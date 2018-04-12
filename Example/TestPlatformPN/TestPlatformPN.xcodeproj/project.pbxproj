@@ -10,7 +10,6 @@
 		11018449206B85AA005113AF /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11018448206B85AA005113AF /* Manager.swift */; };
 		1101844B206BB967005113AF /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1101844A206BB967005113AF /* MessageViewController.swift */; };
 		1103807F2077EFAB00BF960D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1103807E2077EFAB00BF960D /* SystemConfiguration.framework */; };
-		11105AD12068E5C100D0C578 /* TestObjVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 11105AD02068E5C100D0C578 /* TestObjVC.m */; };
 		11564DE9206CBE3B00D9C72B /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11564DE8206CBE3A00D9C72B /* mpulseServices-Info.plist */; };
 		116A78F32057BEFC00B9218F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A78F22057BEFC00B9218F /* AppDelegate.swift */; };
 		116A78F52057BEFC00B9218F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A78F42057BEFC00B9218F /* ViewController.swift */; };
@@ -42,8 +41,6 @@
 		11018448206B85AA005113AF /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		1101844A206BB967005113AF /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		1103807E2077EFAB00BF960D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		11105ACF2068E5C000D0C578 /* TestPlatformPN-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestPlatformPN-Bridging-Header.h"; sourceTree = "<group>"; };
-		11105AD02068E5C100D0C578 /* TestObjVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObjVC.m; sourceTree = "<group>"; };
 		11564DE8206CBE3A00D9C72B /* mpulseServices-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
 		116A78EF2057BEFB00B9218F /* TestPlatformPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPlatformPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		116A78F22057BEFC00B9218F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,8 +100,6 @@
 				116A78F92057BEFC00B9218F /* Assets.xcassets */,
 				116A78FB2057BEFC00B9218F /* LaunchScreen.storyboard */,
 				116A78FE2057BEFC00B9218F /* Info.plist */,
-				11105AD02068E5C100D0C578 /* TestObjVC.m */,
-				11105ACF2068E5C000D0C578 /* TestPlatformPN-Bridging-Header.h */,
 				11018448206B85AA005113AF /* Manager.swift */,
 				1101844A206BB967005113AF /* MessageViewController.swift */,
 				11758ACF207CDC0F00A232FA /* MpulseTabViewController.swift */,
@@ -204,7 +199,6 @@
 				116A78F52057BEFC00B9218F /* ViewController.swift in Sources */,
 				11987D242063BF2300BC9A05 /* InboxViewController.swift in Sources */,
 				11758AD0207CDC0F00A232FA /* MpulseTabViewController.swift in Sources */,
-				11105AD12068E5C100D0C578 /* TestObjVC.m in Sources */,
 				11018449206B85AA005113AF /* Manager.swift in Sources */,
 				1101844B206BB967005113AF /* MessageViewController.swift in Sources */,
 				116A78F32057BEFC00B9218F /* AppDelegate.swift in Sources */,
@@ -352,24 +346,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TestPlatformPN",
-					"$(PROJECT_DIR)/TestPlatformPN/mpulseFramework_ObjectiveC",
-					"$(PROJECT_DIR)/TestPlatformPN/mpulseFramework_ObjectiveC/Output/mpulseFramework_ObjectiveC-Debug-iphoneuniversal",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/mPulseFramework",
 				);
 				INFOPLIST_FILE = TestPlatformPN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/TestPlatformPN/mpulseFramework_ObjectiveC/build/mpulseFramework_ObjectiveC.build/Debug-iphonesimulator/mpulseFramework_ObjectiveC.build/Objects-normal/i386",
-					"$(PROJECT_DIR)/TestPlatformPN/mpulseFramework_ObjectiveC/build/mpulseFramework_ObjectiveC.build/Debug-iphonesimulator/mpulseFramework_ObjectiveC.build/Objects-normal/x86_64",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = mPulse.TestPlatformPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1be4ffbe-1a2d-4fd9-bafb-5d44f7ab5597";
 				PROVISIONING_PROFILE_SPECIFIER = mPulse_TestPlatformPN;
-				SWIFT_OBJC_BRIDGING_HEADER = "TestPlatformPN/TestPlatformPN-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -388,24 +375,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TestPlatformPN",
-					"$(PROJECT_DIR)/TestPlatformPN/mpulseFramework_ObjectiveC",
-					"$(PROJECT_DIR)/TestPlatformPN/mpulseFramework_ObjectiveC/Output/mpulseFramework_ObjectiveC-Debug-iphoneuniversal",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/mPulseFramework",
 				);
 				INFOPLIST_FILE = TestPlatformPN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/TestPlatformPN/mpulseFramework_ObjectiveC/build/mpulseFramework_ObjectiveC.build/Debug-iphonesimulator/mpulseFramework_ObjectiveC.build/Objects-normal/i386",
-					"$(PROJECT_DIR)/TestPlatformPN/mpulseFramework_ObjectiveC/build/mpulseFramework_ObjectiveC.build/Debug-iphonesimulator/mpulseFramework_ObjectiveC.build/Objects-normal/x86_64",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = mPulse.TestPlatformPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1be4ffbe-1a2d-4fd9-bafb-5d44f7ab5597";
 				PROVISIONING_PROFILE_SPECIFIER = mPulse_TestPlatformPN;
-				SWIFT_OBJC_BRIDGING_HEADER = "TestPlatformPN/TestPlatformPN-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MpulseFramework
 
 class InboxViewController: UIViewController {
     var inboxView : MpulseInboxView!
@@ -22,7 +23,7 @@ class InboxViewController: UIViewController {
         lblNoUser.textAlignment = .center
         self.view.addSubview(lblNoUser);
         //Inbox View for secure msg web view
-        inboxView = MpulseHandler.shareInstance().getInboxView()
+        inboxView = MpulseHandler.shared().inboxView()
         inboxView.delegate = self
         inboxView.frame = self.view.frame
         self.view.addSubview(inboxView)
@@ -35,7 +36,7 @@ class InboxViewController: UIViewController {
         if let _ = UserDefaults.standard.value(forKey: "User") {
             self.inboxView.isHidden = false
             self.lblNoUser.isHidden = true
-            if MpulseHandler.shareInstance().appMemberId != nil {
+            if MpulseHandler.shared().appMemberId != nil {
                 inboxView.loadInbox()
                 showActivityIndicator()
             }
@@ -57,14 +58,14 @@ class InboxViewController: UIViewController {
 }
 
 extension InboxViewController: MpulseInboxViewDelegate{
-    func inboxDidStartLoading() {
+    func inboxViewDidStartLoading() {
 //        actInd.startAnimating()
     }
-    func inboxDidFinishLoading() {
+    func inboxViewDidFinishLoading() {
         self.tabBarController?.tabBar.items?[1].badgeValue = nil
         activityIN.stopAnimating()
     }
-    func inboxDidFailLoadingWithError(_ error: Error) {
+    func inboxViewDidFailLoadingWithError(_ error: Error) {
         print(error);
         activityIN.stopAnimating()
     }

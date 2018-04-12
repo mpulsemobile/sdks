@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		11758AFA207DE7F100A232FA /* MpulseHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11758AF9207DE7F100A232FA /* MpulseHelperTests.m */; };
 		11758AFD207DF26A00A232FA /* MpulseErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11758AFC207DF26A00A232FA /* MpulseErrorTests.m */; };
+		11758B36207F719D00A232FA /* MpulseManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 11758B34207F719D00A232FA /* MpulseManager.h */; };
+		11758B37207F719D00A232FA /* MpulseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11758B35207F719D00A232FA /* MpulseManager.m */; };
 		11854AA0207CC5C200F0E833 /* MpulseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11854A96207CC5C200F0E833 /* MpulseFramework.framework */; };
 		11854AA5207CC5C200F0E833 /* MpulseFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11854AA4207CC5C200F0E833 /* MpulseFrameworkTests.m */; };
 		11854AA7207CC5C200F0E833 /* MpulseFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 11854A99207CC5C200F0E833 /* MpulseFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		11758AF9207DE7F100A232FA /* MpulseHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MpulseHelperTests.m; sourceTree = "<group>"; };
 		11758AFC207DF26A00A232FA /* MpulseErrorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MpulseErrorTests.m; sourceTree = "<group>"; };
+		11758B34207F719D00A232FA /* MpulseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MpulseManager.h; sourceTree = "<group>"; };
+		11758B35207F719D00A232FA /* MpulseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MpulseManager.m; sourceTree = "<group>"; };
 		11854A96207CC5C200F0E833 /* MpulseFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MpulseFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11854A99207CC5C200F0E833 /* MpulseFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MpulseFramework.h; sourceTree = "<group>"; };
 		11854A9A207CC5C200F0E833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				11854ABF207CC5E200F0E833 /* Reachability.m */,
 				11854A99207CC5C200F0E833 /* MpulseFramework.h */,
 				11854A9A207CC5C200F0E833 /* Info.plist */,
+				11758B34207F719D00A232FA /* MpulseManager.h */,
+				11758B35207F719D00A232FA /* MpulseManager.m */,
 			);
 			path = MpulseFramework;
 			sourceTree = "<group>";
@@ -145,6 +151,7 @@
 				11854AC6207CC5E200F0E833 /* MpulseHandler.h in Headers */,
 				11854AC0207CC5E200F0E833 /* Constants.h in Headers */,
 				11854AC4207CC5E200F0E833 /* MpulseError.h in Headers */,
+				11758B36207F719D00A232FA /* MpulseManager.h in Headers */,
 				11854ACC207CC5E200F0E833 /* MpulsePNRegister.h in Headers */,
 				11854AC1207CC5E200F0E833 /* ErrorConstants.h in Headers */,
 				11854AA7207CC5C200F0E833 /* MpulseFramework.h in Headers */,
@@ -272,6 +279,7 @@
 			files = (
 				11854ACD207CC5E200F0E833 /* MpulsePNRegister.m in Sources */,
 				11854AC5207CC5E200F0E833 /* MpulseError.m in Sources */,
+				11758B37207F719D00A232FA /* MpulseManager.m in Sources */,
 				11854AC7207CC5E200F0E833 /* MpulseHandler.m in Sources */,
 				11854ACF207CC5E200F0E833 /* Reachability.m in Sources */,
 				11854ACB207CC5E200F0E833 /* MpulseInboxView.m in Sources */,

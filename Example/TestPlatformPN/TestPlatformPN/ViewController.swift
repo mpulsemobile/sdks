@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MpulseFramework
 class ViewController: UIViewController {
     
     @IBOutlet weak var lblToken: UILabel!
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
             self.txtFieldAppMemberId.isHidden = true
             self.btnLogout.isHidden = false
             self.btnRegister.isHidden = true
-            MpulseHandler.shareInstance().configure(user)
+            MpulseHandler.shared().configure(user)
 
         }else{
             self.lblMessage.text = "Enter app memberId and click Register"
@@ -65,8 +65,8 @@ class ViewController: UIViewController {
     }
     
     func getUnreadMsgCount(){
-        if MpulseHandler.shareInstance().appMemberId != nil && (UserDefaults.standard.value(forKey: "User") != nil){
-            MpulseHandler.shareInstance().getMessageCount { (dict, err) in
+        if MpulseHandler.shared().appMemberId != nil && (UserDefaults.standard.value(forKey: "User") != nil){
+            MpulseHandler.shared().getInboxMessageCount { (dict, err) in
                 if let dictionary = dict as? [String: String], let unread = dictionary["unread"]{
                     DispatchQueue.main.async {
                         self.tabBarController?.tabBar.items?[1].badgeValue = unread
@@ -79,9 +79,9 @@ class ViewController: UIViewController {
     func pnRegister(deviceToken: String){
         if let text = txtFieldAppMemberId.text {
             activityIN.startAnimating()
-            MpulseHandler.shareInstance().configure(text)
-            if MpulseHandler.shareInstance().appMemberId != nil{
-                MpulseHandler.shareInstance().registerForPushNotification(withDeviceToken: deviceToken, completionHandler: { (res, msg, err) in
+            MpulseHandler.shared().configure(text)
+            if MpulseHandler.shared().appMemberId != nil{
+                MpulseHandler.shared().registerForPushNotification(withDeviceToken: deviceToken, completionHandler: { (res, msg, err) in
                      DispatchQueue.main.async {
                     self.activityIN.stopAnimating()
                     }
@@ -100,7 +100,10 @@ class ViewController: UIViewController {
                             }
                         }
                     }else{
-                        print(err)
+                        if let e = err{
+                            print(e.localizedDescription)
+                        }
+                        
                     }
                 })
 
@@ -131,7 +134,7 @@ class ViewController: UIViewController {
             activityIN.startAnimating()
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let deviceTokenFromDelegate = appDelegate.deviceTokenVal;
-            MpulseHandler.shareInstance().unregisterForPushNotification(withDeviceToken: deviceTokenFromDelegate!, completionHandler: { (res, apiMsg, error) in
+            MpulseHandler.shared().unregisterForPushNotification(withDeviceToken: deviceTokenFromDelegate!, completionHandler: { (res, apiMsg, error) in
                 DispatchQueue.main.async {
                     self.activityIN.stopAnimating()
                     self.tabBarController?.tabBar.items?[1].badgeValue = nil

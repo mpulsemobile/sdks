@@ -1,8 +1,8 @@
 //
 //  Constants.h
-//  mPulseFramework
+//  MpulseFramework
 //
-//  Created by Heena Dhawan on 03/04/18.
+//  Created by mPulse Team on 03/04/18.
 //  Copyright © 2018 mPulse. All rights reserved.
 //
 

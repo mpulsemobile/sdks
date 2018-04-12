@@ -1,8 +1,8 @@
 //
-//  mPulsePnRegister.m
-//  mpulseFramework_ObjectiveC
+//  MpulsePnRegister.m
+//  MpulseFramework
 //
-//  Created by Heena Dhawan on 27/03/18.
+//  Created by mPulse Team on 27/03/18.
 //  Copyright © 2018 mPulse. All rights reserved.
 //
 
@@ -38,11 +38,11 @@
     result(urlString,error);
 }
 
-+(void)shouldregisterForPushNotification:(BOOL)registerforPN WithDeviceToken:(NSString*_Nonnull) deviceToken appMemberId:(NSString* _Nonnull)memberId completionHandler: (void (^_Nullable)(Result result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
++(void)shouldregisterForPushNotification:(BOOL)registerforPN WithDeviceToken:(NSString*_Nonnull) deviceToken appMemberId:(NSString* _Nonnull)memberId completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     __block NSError *error;
     __block NSString *queryStringForPN;
     __block NSURL* generatedURL;
-    Result result = Failure;
+    MpulsePNResult result = Failure;
     [self generateQueryStringForPNForMemberId:memberId withDeviceToken:deviceToken result:^(NSString *urlStr, NSError *err) {
         queryStringForPN = urlStr;
         error = err;
@@ -70,17 +70,17 @@
             }
             long responseCode = (long)[httpResponse statusCode];
             if (responseCode == 200) {
-                Result res = Success;
+                MpulsePNResult res = Success;
                 completionHandler(res, apiMsg, nil);
             }else if(responseCode == 202){
-                Result res = Failure;
+                MpulsePNResult res = Failure;
                 completionHandler(res, apiMsg, nil);
             }else if(responseCode ==417){
-                Result res = Failure;
+                MpulsePNResult res = Failure;
                 completionHandler(res, apiMsg, nil);
             }
             else{
-                Result res = Failure;
+                MpulsePNResult res = Failure;
                 completionHandler(res,nil,error);
             }
         }];
@@ -91,15 +91,15 @@
     }
 }
 
-+(void)registerForPushNotificationWithDeviceToken:(NSString*_Nonnull) deviceToken appMemberId:(NSString*_Nonnull)memberId completionHandler: (void (^_Nullable)(Result result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
-    [self shouldregisterForPushNotification:true WithDeviceToken:deviceToken appMemberId:memberId completionHandler:^(Result result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
++(void)registerForPushNotificationWithDeviceToken:(NSString*_Nonnull) deviceToken appMemberId:(NSString*_Nonnull)memberId completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+    [self shouldregisterForPushNotification:true WithDeviceToken:deviceToken appMemberId:memberId completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }
 
-+(void)unregisterForPushNotificationWithDeviceToken:(NSString*_Nonnull) deviceToken appMemberId:(NSString*_Nonnull)memberId completionHandler: (void (^_Nullable)(Result result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
++(void)unregisterForPushNotificationWithDeviceToken:(NSString*_Nonnull) deviceToken appMemberId:(NSString*_Nonnull)memberId completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     NSString *replaceToken = [NSString stringWithFormat:@"%@_%@", deviceToken, memberId];
-    [self shouldregisterForPushNotification:true WithDeviceToken:replaceToken appMemberId:memberId completionHandler:^(Result result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+    [self shouldregisterForPushNotification:true WithDeviceToken:replaceToken appMemberId:memberId completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }

@@ -1,8 +1,8 @@
 //
-//  mPulseHelper.h
-//  mPulseFramework
+//  MpulseHelper.h
+//  MpulseFramework
 //
-//  Created by Heena Dhawan on 02/04/18.
+//  Created by mPulse Team on 02/04/18.
 //  Copyright © 2018 mPulse. All rights reserved.
 //
 

@@ -1,20 +1,28 @@
 //
-//  MpulseServices.m
-//  TestPlatformPN
+//  MpulseHandler.m
+//  MpulseFramework
 //
-//  Created by Heena Dhawan on 09/04/18.
+//  Created by mPulse Team on 09/04/18.
 //  Copyright © 2018 mPulse. All rights reserved.
 //
 
 #import "MpulseHandler.h"
 #import "MpulsePNRegister.h"
 #import "MpulseInboxView.h"
+#import "MpulseManager.h"
+@interface MpulseHandler()
+/* The initializers not available to subclasses or initialise new instance
+ only sharedInstance should be used
+ */
++ (instancetype _Nonnull) new  NS_UNAVAILABLE;
+- (instancetype _Nonnull) init NS_UNAVAILABLE;
+@end
 
 @implementation MpulseHandler
 static id _instance;
 NSString *_appMemberId = nil;
 
-+ (instancetype)shareInstance {
++ (instancetype)shared {
     static MpulseHandler *shareInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -39,24 +47,24 @@ NSString *_appMemberId = nil;
     _appMemberId = withAppMemberId;
 }
 
--(void)registerForPushNotificationWithDeviceToken:(NSString*_Nonnull) withDeviceToken completionHandler: (void (^_Nullable)(Result result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
-    [MpulsePNRegister registerForPushNotificationWithDeviceToken:withDeviceToken appMemberId:_appMemberId completionHandler:^(Result result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+-(void)registerForPushNotificationWithDeviceToken:(NSString*_Nonnull) withDeviceToken completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+    [MpulsePNRegister registerForPushNotificationWithDeviceToken:withDeviceToken appMemberId:_appMemberId completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }
 
--(void)unregisterForPushNotificationWithDeviceToken:(NSString*_Nonnull) withDeviceToken completionHandler: (void (^_Nullable)(Result result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
-    [MpulsePNRegister unregisterForPushNotificationWithDeviceToken:withDeviceToken appMemberId:_appMemberId completionHandler:^(Result result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+-(void)unregisterForPushNotificationWithDeviceToken:(NSString*_Nonnull) withDeviceToken completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+    [MpulsePNRegister unregisterForPushNotificationWithDeviceToken:withDeviceToken appMemberId:_appMemberId completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }
 
--(MpulseInboxView*_Nonnull)getInboxView{
+-(MpulseInboxView*_Nonnull)inboxView{
     return [[MpulseInboxView alloc]init];
 }
 
--(void)getMessageCount:(void (^_Nullable)(NSDictionary* json, NSError * _Nullable error))completionHandler{
-    [MpulseInboxView getMessageCountForAppMemberId:_appMemberId completionHandler:^(NSDictionary * _Nullable jsonData, NSError * _Nullable error) {
+-(void)getInboxMessageCount:(void (^_Nullable)(NSDictionary* json, NSError * _Nullable error))completionHandler{
+    [MpulseManager getMessageCountForAppMemberId:_appMemberId completionHandler:^(NSDictionary * _Nullable jsonData, NSError * _Nullable error) {
         completionHandler(jsonData, error);
     }];
 }

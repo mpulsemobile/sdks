@@ -2,7 +2,7 @@
 //  MpulseFrameworkTests.m
 //  MpulseFrameworkTests
 //
-//  Created by Heena Dhawan on 10/04/18.
+//  Created by mPulse Team on 10/04/18.
 //  Copyright © 2018 mPulse. All rights reserved.
 //
 

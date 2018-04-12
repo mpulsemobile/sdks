@@ -1,8 +1,8 @@
 //
 //  ErrorConstants.h
-//  TestPlatformPN
+//  MpulseFramework
 //
-//  Created by Heena Dhawan on 06/04/18.
+//  Created by mPulse Team on 06/04/18.
 //  Copyright © 2018 mPulse. All rights reserved.
 //
 

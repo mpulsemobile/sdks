@@ -4,38 +4,38 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/heenafortest/Library/Developer/Xcode/DerivedData/MpulseFramework-alqemzorqryfcbdffhkcjrbopxif/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Headers",
+      'name': "/Users/heenafortest/Library/Developer/Xcode/DerivedData/MpulseFramework-gzevrsmtquggwibvbosmanygynfh/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "MpulseFramework-Swift.h",
-          'external-contents': "/Users/heenafortest/Library/Developer/Xcode/DerivedData/MpulseFramework-alqemzorqryfcbdffhkcjrbopxif/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Headers/MpulseFramework-Swift.h"
+          'external-contents': "/Users/heenafortest/Library/Developer/Xcode/DerivedData/MpulseFramework-gzevrsmtquggwibvbosmanygynfh/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Headers/MpulseFramework-Swift.h"
         },
         {
           'type': 'file',
           'name': "MpulseFramework.h",
-          'external-contents': "/Users/heenafortest/Desktop/Heena Dhawan/MpulseFramework_Final/MpulseFramework/MpulseFramework/MpulseFramework.h"
+          'external-contents': "/Users/heenafortest/Desktop/Heena Dhawan/Projects/mPulse_Git/mPulse_iOS_Framework/sdks/MpulseFramework/MpulseFramework/MpulseFramework.h"
         },
         {
           'type': 'file',
           'name': "MpulseHandler.h",
-          'external-contents': "/Users/heenafortest/Desktop/Heena Dhawan/MpulseFramework_Final/MpulseFramework/MpulseFramework/MpulseHandler.h"
+          'external-contents': "/Users/heenafortest/Desktop/Heena Dhawan/Projects/mPulse_Git/mPulse_iOS_Framework/sdks/MpulseFramework/MpulseFramework/MpulseHandler.h"
         },
         {
           'type': 'file',
           'name': "MpulseInboxView.h",
-          'external-contents': "/Users/heenafortest/Desktop/Heena Dhawan/MpulseFramework_Final/MpulseFramework/MpulseFramework/MpulseInboxView.h"
+          'external-contents': "/Users/heenafortest/Desktop/Heena Dhawan/Projects/mPulse_Git/mPulse_iOS_Framework/sdks/MpulseFramework/MpulseFramework/MpulseInboxView.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/heenafortest/Library/Developer/Xcode/DerivedData/MpulseFramework-alqemzorqryfcbdffhkcjrbopxif/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Modules",
+      'name': "/Users/heenafortest/Library/Developer/Xcode/DerivedData/MpulseFramework-gzevrsmtquggwibvbosmanygynfh/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/heenafortest/Desktop/Heena Dhawan/MpulseFramework_Final/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/module.modulemap"
+          'external-contents': "/Users/heenafortest/Desktop/Heena Dhawan/Projects/mPulse_Git/mPulse_iOS_Framework/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/module.modulemap"
         }
       ]
     }
