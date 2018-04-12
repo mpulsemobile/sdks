@@ -1,0 +1,6 @@
+framework module MpulseFramework {
+  umbrella header "MpulseFramework.h"
+
+  export *
+  module * { export * }
+}
