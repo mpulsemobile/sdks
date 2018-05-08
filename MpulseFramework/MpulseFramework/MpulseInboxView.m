@@ -105,7 +105,7 @@
         [delegate inboxViewDidFailLoadingWithError:error];
         return;
     }
-    NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseUserAgentFromHeaderValue, mPulseAccessKeyHeaderKey: accessKey};
+    NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: accessKey};
     
     //Generate query string base 64 encoded
     [self queryStringForSecureAppmailWithMemberId:appMemberId result:^(NSString *urlStr, NSError *err) {

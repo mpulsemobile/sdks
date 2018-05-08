@@ -10,6 +10,7 @@
 #import "MpulsePNRegister.h"
 #import "MpulseInboxView.h"
 #import "MpulseManager.h"
+#import "Constants.h"
 @interface MpulseHandler()
 /* The initializers not available to subclasses or initialise new instance
  only sharedInstance should be used
@@ -44,7 +45,16 @@ NSString *_appMemberId = nil;
 }
 
 -(void)configure:(NSString*_Nonnull) withAppMemberId{
+    NSString *appMember = [[NSUserDefaults standardUserDefaults] valueForKey:mPulseAppMemberIdValue];
+    if(appMember != withAppMemberId){
+        //App memeber id changed
+        [[NSUserDefaults standardUserDefaults] setBool:false forKey:mPulseTracking];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
     _appMemberId = withAppMemberId;
+    [self trackApp];
+    [[NSUserDefaults standardUserDefaults] setValue:withAppMemberId forKey:mPulseAppMemberIdValue];
+    
 }
 
 -(void)registerForPushNotificationWithDeviceToken:(NSString*_Nonnull) withDeviceToken completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
@@ -67,6 +77,12 @@ NSString *_appMemberId = nil;
     [MpulseManager getMessageCountForAppMemberId:_appMemberId completionHandler:^(NSDictionary * _Nullable jsonData, NSError * _Nullable error) {
         completionHandler(jsonData, error);
     }];
+}
+
+-(void)trackApp{
+    if(!([[NSUserDefaults standardUserDefaults] boolForKey:mPulseTracking])){
+        [MpulseManager trackAppUsageFor:_appMemberId];
+    }
 }
 @end
 

@@ -22,8 +22,8 @@
 
 #pragma mark *** MpulsePNResult - Enum ***
 /*
-    MpulsePNResult gives Success or Failure
-    as result of register/unregister with Push Notification on mpulse platform
+ MpulsePNResult gives Success or Failure
+ as result of register/unregister with Push Notification on mpulse platform
  */
 typedef enum
 {
@@ -85,3 +85,4 @@ typedef enum
 -(void)getInboxMessageCount:(void (^_Nullable)(NSDictionary * _Nullable json, NSError * _Nullable error)) completionHandler;
 
 @end
+

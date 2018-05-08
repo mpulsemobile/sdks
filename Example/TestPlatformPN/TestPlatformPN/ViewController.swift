@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         let deviceTokenFromDelegate = appDelegate.deviceTokenVal;
         lblToken.text = deviceTokenFromDelegate
         view.endEditing(true)
-        pnRegister(deviceToken: deviceTokenFromDelegate!);
+        pnRegister(deviceToken: "deviceTokenFromDelegate!");
     }
     
     override func viewDidLoad() {
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
             activityIN.startAnimating()
             MpulseHandler.shared().configure(text)
             if MpulseHandler.shared().appMemberId != nil{
-                MpulseHandler.shared().registerForPushNotification(withDeviceToken: deviceToken, completionHandler: { (res, msg, err) in
+                MpulseHandler.shared().registerForPushNotification(withDeviceToken: "deviceToken", completionHandler: { (res, msg, err) in
                      DispatchQueue.main.async {
                     self.activityIN.stopAnimating()
                     }
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
             activityIN.startAnimating()
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let deviceTokenFromDelegate = appDelegate.deviceTokenVal;
-            MpulseHandler.shared().unregisterForPushNotification(withDeviceToken: deviceTokenFromDelegate!, completionHandler: { (res, apiMsg, error) in
+            MpulseHandler.shared().unregisterForPushNotification(withDeviceToken: "deviceTokenFromDelegate!", completionHandler: { (res, apiMsg, error) in
                 DispatchQueue.main.async {
                     self.activityIN.stopAnimating()
                     self.tabBarController?.tabBar.items?[1].badgeValue = nil

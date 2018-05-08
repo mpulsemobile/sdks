@@ -10,6 +10,7 @@
 #import "MpulseHelper.h"
 #import "MpulseError.h"
 #import "Constants.h"
+#import <UIKit/UIKit.h>
 
 @implementation MpulseManager
 
@@ -92,4 +93,63 @@
     }
 }
 
++(void)trackAppUsageFor:(NSString * _Nonnull) appMemberId{
+    __block NSError *error;
+    __block NSMutableDictionary *dataDictionary;
+    
+    __block NSURL* generatedURL;
+    
+    [MpulseHelper getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+        error = err;
+        dataDictionary = (NSMutableDictionary *) dataDict;
+    }];
+    if (error) {
+        [[NSUserDefaults standardUserDefaults] setBool:false forKey:mPulseTracking];
+        return;
+    }
+    NSMutableDictionary *postDataDict = [[NSMutableDictionary alloc] init];
+    postDataDict[mPulseOS] = [[UIDevice currentDevice] systemVersion];
+    postDataDict[mPulseDeviceType] = [[UIDevice currentDevice] model];
+    postDataDict[mPulseAppMemberId] = appMemberId;
+    postDataDict[mPulseAppId] = dataDictionary[mPulseAppId];
+    postDataDict[mPulseAccountId] = dataDictionary[mPulseAccountId];
+    postDataDict[mPulseAppVersion] = [[[NSBundle mainBundle] infoDictionary] objectForKey:mPulseAppBundleVersion];
+    NSString *queryStringForAppTracking = [NSString stringWithFormat:@"%@/%@/%@",  mPulseAPI,postDataDict[mPulseAccountId],mPulseTrackingAPI];
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:postDataDict options:0 error:&error];
+    [MpulseHelper getURLFormPulseServicewithQueryParams:queryStringForAppTracking resultAs:^(NSURL * _Nullable mpulseURL, NSError * _Nullable err) {
+        generatedURL = mpulseURL;
+        error = err;
+    }];
+    
+    if (error) {
+        [[NSUserDefaults standardUserDefaults] setBool:false forKey:mPulseTracking];
+        return;
+    }
+    
+    NSString *accessKey = dataDictionary[mPulseAccessKey];
+    if (accessKey == nil ) {
+        error = [MpulseError returnMpulseErrorWithCode:kNoAccessKey];
+        [[NSUserDefaults standardUserDefaults] setBool:false forKey:mPulseTracking];
+        return;
+    }
+    NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: accessKey, mPulseContentType: mPulseContentTypeValue};
+    [MpulseHelper makeAPICallToPlatformForURL:generatedURL withMethod:@"POST" headerDict:headerDict andBody:postdata completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+        NSString *apiMsg;
+        if (data){
+            apiMsg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        }
+        long responseCode = (long)[httpResponse statusCode];
+        if (responseCode >= 200 && responseCode <=300) {
+            [[NSUserDefaults standardUserDefaults] setBool:true forKey:mPulseTracking];
+        }
+        if(error){
+            [[NSUserDefaults standardUserDefaults] setBool:false forKey:mPulseTracking];
+        }
+    }];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
 @end
+

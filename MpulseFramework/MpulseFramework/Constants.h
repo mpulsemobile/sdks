@@ -13,6 +13,8 @@
 #define mPulsePNService @"pn"
 #define mPulseMsgCounterService @"count"
 #define mPulseSecureMsgService @"secureMsg"
+#define mPulseTrackingAPI @"track/installation"
+#define mPulseAPI @"api"
 #define mPulseServiceDictionary @{@"pn":@"pnregister",\
 @"secureMsg":@"webview",\
 @"count":@"counter",\
@@ -25,7 +27,6 @@
 #define mPulseConfigFileType @"plist"
 #define mPulseSDKRequest @"sdk"
 #define mPulseUserAgentFromHeaderKey @"user-agent-from"
-#define mPulseUserAgentFromHeaderValue @"sdk"
 #define mPulseAccessKeyHeaderKey @"access-key"
 #define mPulsePOSTmethod @"POST"
 #define mPulseUserAgentHeaderKey @"User-Agent"
@@ -33,5 +34,17 @@
 #define mPulseActionHeaderKey @"action"
 #define mPulseRegisterActionHeaderValue @"register"
 #define mPulseUnRegisterActionHeaderValue @"unregister"
-#endif /* Constants_h */
+#define mPulseOS @"OS"
+#define mPulseDeviceType @"DEVICE_TYPE"
+#define mPulseAppVersion @"APP_VERSION"
+#define mPulseCreatedOn @"CREATED_ON"
+#define mPulseAppMemberId @"APP_MEMBER_ID"
+#define mPulseAppBundleVersion @"CFBundleShortVersionString"
+#define mPulseContentType @"Content-Type"
+#define mPulseContentTypeValue @"application/json"
+#define mPulseTracking @"mPulseTracking"
+#define mPulseAppMemberIdValue @"mPulseAppMemberId"
+#endif
+
+/* Constants_h */
 
