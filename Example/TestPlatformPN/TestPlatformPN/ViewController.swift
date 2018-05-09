@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         let deviceTokenFromDelegate = appDelegate.deviceTokenVal;
         lblToken.text = deviceTokenFromDelegate
         view.endEditing(true)
-        pnRegister(deviceToken: "deviceTokenFromDelegate!");
+        pnRegister(deviceToken: deviceTokenFromDelegate!);
     }
     
     override func viewDidLoad() {
@@ -49,8 +49,9 @@ class ViewController: UIViewController {
             self.txtFieldAppMemberId.isHidden = true
             self.btnLogout.isHidden = false
             self.btnRegister.isHidden = true
-            MpulseHandler.shared().configure(user)
-
+            if(MpulseHandler.shared().appMemberId == nil){
+                MpulseHandler.shared().configure(user)
+            }
         }else{
             self.lblMessage.text = "Enter app memberId and click Register"
             self.lblMessage.textColor = .black
@@ -81,7 +82,7 @@ class ViewController: UIViewController {
             activityIN.startAnimating()
             MpulseHandler.shared().configure(text)
             if MpulseHandler.shared().appMemberId != nil{
-                MpulseHandler.shared().registerForPushNotification(withDeviceToken: "deviceToken", completionHandler: { (res, msg, err) in
+                MpulseHandler.shared().registerForPushNotification(withDeviceToken: deviceToken, completionHandler: { (res, msg, err) in
                      DispatchQueue.main.async {
                     self.activityIN.stopAnimating()
                     }
@@ -130,11 +131,9 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func logoutUser(_ sender: Any) {
-        if let _ = UserDefaults.standard.value(forKey: "User") {
+        if let _ = UserDefaults.standard.value(forKey: "User"), let appDelegate = UIApplication.shared.delegate as? AppDelegate, let deviceTokenFromDelegate = appDelegate.deviceTokenVal{
             activityIN.startAnimating()
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let deviceTokenFromDelegate = appDelegate.deviceTokenVal;
-            MpulseHandler.shared().unregisterForPushNotification(withDeviceToken: "deviceTokenFromDelegate!", completionHandler: { (res, apiMsg, error) in
+            MpulseHandler.shared().unregisterForPushNotification(withDeviceToken: deviceTokenFromDelegate, completionHandler: { (res, apiMsg, error) in
                 DispatchQueue.main.async {
                     self.activityIN.stopAnimating()
                     self.tabBarController?.tabBar.items?[1].badgeValue = nil
