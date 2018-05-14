@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var details: String?
     var strTitle: String?
     var activityIN : UIActivityIndicatorView!
-
+    
     @IBAction func getToken(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let deviceTokenFromDelegate = appDelegate.deviceTokenVal;
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      getUnreadMsgCount()
+        getUnreadMsgCount()
     }
     
     func getUnreadMsgCount(){
@@ -76,15 +76,15 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     func pnRegister(deviceToken: String){
         if let text = txtFieldAppMemberId.text {
             activityIN.startAnimating()
             MpulseHandler.shared().configure(text)
             if MpulseHandler.shared().appMemberId != nil{
                 MpulseHandler.shared().registerForPushNotification(withDeviceToken: deviceToken, completionHandler: { (res, msg, err) in
-                     DispatchQueue.main.async {
-                    self.activityIN.stopAnimating()
+                    DispatchQueue.main.async {
+                        self.activityIN.stopAnimating()
                     }
                     if(err == nil){
                         
@@ -107,8 +107,8 @@ class ViewController: UIViewController {
                         
                     }
                 })
-
-                }
+                
+            }
         }else{
             self.lblMessage.text = "Please enter app member Id"
             self.lblMessage.textColor = .red
@@ -121,7 +121,7 @@ class ViewController: UIViewController {
         self.details = strDetails
         performSegue(withIdentifier: "messageSegue", sender: nil)
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "messageSegue" {
             if let controller = segue.destination as? MessageViewController{

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/AppDelegate.swift"
-            timestampString = "545151161.2523659"
+            timestampString = "547544102.336807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -280,7 +280,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/AppDelegate.swift"
-            timestampString = "545151161.253382"
+            timestampString = "547544102.3378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -376,7 +376,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/AppDelegate.swift"
-            timestampString = "545151161.253659"
+            timestampString = "547544102.3381701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -424,7 +424,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/AppDelegate.swift"
-            timestampString = "545151161.253741"
+            timestampString = "547544102.338269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -493,38 +493,6 @@
             endingLineNumber = "43"
             landmarkName = "-registerForPushNotificationWithDeviceToken:completionHandler:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MpulseHandler registerForPushNotificationWithDeviceToken:completionHandler:]"
-                  moduleName = "TestPlatformPN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse/Project/TestPlatformPN/TestPlatformPN/MpulseHandler.m"
-                  timestampString = "545150622.891315"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__78-[MpulseHandler registerForPushNotificationWithDeviceToken:completionHandler:]_block_invoke"
-                  moduleName = "TestPlatformPN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse/Project/TestPlatformPN/TestPlatformPN/MpulseHandler.m"
-                  timestampString = "545150622.893535"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -566,11 +534,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "545227195.8974349"
+            timestampString = "547642217.018013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -605,38 +573,6 @@
             endingLineNumber = "65"
             landmarkName = "+shouldregisterForPushNotification:WithDeviceToken:appMemberId:completionHandler:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "+[MpulsePNRegister shouldregisterForPushNotification:WithDeviceToken:appMemberId:completionHandler:]"
-                  moduleName = "TestPlatformPN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse/Project/TestPlatformPN/TestPlatformPN/MpulsePNRegister.m"
-                  timestampString = "545150622.911837"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "856">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__100+[MpulsePNRegister shouldregisterForPushNotification:WithDeviceToken:appMemberId:completionHandler:]_block_invoke.49"
-                  moduleName = "TestPlatformPN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse/Project/TestPlatformPN/TestPlatformPN/MpulsePNRegister.m"
-                  timestampString = "545150622.914006"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -646,11 +582,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "545227195.897755"
+            timestampString = "547642217.018689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "logoutUser(_:)"
             landmarkType = "7">
             <Locations>
@@ -661,27 +597,27 @@
                   symbolName = "TestPlatformPN.ViewController.logoutUser(Any) -&gt; ()"
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse/Project/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "545150622.919247"
+                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse_Git/mPulse_iOS_Framework/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
+                  timestampString = "547642217.205266"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "134"
-                  endingLineNumber = "134"
-                  offsetFromSymbolStart = "856">
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "972">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.Result, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TestPlatformPN.ViewController.logoutUser(Any) -&gt; ()"
+                  symbolName = "closure #1 (__C.MpulsePNResult, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TestPlatformPN.ViewController.logoutUser(Any) -&gt; ()"
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse/Project/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "545150622.921544"
+                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse_Git/mPulse_iOS_Framework/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
+                  timestampString = "547642217.210861"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
                   offsetFromSymbolStart = "52">
                </Location>
             </Locations>
@@ -733,38 +669,6 @@
             endingLineNumber = "49"
             landmarkName = "-unregisterForPushNotificationWithDeviceToken:completionHandler:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MpulseHandler unregisterForPushNotificationWithDeviceToken:completionHandler:]"
-                  moduleName = "TestPlatformPN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse/Project/TestPlatformPN/TestPlatformPN/MpulseHandler.m"
-                  timestampString = "545150622.935202"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__80-[MpulseHandler unregisterForPushNotificationWithDeviceToken:completionHandler:]_block_invoke"
-                  moduleName = "TestPlatformPN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse/Project/TestPlatformPN/TestPlatformPN/MpulseHandler.m"
-                  timestampString = "545150622.93743"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -781,38 +685,6 @@
             endingLineNumber = "102"
             landmarkName = "+unregisterForPushNotificationWithDeviceToken:appMemberId:completionHandler:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "+[MpulsePNRegister unregisterForPushNotificationWithDeviceToken:appMemberId:completionHandler:]"
-                  moduleName = "TestPlatformPN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse/Project/TestPlatformPN/TestPlatformPN/MpulsePNRegister.m"
-                  timestampString = "545150622.942818"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
-                  offsetFromSymbolStart = "216">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__95+[MpulsePNRegister unregisterForPushNotificationWithDeviceToken:appMemberId:completionHandler:]_block_invoke"
-                  moduleName = "TestPlatformPN"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heenafortest/Desktop/Heena%20Dhawan/Projects/mPulse/Project/TestPlatformPN/TestPlatformPN/MpulsePNRegister.m"
-                  timestampString = "545150622.945039"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -822,7 +694,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/InboxViewController.swift"
-            timestampString = "545227195.898103"
+            timestampString = "547642217.0192471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -838,7 +710,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/InboxViewController.swift"
-            timestampString = "545227195.898203"
+            timestampString = "547642217.019346"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -854,7 +726,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/InboxViewController.swift"
-            timestampString = "545227195.8983541"
+            timestampString = "547642217.019418"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -870,12 +742,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "545227195.898438"
+            timestampString = "547642217.019487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "pnRegister(deviceToken:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestPlatformPN/ViewController.swift"
+            timestampString = "547642217.0198441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "logoutUser(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestPlatformPN/AppDelegate.swift"
+            timestampString = "547544102.340373"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestPlatformPN/ViewController.swift"
+            timestampString = "547642217.020283"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getToken(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestPlatformPN/ViewController.swift"
+            timestampString = "547642217.020628"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "pnRegister(deviceToken:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestPlatformPN/ViewController.swift"
+            timestampString = "547642217.021102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getToken(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
