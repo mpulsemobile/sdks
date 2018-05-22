@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11D1AD9320B325EB00174958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1AD9220B325EB00174958 /* AppDelegate.swift */; };
+		11D1AD9520B325EB00174958 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1AD9420B325EB00174958 /* ViewController.swift */; };
+		11D1AD9820B325EB00174958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D1AD9620B325EB00174958 /* Main.storyboard */; };
+		11D1AD9A20B325EB00174958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D1AD9920B325EB00174958 /* Assets.xcassets */; };
+		11D1AD9D20B325EB00174958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D1AD9B20B325EB00174958 /* LaunchScreen.storyboard */; };
+		11D1ADA820B3266300174958 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1ADA420B3266200174958 /* InboxViewController.swift */; };
+		11D1ADA920B3266300174958 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1ADA520B3266200174958 /* Manager.swift */; };
+		11D1ADAA20B3266300174958 /* MpulseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1ADA620B3266200174958 /* MpulseTabViewController.swift */; };
+		11D1ADAB20B3266300174958 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1ADA720B3266200174958 /* MessageViewController.swift */; };
+		11D1ADAE20B326D600174958 /* MpulseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D1ADAC20B326BE00174958 /* MpulseFramework.framework */; };
+		11D1ADAF20B326D600174958 /* MpulseFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11D1ADAC20B326BE00174958 /* MpulseFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		11D1ADB520B4437B00174958 /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11D1ADB420B4437B00174958 /* mpulseServices-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		11D1ADB020B326D600174958 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				11D1ADAF20B326D600174958 /* MpulseFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		11D1AD8F20B325EB00174958 /* mPulseSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mPulseSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11D1AD9220B325EB00174958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11D1AD9420B325EB00174958 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11D1AD9720B325EB00174958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11D1AD9920B325EB00174958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11D1AD9C20B325EB00174958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11D1AD9E20B325EB00174958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11D1ADA420B3266200174958 /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
+		11D1ADA520B3266200174958 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		11D1ADA620B3266200174958 /* MpulseTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MpulseTabViewController.swift; sourceTree = "<group>"; };
+		11D1ADA720B3266200174958 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		11D1ADAC20B326BE00174958 /* MpulseFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MpulseFramework.framework; sourceTree = "<group>"; };
+		11D1ADB120B3F63500174958 /* mPulseSampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mPulseSampleApp.entitlements; sourceTree = "<group>"; };
+		11D1ADB420B4437B00174958 /* mpulseServices-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11D1AD8C20B325EB00174958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11D1ADAE20B326D600174958 /* MpulseFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11D1AD8620B325EB00174958 = {
+			isa = PBXGroup;
+			children = (
+				11D1AD9120B325EB00174958 /* mPulseSampleApp */,
+				11D1AD9020B325EB00174958 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11D1AD9020B325EB00174958 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11D1AD8F20B325EB00174958 /* mPulseSampleApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11D1AD9120B325EB00174958 /* mPulseSampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				11D1ADB120B3F63500174958 /* mPulseSampleApp.entitlements */,
+				11D1ADAC20B326BE00174958 /* MpulseFramework.framework */,
+				11D1ADA420B3266200174958 /* InboxViewController.swift */,
+				11D1ADB420B4437B00174958 /* mpulseServices-Info.plist */,
+				11D1ADA520B3266200174958 /* Manager.swift */,
+				11D1ADA720B3266200174958 /* MessageViewController.swift */,
+				11D1ADA620B3266200174958 /* MpulseTabViewController.swift */,
+				11D1AD9220B325EB00174958 /* AppDelegate.swift */,
+				11D1AD9420B325EB00174958 /* ViewController.swift */,
+				11D1AD9620B325EB00174958 /* Main.storyboard */,
+				11D1AD9920B325EB00174958 /* Assets.xcassets */,
+				11D1AD9B20B325EB00174958 /* LaunchScreen.storyboard */,
+				11D1AD9E20B325EB00174958 /* Info.plist */,
+			);
+			path = mPulseSampleApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11D1AD8E20B325EB00174958 /* mPulseSampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11D1ADA120B325EB00174958 /* Build configuration list for PBXNativeTarget "mPulseSampleApp" */;
+			buildPhases = (
+				11D1AD8B20B325EB00174958 /* Sources */,
+				11D1AD8C20B325EB00174958 /* Frameworks */,
+				11D1AD8D20B325EB00174958 /* Resources */,
+				11D1ADB020B326D600174958 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mPulseSampleApp;
+			productName = mPulseSampleApp;
+			productReference = 11D1AD8F20B325EB00174958 /* mPulseSampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11D1AD8720B325EB00174958 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "mPulse Mobile";
+				TargetAttributes = {
+					11D1AD8E20B325EB00174958 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 11D1AD8A20B325EB00174958 /* Build configuration list for PBXProject "mPulseSampleApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11D1AD8620B325EB00174958;
+			productRefGroup = 11D1AD9020B325EB00174958 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11D1AD8E20B325EB00174958 /* mPulseSampleApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11D1AD8D20B325EB00174958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11D1AD9D20B325EB00174958 /* LaunchScreen.storyboard in Resources */,
+				11D1AD9A20B325EB00174958 /* Assets.xcassets in Resources */,
+				11D1ADB520B4437B00174958 /* mpulseServices-Info.plist in Resources */,
+				11D1AD9820B325EB00174958 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11D1AD8B20B325EB00174958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11D1AD9520B325EB00174958 /* ViewController.swift in Sources */,
+				11D1ADAA20B3266300174958 /* MpulseTabViewController.swift in Sources */,
+				11D1ADA820B3266300174958 /* InboxViewController.swift in Sources */,
+				11D1AD9320B325EB00174958 /* AppDelegate.swift in Sources */,
+				11D1ADAB20B3266300174958 /* MessageViewController.swift in Sources */,
+				11D1ADA920B3266300174958 /* Manager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		11D1AD9620B325EB00174958 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11D1AD9720B325EB00174958 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11D1AD9B20B325EB00174958 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11D1AD9C20B325EB00174958 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11D1AD9F20B325EB00174958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11D1ADA020B325EB00174958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11D1ADA220B325EB00174958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = mPulseSampleApp/mPulseSampleApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MYQC5FZ88F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mPulseSampleApp",
+				);
+				INFOPLIST_FILE = mPulseSampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mPulse-Mobile.mPulseSample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11D1ADA320B325EB00174958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = mPulseSampleApp/mPulseSampleApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MYQC5FZ88F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mPulseSampleApp",
+				);
+				INFOPLIST_FILE = mPulseSampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mPulse-Mobile.mPulseSample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11D1AD8A20B325EB00174958 /* Build configuration list for PBXProject "mPulseSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11D1AD9F20B325EB00174958 /* Debug */,
+				11D1ADA020B325EB00174958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11D1ADA120B325EB00174958 /* Build configuration list for PBXNativeTarget "mPulseSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11D1ADA220B325EB00174958 /* Debug */,
+				11D1ADA320B325EB00174958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11D1AD8720B325EB00174958 /* Project object */;
+}
