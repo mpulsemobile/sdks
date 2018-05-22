@@ -21,10 +21,12 @@ class ViewController: UIViewController {
     
     @IBAction func getToken(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let deviceTokenFromDelegate = appDelegate.deviceTokenVal;
+        let deviceTokenFromDelegate : String? = appDelegate.deviceTokenVal;
         lblToken.text = deviceTokenFromDelegate
         view.endEditing(true)
-        pnRegister(deviceToken: deviceTokenFromDelegate!);
+        if(deviceTokenFromDelegate != nil){
+            pnRegister(deviceToken: deviceTokenFromDelegate!);
+        }
     }
     
     override func viewDidLoad() {
