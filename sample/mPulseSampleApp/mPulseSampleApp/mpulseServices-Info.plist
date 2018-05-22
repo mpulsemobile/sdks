@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ACCESS_KEY</key>
+	<string></string>
+	<key>ACCOUNT_ID</key>
+	<string>1474</string>
+	<key>APP_ID</key>
+	<string>mPulse_SampleApp</string>
+	<key>MPULSE_URL</key>
+	<string>https://qa2-appmail.mpulsemobile.com</string>
+</dict>
+</plist>
