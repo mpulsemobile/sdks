@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "MpulseError.h"
 #import "ErrorConstants.h"
+#import "Reachability.h"
 
 @implementation MpulseHelper
 
@@ -160,7 +161,11 @@
 }
 
 + (void)makeAPICallToPlatformForURL:(NSURL*)url withMethod:(NSString*)method headerDict:(NSDictionary*)headerDict andBody:(NSData*)body completionHandler: (void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler{
-    
+    if([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable){
+       NSError *error = [MpulseError returnMpulseErrorWithCode:kNoInternet];
+        completionHandler(nil, nil, error);
+        return;
+    }
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
     NSMutableURLRequest *request = [self urlRequestForURL:url withMethod:method headerDict:headerDict andBody:body];

@@ -69,20 +69,24 @@
     }
     if(generatedURL != nil){
         [MpulseHelper makeAPICallToPlatformForURL:generatedURL withMethod:@"GET" headerDict:nil andBody:nil completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-            NSError *responseError;
-            long responseCode = (long)[httpResponse statusCode];
-            if(responseCode >= 200 || responseCode <= 300){
-                NSDictionary *jsonDict =  [NSJSONSerialization JSONObjectWithData:data options:0 error:&responseError];
-                if (responseError) {
-                    //Could not serialize json data
-                    responseError = [MpulseError returnMpulseErrorWithCode:kJSONSerialisationError];
+            if(error){
+                completionHandler(nil , error);
+            }else{
+                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                NSError *responseError;
+                long responseCode = (long)[httpResponse statusCode];
+                if(responseCode >= 200 || responseCode <= 300){
+                    NSDictionary *jsonDict =  [NSJSONSerialization JSONObjectWithData:data options:0 error:&responseError];
+                    if (responseError) {
+                        //Could not serialize json data
+                        responseError = [MpulseError returnMpulseErrorWithCode:kJSONSerialisationError];
+                        completionHandler(nil, responseError);
+                    }
+                    completionHandler(jsonDict, nil);
+                }else{
+                    responseError = [MpulseError returnMpulseErrorWithCode:kBadRequest];
                     completionHandler(nil, responseError);
                 }
-                completionHandler(jsonDict, nil);
-            }else{
-                responseError = [MpulseError returnMpulseErrorWithCode:kBadRequest];
-                completionHandler(nil, responseError);
             }
         }];
     }
@@ -134,17 +138,21 @@
     }
     NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: accessKey, mPulseContentType: mPulseContentTypeValue};
     [MpulseHelper makeAPICallToPlatformForURL:generatedURL withMethod:@"POST" headerDict:headerDict andBody:postdata completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-        NSString *apiMsg;
-        if (data){
-            apiMsg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        }
-        long responseCode = (long)[httpResponse statusCode];
-        if (responseCode >= 200 && responseCode <=300) {
-            [[NSUserDefaults standardUserDefaults] setBool:true forKey:mPulseTracking];
-        }
         if(error){
             [[NSUserDefaults standardUserDefaults] setBool:false forKey:mPulseTracking];
+        }else{
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSString *apiMsg;
+            if (data){
+                apiMsg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            }
+            long responseCode = (long)[httpResponse statusCode];
+            if (responseCode >= 200 && responseCode <=300) {
+                [[NSUserDefaults standardUserDefaults] setBool:true forKey:mPulseTracking];
+            }
+            if(error){
+                [[NSUserDefaults standardUserDefaults] setBool:false forKey:mPulseTracking];
+            }
         }
     }];
     [[NSUserDefaults standardUserDefaults] synchronize];

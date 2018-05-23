@@ -24,7 +24,9 @@ class ViewController: UIViewController {
         let deviceTokenFromDelegate = appDelegate.deviceTokenVal;
         lblToken.text = deviceTokenFromDelegate
         view.endEditing(true)
-        pnRegister(deviceToken: deviceTokenFromDelegate!);
+        if(deviceTokenFromDelegate != nil){
+            pnRegister(deviceToken: deviceTokenFromDelegate!);
+        }
     }
     
     override func viewDidLoad() {

@@ -63,26 +63,31 @@
         NSString *actionHeaderValues = registerforPN ? mPulseRegisterActionHeaderValue : mPulseUnRegisterActionHeaderValue;
         NSDictionary *headerDict = @{mPulseUserAgentHeaderKey: mPulseUserAgentHeaderValue, mPulseActionHeaderKey: actionHeaderValues};
         [MpulseHelper makeAPICallToPlatformForURL:generatedURL withMethod:@"GET" headerDict:headerDict andBody:nil completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-            NSString *apiMsg;
-            if (data){
-                apiMsg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            if(error){
+                completionHandler(Failure, nil , error);
+            }else{
+                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                NSString *apiMsg;
+                if (data){
+                    apiMsg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                }
+                long responseCode = (long)[httpResponse statusCode];
+                if (responseCode == 200) {
+                    MpulsePNResult res = Success;
+                    completionHandler(res, apiMsg, nil);
+                }else if(responseCode == 202){
+                    MpulsePNResult res = Failure;
+                    completionHandler(res, apiMsg, nil);
+                }else if(responseCode ==417){
+                    MpulsePNResult res = Failure;
+                    completionHandler(res, apiMsg, nil);
+                }
+                else{
+                    MpulsePNResult res = Failure;
+                    completionHandler(res,nil,error);
+                }
             }
-            long responseCode = (long)[httpResponse statusCode];
-            if (responseCode == 200) {
-                MpulsePNResult res = Success;
-                completionHandler(res, apiMsg, nil);
-            }else if(responseCode == 202){
-                MpulsePNResult res = Failure;
-                completionHandler(res, apiMsg, nil);
-            }else if(responseCode ==417){
-                MpulsePNResult res = Failure;
-                completionHandler(res, apiMsg, nil);
-            }
-            else{
-                MpulsePNResult res = Failure;
-                completionHandler(res,nil,error);
-            }
+          
         }];
     }else{
         error= [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
