@@ -99,7 +99,7 @@ typedef enum
  @param memberDetails the details of new member
  @param listID the list to which member has to be added
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
- @discussion This is the designated to get message count of secure mail inbox for app member id in mpulse platform
+ @discussion This is the designated to let mPulse client add a new member to the specified list
  */
 -(void)addNewMemberWithDetails:(NSDictionary * _Nonnull)memberDetails toList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
