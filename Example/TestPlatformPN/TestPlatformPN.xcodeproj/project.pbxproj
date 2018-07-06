@@ -10,27 +10,27 @@
 		11018449206B85AA005113AF /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11018448206B85AA005113AF /* Manager.swift */; };
 		1101844B206BB967005113AF /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1101844A206BB967005113AF /* MessageViewController.swift */; };
 		1103807F2077EFAB00BF960D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1103807E2077EFAB00BF960D /* SystemConfiguration.framework */; };
-		11564DE9206CBE3B00D9C72B /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11564DE8206CBE3A00D9C72B /* mpulseServices-Info.plist */; };
 		116A78F32057BEFC00B9218F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A78F22057BEFC00B9218F /* AppDelegate.swift */; };
 		116A78F52057BEFC00B9218F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116A78F42057BEFC00B9218F /* ViewController.swift */; };
 		116A78F82057BEFC00B9218F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116A78F62057BEFC00B9218F /* Main.storyboard */; };
 		116A78FA2057BEFC00B9218F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116A78F92057BEFC00B9218F /* Assets.xcassets */; };
 		116A78FD2057BEFC00B9218F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116A78FB2057BEFC00B9218F /* LaunchScreen.storyboard */; };
 		11758AD0207CDC0F00A232FA /* MpulseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11758ACF207CDC0F00A232FA /* MpulseTabViewController.swift */; };
-		11758B17207E581200A232FA /* MpulseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11758B16207E581200A232FA /* MpulseFramework.framework */; };
-		11758B19207E582C00A232FA /* MpulseFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11758B16207E581200A232FA /* MpulseFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11987D242063BF2300BC9A05 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11987D232063BF2300BC9A05 /* InboxViewController.swift */; };
 		119AC5DD2060EA69007BE295 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116A79062057E3B500B9218F /* UserNotifications.framework */; };
+		3A0127CA20E3D0D00057D90F /* MpulseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0127C820E3D0390057D90F /* MpulseFramework.framework */; };
+		3A0127CB20E3D0D00057D90F /* MpulseFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0127C820E3D0390057D90F /* MpulseFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3AC0CA7220E4BA65000A998C /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		11105ACC206821E900D0C578 /* Embed Frameworks */ = {
+		3A0127CC20E3D0D00057D90F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				11758B19207E582C00A232FA /* MpulseFramework.framework in Embed Frameworks */,
+				3A0127CB20E3D0D00057D90F /* MpulseFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,7 +41,6 @@
 		11018448206B85AA005113AF /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		1101844A206BB967005113AF /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		1103807E2077EFAB00BF960D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		11564DE8206CBE3A00D9C72B /* mpulseServices-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
 		116A78EF2057BEFB00B9218F /* TestPlatformPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPlatformPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		116A78F22057BEFC00B9218F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		116A78F42057BEFC00B9218F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,8 +51,9 @@
 		116A79042057C96A00B9218F /* TestPlatformPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestPlatformPN.entitlements; sourceTree = "<group>"; };
 		116A79062057E3B500B9218F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		11758ACF207CDC0F00A232FA /* MpulseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MpulseTabViewController.swift; sourceTree = "<group>"; };
-		11758B16207E581200A232FA /* MpulseFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MpulseFramework.framework; sourceTree = "<group>"; };
 		11987D232063BF2300BC9A05 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
+		3A0127C820E3D0390057D90F /* MpulseFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MpulseFramework.framework; sourceTree = "<group>"; };
+		3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1103807F2077EFAB00BF960D /* SystemConfiguration.framework in Frameworks */,
-				11758B17207E581200A232FA /* MpulseFramework.framework in Frameworks */,
+				3A0127CA20E3D0D00057D90F /* MpulseFramework.framework in Frameworks */,
 				119AC5DD2060EA69007BE295 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,9 +90,9 @@
 		116A78F12057BEFB00B9218F /* TestPlatformPN */ = {
 			isa = PBXGroup;
 			children = (
-				11758B16207E581200A232FA /* MpulseFramework.framework */,
-				11564DE8206CBE3A00D9C72B /* mpulseServices-Info.plist */,
+				3A0127C820E3D0390057D90F /* MpulseFramework.framework */,
 				116A79042057C96A00B9218F /* TestPlatformPN.entitlements */,
+				3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */,
 				116A78F22057BEFC00B9218F /* AppDelegate.swift */,
 				116A78F42057BEFC00B9218F /* ViewController.swift */,
 				11987D232063BF2300BC9A05 /* InboxViewController.swift */,
@@ -126,7 +126,7 @@
 				116A78EB2057BEFB00B9218F /* Sources */,
 				116A78EC2057BEFB00B9218F /* Frameworks */,
 				116A78ED2057BEFB00B9218F /* Resources */,
-				11105ACC206821E900D0C578 /* Embed Frameworks */,
+				3A0127CC20E3D0D00057D90F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,7 +150,7 @@
 					116A78EE2057BEFB00B9218F = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -184,7 +184,7 @@
 			files = (
 				116A78FD2057BEFC00B9218F /* LaunchScreen.storyboard in Resources */,
 				116A78FA2057BEFC00B9218F /* Assets.xcassets in Resources */,
-				11564DE9206CBE3B00D9C72B /* mpulseServices-Info.plist in Resources */,
+				3AC0CA7220E4BA65000A998C /* mpulseServices-Info.plist in Resources */,
 				116A78F82057BEFC00B9218F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,7 +340,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TestPlatformPN/TestPlatformPN.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SNQQJDD73U;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -354,8 +355,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = mPulse.TestPlatformPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1be4ffbe-1a2d-4fd9-bafb-5d44f7ab5597";
-				PROVISIONING_PROFILE_SPECIFIER = mPulse_TestPlatformPN;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -369,7 +370,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TestPlatformPN/TestPlatformPN.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SNQQJDD73U;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -383,8 +385,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = mPulse.TestPlatformPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1be4ffbe-1a2d-4fd9-bafb-5d44f7ab5597";
-				PROVISIONING_PROFILE_SPECIFIER = mPulse_TestPlatformPN;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

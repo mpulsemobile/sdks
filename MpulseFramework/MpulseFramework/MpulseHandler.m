@@ -11,6 +11,8 @@
 #import "MpulseInboxView.h"
 #import "MpulseManager.h"
 #import "Constants.h"
+#import "MpulseAdmin.h"
+
 @interface MpulseHandler()
 /* The initializers not available to subclasses or initialise new instance
  only sharedInstance should be used
@@ -84,5 +86,13 @@ NSString *_appMemberId = nil;
         [MpulseManager trackAppUsageFor:_appMemberId];
     }
 }
+
+-(void)addNewMemberWithDetails:(NSDictionary * _Nonnull)memberDetails toList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] init];
+    [mPulseAdmin createNewMember:memberDetails completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+        completionHandler(result,apiMessage,error);
+    }];
+}
+
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MpulseHandler.h"
 
 @interface MpulseHelper : NSObject
 
@@ -23,4 +24,6 @@
 + (void) makeAPICallToPlatformForURL:(NSURL* _Nonnull)url withMethod:(NSString*_Nonnull)method headerDict:(NSDictionary*_Nullable)headerDict andBody:(NSData*_Nullable)body completionHandler: (void (^_Nullable)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler;
 
 +(NSMutableURLRequest*_Nonnull) urlRequestForURL:(NSURL*_Nonnull)url withMethod:(NSString*_Nullable)method headerDict:(NSDictionary*_Nullable)headerDict andBody:(NSData*_Nullable)body;
+
++ (void)getControlPanelAPIUrlForAction:(MpulseAdminActionType)action  resultAs:(void (^)(NSURL* mpulseURL, NSError* err))result;
 @end

@@ -6,19 +6,19 @@
 	<dict>
 		<key>Headers/MpulseFramework.h</key>
 		<data>
-		1uiDKm8Bfph+KTJ4h9CLJTK/lOQ=
+		+fLQc3TS7PX1b4WKTL7Oek8LnqM=
 		</data>
 		<key>Headers/MpulseHandler.h</key>
 		<data>
-		Ou6Dsd7yWSvSlrxJRIchshrhUJY=
+		1WC6YNaOZtU+Z/ra9SOk0qHW4WM=
 		</data>
 		<key>Headers/MpulseInboxView.h</key>
 		<data>
-		MXkU3/bEgGF6VDB6LAqEEGKQ2ws=
+		hzQbNV6jjvhsk5NZHBuJxb2nKaE=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		xdREhrhOgiq6OsCTKRwqKxyOOWs=
+		hj05xAq8tKo8yJ1HnldPjba6zRE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -31,33 +31,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1uiDKm8Bfph+KTJ4h9CLJTK/lOQ=
+			+fLQc3TS7PX1b4WKTL7Oek8LnqM=
 			</data>
 			<key>hash2</key>
 			<data>
-			LpW83DRFcaaAg7QBGqcy+ufPWxy6jkP3c34pa0YiZCg=
+			kZsIdaYnuonPE/dp1ToXR/v6qcPyo6l4Xd1L6JbpEjw=
 			</data>
 		</dict>
 		<key>Headers/MpulseHandler.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ou6Dsd7yWSvSlrxJRIchshrhUJY=
+			1WC6YNaOZtU+Z/ra9SOk0qHW4WM=
 			</data>
 			<key>hash2</key>
 			<data>
-			A1jyi9eTY/6sgXKd2vXF+/wXUbY3tAWqHdg199mXmK8=
+			2kAeFRs2UnH76+5NL0Y4PxlCRLdF/7SFW/LqGqvnRtY=
 			</data>
 		</dict>
 		<key>Headers/MpulseInboxView.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MXkU3/bEgGF6VDB6LAqEEGKQ2ws=
+			hzQbNV6jjvhsk5NZHBuJxb2nKaE=
 			</data>
 			<key>hash2</key>
 			<data>
-			xwJ3KFiDTGDs3f/TKINu+1flqgwL/Yi8rm3sp0O1QX0=
+			/I0vcHnf23LdgST+KFiuSsxoUrOHhMFXcEGCHrVqyoY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

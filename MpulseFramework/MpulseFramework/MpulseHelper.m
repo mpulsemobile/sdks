@@ -174,4 +174,23 @@
     }];
     [postDataTask resume];
 }
+
++ (void)getControlPanelAPIUrlForAction:(MpulseAdminActionType)action  resultAs:(void (^)(NSURL* mpulseURL, NSError* err))result{
+    // First get query string [it further uses getDict to fetch plist parameters]  else error
+    // Then check if base url is available in plist else again error
+    
+    NSString *baseUrl = @"https://www.google.com";
+    switch (action) {
+        case AddMember:{
+            NSString *urlString = [NSString stringWithFormat:@"%@%@",baseUrl,@"/AddMember"];
+            result([NSURL URLWithString:urlString] ,nil);
+        }
+            break;
+        default:
+            break;
+    }
+    result([NSURL URLWithString:@""],nil);
+}
+
+
 @end

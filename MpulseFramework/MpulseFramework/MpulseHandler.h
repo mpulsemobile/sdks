@@ -31,6 +31,16 @@ typedef enum
     Failure
 } MpulsePNResult;
 
+/*
+ MpulseAdminActionType lets SDK know which action to perform as Admin
+ */
+typedef enum
+{
+    AddMember,
+    UpdateMember,
+    TriggerEvent
+} MpulseAdminActionType;
+
 #pragma mark *** MpulseHandler ***
 @interface MpulseHandler : NSObject
 
@@ -83,6 +93,15 @@ typedef enum
  @discussion This is the designated to get message count of secure mail inbox for app member id in mpulse platform
  */
 -(void)getInboxMessageCount:(void (^_Nullable)(NSDictionary * _Nullable json, NSError * _Nullable error)) completionHandler;
+
+/**
+ @method addNewMemberWithDetails:toList:completionHandler
+ @param memberDetails the details of new member
+ @param listID the list to which member has to be added
+ @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @discussion This is the designated to get message count of secure mail inbox for app member id in mpulse platform
+ */
+-(void)addNewMemberWithDetails:(NSDictionary * _Nonnull)memberDetails toList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
 @end
 
