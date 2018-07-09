@@ -178,19 +178,92 @@
 + (void)getControlPanelAPIUrlForAction:(MpulseAdminActionType)action  resultAs:(void (^)(NSURL* mpulseURL, NSError* err))result{
     // First get query string [it further uses getDict to fetch plist parameters]  else error
     // Then check if base url is available in plist else again error
+    __block NSString *mpulseURLString;
+    __block NSString *queryString;
+    __block NSError *error;
+    __block NSDictionary *mpulseDataDict;
+    [self getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+        mpulseDataDict = dataDict;
+        error = error;
+    }];
     
-    NSString *baseUrl = @"https://www.google.com";
+    if(mpulseDataDict){
+        mpulseURLString = mpulseDataDict[mPulseAPIURL];
+        NSString *endPointURL = [NSString stringWithFormat:@"%@/",mpulseURLString];
+        mpulseURLString = endPointURL;
+        if (mpulseURLString == nil) {
+            NSError *error = [MpulseError returnMpulseErrorWithCode:kCouldNotGenerateURL];
+            result(nil,error);
+            return;
+        }
+    }else{
+        NSError *error = [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
+        result(nil,error);
+        return;
+    }
+    
     switch (action) {
         case AddMember:{
-            NSString *urlString = [NSString stringWithFormat:@"%@%@",baseUrl,@"/AddMember"];
-            result([NSURL URLWithString:urlString] ,nil);
+            mpulseURLString = [NSString stringWithFormat:@"%@%@",mpulseURLString,@"addMember"];
         }
             break;
         default:
             break;
     }
+    
+    [self generateQueryStringForControlPanelAccessWithCompletion:^(NSString * _Nullable queryStr, NSError * _Nullable err) {
+        queryString = queryStr;
+        error = err;
+    }];
+    
+    if(queryString != nil ) {
+        mpulseURLString = [NSString stringWithFormat:@"%@?%@",mpulseURLString, queryString];
+        mpulseURLString = [mpulseURLString  stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        if (mpulseURLString == nil) {
+            NSError *error = [MpulseError returnMpulseErrorWithCode:kCouldNotGenerateURL];
+            result(nil,error);
+            return;
+        } else {
+            result([NSURL URLWithString:mpulseURLString],nil);
+        }
+    }else{
+        NSError *error = [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
+        result(nil,error);
+        return;
+    }
+    
     result([NSURL URLWithString:@""],nil);
 }
 
++ (void)generateQueryStringForControlPanelAccessWithCompletion:(void (^_Nonnull)(NSString* _Nullable urlStr, NSError* _Nullable err))result{
+    __block NSString *queryString;
+    __block NSError *error;
+    __block NSDictionary *mPulseDataDict;
+    [self getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+        mPulseDataDict = dataDict;
+        error = err;
+    }];
+    if (error) {
+        result(nil, error);
+        return;
+    }else{
+        NSString *appId = mPulseDataDict[mPulseAppId];
+        if(appId == nil){
+            //Error - No app Id found in plist dictionary
+            error = [MpulseError returnMpulseErrorWithCode:kNoAppId];
+            result(nil,error);
+            return;
+        }
+        NSString *accountId = mPulseDataDict[mPulseAccountId];
+        if(accountId == nil){
+            //Error - No account Id found in plist dictionary
+            error = [MpulseError returnMpulseErrorWithCode:kNoAccountId];
+            result(nil,error);
+            return;
+        }
+        queryString = [NSString stringWithFormat:@"appId=%@&platform=ios&version=1.0&accountId=%@",appId,accountId];
+        result(queryString, nil);
+    }
+}
 
 @end

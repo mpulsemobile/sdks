@@ -28,17 +28,19 @@
     return self;
 }
 
--(void)createNewMember:(NSDictionary* _Nonnull)memberDetails completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+- (void)shouldCreateNewMember:(NSDictionary * _Nonnull)memberDetails completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     __block NSError *error;
+    __block MpulsePNResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:AddMember resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
             // check here later
             NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: authorizationHeader};
             NSData *postdata = [NSJSONSerialization dataWithJSONObject:memberDetails options:0 error:&error];
-
+            
             [MpulseHelper makeAPICallToPlatformForURL:mpulseURL withMethod:@"POST" headerDict:headerDict andBody:postdata completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 if(error){
-                    completionHandler(Failure, nil , error);
+                    res = Failure;
+                    completionHandler(res, nil , error);
                 }else{
                     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                     NSString *apiMsg;
@@ -47,26 +49,34 @@
                     }
                     long responseCode = (long)[httpResponse statusCode];
                     if (responseCode == 200) {
-                        MpulsePNResult res = Success;
+                        res = Success;
                         completionHandler(res, apiMsg, nil);
                     }else if(responseCode == 202){
-                        MpulsePNResult res = Failure;
+                        res = Failure;
                         completionHandler(res, apiMsg, nil);
                     }else if(responseCode ==417){
-                        MpulsePNResult res = Failure;
+                        res = Failure;
                         completionHandler(res, apiMsg, nil);
                     }
                     else{
-                        MpulsePNResult res = Failure;
+                        res = Failure;
                         completionHandler(res,nil,error);
                     }
                 }
             }];
         } else {
-            error= [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
+            error = [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
             completionHandler(Failure,nil, error);
         }
     }];
+    
+}
+
+-(void)createNewMember:(NSDictionary* _Nonnull)memberDetails completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+    [self  shouldCreateNewMember:memberDetails
+               completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+                   completionHandler(result, apiMessage, error);
+               }];
 }
 
 @end
