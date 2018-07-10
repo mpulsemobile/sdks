@@ -121,22 +121,22 @@
         mpulseDataDict = dataDict;
         error = error;
     }];
-     if(mpulseDataDict){
-         NSString * mPulseURLString = mpulseDataDict[mPulseAPIURL];
-         NSString *endPointURL = [NSString stringWithFormat:@"%@/%@",mPulseURLString,queryString];
-         endPointURL = [endPointURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-         mpulseURL = [NSURL URLWithString:endPointURL];
-         if (mpulseURL == nil) {
-             NSError *error = [MpulseError returnMpulseErrorWithCode:kCouldNotGenerateURL];
-             result(nil,error);
-             return;
-         }
-         result(mpulseURL,error);
-     }else{
-         NSError *error = [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
-         result(nil,error);
-         return;
-     }
+    if(mpulseDataDict){
+        NSString * mPulseURLString = mpulseDataDict[mPulseAPIURL];
+        NSString *endPointURL = [NSString stringWithFormat:@"%@/%@",mPulseURLString,queryString];
+        endPointURL = [endPointURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        mpulseURL = [NSURL URLWithString:endPointURL];
+        if (mpulseURL == nil) {
+            NSError *error = [MpulseError returnMpulseErrorWithCode:kCouldNotGenerateURL];
+            result(nil,error);
+            return;
+        }
+        result(mpulseURL,error);
+    }else{
+        NSError *error = [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
+        result(nil,error);
+        return;
+    }
 }
 
 +(NSMutableURLRequest*_Nonnull) urlRequestForURL:(NSURL*_Nonnull)url withMethod:(NSString*_Nullable)method headerDict:(NSDictionary*_Nullable)headerDict andBody:(NSData*_Nullable)body{
@@ -162,7 +162,7 @@
 
 + (void)makeAPICallToPlatformForURL:(NSURL*)url withMethod:(NSString*)method headerDict:(NSDictionary*)headerDict andBody:(NSData*)body completionHandler: (void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler{
     if([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable){
-       NSError *error = [MpulseError returnMpulseErrorWithCode:kNoInternet];
+        NSError *error = [MpulseError returnMpulseErrorWithCode:kNoInternet];
         completionHandler(nil, nil, error);
         return;
     }
@@ -179,7 +179,7 @@
     // First get query string [it further uses getDict to fetch plist parameters]  else error
     // Then check if base url is available in plist else again error
     __block NSString *mpulseURLString;
-    __block NSString *queryString;
+    __block NSString *controlPanelPath;
     __block NSError *error;
     __block NSDictionary *mpulseDataDict;
     [self getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
@@ -202,22 +202,21 @@
         return;
     }
     
-    switch (action) {
-        case AddMember:{
-            mpulseURLString = [NSString stringWithFormat:@"%@%@",mpulseURLString,@"addMember"];
-        }
-            break;
-        default:
-            break;
-    }
-    
-    [self generateQueryStringForControlPanelAccessWithCompletion:^(NSString * _Nullable queryStr, NSError * _Nullable err) {
-        queryString = queryStr;
+    [self getControlPanelAccessPathWithCompletion:^(NSString * _Nullable path, NSError * _Nullable err) {
+        controlPanelPath = path;
         error = err;
     }];
     
-    if(queryString != nil ) {
-        mpulseURLString = [NSString stringWithFormat:@"%@?%@",mpulseURLString, queryString];
+    if(controlPanelPath != nil ) {
+        mpulseURLString = [NSString stringWithFormat:@"%@%@",mpulseURLString, controlPanelPath];
+        switch (action) {
+            case AddMember:{
+                mpulseURLString = [NSString stringWithFormat:@"%@%@",mpulseURLString,@"/members"];
+            }
+                break;
+            default:
+                break;
+        }
         mpulseURLString = [mpulseURLString  stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         if (mpulseURLString == nil) {
             NSError *error = [MpulseError returnMpulseErrorWithCode:kCouldNotGenerateURL];
@@ -235,7 +234,7 @@
     result([NSURL URLWithString:@""],nil);
 }
 
-+ (void)generateQueryStringForControlPanelAccessWithCompletion:(void (^_Nonnull)(NSString* _Nullable urlStr, NSError* _Nullable err))result{
++ (void)getControlPanelAccessPathWithCompletion:(void (^_Nonnull)(NSString* _Nullable urlStr, NSError* _Nullable err))result{
     __block NSString *queryString;
     __block NSError *error;
     __block NSDictionary *mPulseDataDict;
@@ -247,13 +246,15 @@
         result(nil, error);
         return;
     }else{
-        NSString *appId = mPulseDataDict[mPulseAppId];
-        if(appId == nil){
-            //Error - No app Id found in plist dictionary
-            error = [MpulseError returnMpulseErrorWithCode:kNoAppId];
-            result(nil,error);
-            return;
-        }
+        /*
+         NSString *appId = mPulseDataDict[mPulseAppId];
+         if(appId == nil){
+         //Error - No app Id found in plist dictionary
+         error = [MpulseError returnMpulseErrorWithCode:kNoAppId];
+         result(nil,error);
+         return;
+         }
+         */
         NSString *accountId = mPulseDataDict[mPulseAccountId];
         if(accountId == nil){
             //Error - No account Id found in plist dictionary
@@ -261,7 +262,7 @@
             result(nil,error);
             return;
         }
-        queryString = [NSString stringWithFormat:@"appId=%@&platform=ios&version=1.0&accountId=%@",appId,accountId];
+        queryString = [NSString stringWithFormat:@"account/%@",accountId];
         result(queryString, nil);
     }
 }

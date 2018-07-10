@@ -87,11 +87,20 @@ NSString *_appMemberId = nil;
     }
 }
 
--(void)addNewMemberWithDetails:(NSDictionary * _Nonnull)memberDetails toList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+-(void)addNewMember:(Member * _Nonnull)member toList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] init];
-    [mPulseAdmin createNewMember:memberDetails completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+    [mPulseAdmin createNewMember:member inList:listID completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
+}
+
+-(Member *_Nonnull)createMemberWithFirstName:(NSString *_Nullable)firstName lastName:(NSString *_Nullable)lastName email:(NSString *_Nullable)email phoneNumber:(NSString *_Nullable)phoneNumber {
+    Member *member = [[Member alloc] init];
+    member.firstname = firstName;
+    member.lastName  = lastName;
+    member.email  = email;
+    member.phoneNumber  = phoneNumber;
+    return member;
 }
 
 @end

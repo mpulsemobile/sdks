@@ -10,6 +10,7 @@
 #import "MpulseHelper.h"
 #import "Constants.h"
 #import "MpulseError.h"
+#import "Member.h"
 
 @implementation MpulseAdmin {
     NSString* authorizationHeader;
@@ -28,14 +29,19 @@
     return self;
 }
 
-- (void)shouldCreateNewMember:(NSDictionary * _Nonnull)memberDetails completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+- (void)shouldCreateNewMember:(Member * _Nonnull)member inList:(NSString* _Nonnull)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     __block NSError *error;
     __block MpulsePNResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:AddMember resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
             // check here later
             NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: authorizationHeader};
-            NSData *postdata = [NSJSONSerialization dataWithJSONObject:memberDetails options:0 error:&error];
+            NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
+            NSDictionary *memberJson = [Member getDictionaryFor:member];
+            [jsonRequest setValue:memberJson forKey:@"member"];
+            [jsonRequest setValue:listID forKey:@"listid"];
+
+            NSData *postdata = [NSJSONSerialization dataWithJSONObject:@{@"body":jsonRequest} options:0 error:&error];
             
             [MpulseHelper makeAPICallToPlatformForURL:mpulseURL withMethod:@"POST" headerDict:headerDict andBody:postdata completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 if(error){
@@ -72,8 +78,9 @@
     
 }
 
--(void)createNewMember:(NSDictionary* _Nonnull)memberDetails completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
-    [self  shouldCreateNewMember:memberDetails
+-(void)createNewMember:(Member* _Nonnull)member inList:(NSString* _Nonnull)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+    [self  shouldCreateNewMember:member
+                          inList:listID
                completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
                    completionHandler(result, apiMessage, error);
                }];

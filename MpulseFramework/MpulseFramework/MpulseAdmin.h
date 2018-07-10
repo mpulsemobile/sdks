@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "MpulseHandler.h"
+#import "Member.h"
 
 @interface MpulseAdmin : NSObject
 
 -(id _Nonnull)init;
--(void)createNewMember:(NSDictionary* _Nonnull)memberDetails completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+-(void)createNewMember:(Member* _Nonnull)member inList:(NSString* _Nonnull)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
 @end
