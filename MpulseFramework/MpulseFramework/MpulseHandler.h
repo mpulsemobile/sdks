@@ -101,7 +101,7 @@ typedef enum
  @param member the details of new member
  @param lists array of list IDs to which member has to be added
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
- @discussion This is the designated to let mPulse client add a new member to the specified list
+ @discussion This is the designated to let mPulse client add a new member to specified lists
  */
 -(void)addNewMember:(Member * _Nonnull)member toLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
@@ -111,7 +111,7 @@ typedef enum
  @param member the details of member
  @param lists the array of list IDs for the member
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
- @discussion This is the designated to let mPulse client add a new member to the specified list
+ @discussion This is the designated to let mPulse client update an existing member and his lists
  */
 -(void)updateMemberWithID:(NSString *_Nonnull)memberID details:(Member * _Nonnull)member andLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
