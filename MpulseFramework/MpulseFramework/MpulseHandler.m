@@ -110,5 +110,13 @@ NSString *_appMemberId = nil;
     return member;
 }
 
+-(void)triggerEvent:(NSString *_Nonnull)event toMembers:(NSArray *_Nullable)memberIDs inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] init];
+
+    [mPulseAdmin sendEvent:event toMembers:memberIDs inList:listID completionHandler:^(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+        completionHandler(result,apiMessage,error);
+    }];
+}
+
 @end
 

@@ -31,7 +31,7 @@ typedef enum
 {
     Success,
     Failure
-} MpulsePNResult;
+} MpulsePNResult, MpulseAudienceResult, MpulseEventUploadResult;
 
 /*
  MpulseAdminActionType lets SDK know which action to perform as Admin
@@ -103,7 +103,7 @@ typedef enum
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client add a new member to specified lists
  */
--(void)addNewMember:(Member * _Nonnull)member toLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+-(void)addNewMember:(Member * _Nonnull)member toLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
 /**
  @method updateMemberWithID:details:andLists:completionHandler
@@ -113,7 +113,7 @@ typedef enum
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client update an existing member and his lists
  */
--(void)updateMemberWithID:(NSString *_Nonnull)memberID details:(Member * _Nonnull)member andLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+-(void)updateMemberWithID:(NSString *_Nonnull)memberID details:(Member * _Nonnull)member andLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
 /**
  @method createMemberWithFirstName:lastName:email:phoneNumber
@@ -126,5 +126,14 @@ typedef enum
  */
 -(Member *_Nonnull)createMemberWithFirstName:(NSString *_Nullable)firstName lastName:(NSString *_Nullable)lastName email:(NSString *_Nullable)email phoneNumber:(NSString *_Nullable)phoneNumber;
 
+/**
+ @method triggerEvent:toMembers:inList:completionHandler
+ @param event the name of the event
+ @param memberIDs IDs of members to whom event is triggered
+ @param listID ID of the list belonging to members
+ @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @discussion This is the designated to let mPulse client trigger events to the audience
+ */
+-(void)triggerEvent:(NSString *_Nonnull)event toMembers:(NSArray *_Nullable)memberIDs inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 @end
 
