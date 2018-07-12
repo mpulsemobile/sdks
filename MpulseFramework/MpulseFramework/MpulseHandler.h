@@ -97,13 +97,23 @@ typedef enum
 -(void)getInboxMessageCount:(void (^_Nullable)(NSDictionary * _Nullable json, NSError * _Nullable error)) completionHandler;
 
 /**
- @method addNewMember:toList:completionHandler
+ @method addNewMember:toLists:completionHandler
  @param member the details of new member
- @param listID the list to which member has to be added
+ @param lists array of list IDs to which member has to be added
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client add a new member to the specified list
  */
--(void)addNewMember:(Member * _Nonnull)member toList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+-(void)addNewMember:(Member * _Nonnull)member toLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+
+/**
+ @method updateMemberWithID:details:andLists:completionHandler
+ @param memberID id of the member
+ @param member the details of member
+ @param lists the array of list IDs for the member
+ @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @discussion This is the designated to let mPulse client add a new member to the specified list
+ */
+-(void)updateMemberWithID:(NSString *_Nonnull)memberID details:(Member * _Nonnull)member andLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
 /**
  @method createMemberWithFirstName:lastName:email:phoneNumber

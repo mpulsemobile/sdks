@@ -87,9 +87,16 @@ NSString *_appMemberId = nil;
     }
 }
 
--(void)addNewMember:(Member * _Nonnull)member toList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+-(void)addNewMember:(Member * _Nonnull)member toLists:(NSArray * _Nonnull)lists completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] init];
-    [mPulseAdmin createNewMember:member inList:listID completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+    [mPulseAdmin createNewMember:member inLists:lists completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+        completionHandler(result,apiMessage,error);
+    }];
+}
+
+-(void)updateMemberWithID:(NSString *_Nonnull)memberID details:(Member * _Nonnull)member andLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] init];
+    [mPulseAdmin updateMemberWithID:memberID details:member andLists:lists completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }

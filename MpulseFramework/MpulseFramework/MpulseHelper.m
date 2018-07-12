@@ -210,7 +210,8 @@
     if(controlPanelPath != nil ) {
         mpulseURLString = [NSString stringWithFormat:@"%@%@",mpulseURLString, controlPanelPath];
         switch (action) {
-            case AddMember:{
+            case AddMember:
+            case UpdateMember:{
                 mpulseURLString = [NSString stringWithFormat:@"%@%@",mpulseURLString,@"/members"];
             }
                 break;
@@ -224,6 +225,7 @@
             return;
         } else {
             result([NSURL URLWithString:mpulseURLString],nil);
+            return;
         }
     }else{
         NSError *error = [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];

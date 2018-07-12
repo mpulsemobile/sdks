@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Member.h"
+
 @class MpulseInboxView;
 
 /**
@@ -95,13 +97,34 @@ typedef enum
 -(void)getInboxMessageCount:(void (^_Nullable)(NSDictionary * _Nullable json, NSError * _Nullable error)) completionHandler;
 
 /**
- @method addNewMemberWithDetails:toList:completionHandler
- @param memberDetails the details of new member
- @param listID the list to which member has to be added
+ @method addNewMember:toLists:completionHandler
+ @param member the details of new member
+ @param lists array of list IDs to which member has to be added
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client add a new member to the specified list
  */
--(void)addNewMemberWithDetails:(NSDictionary * _Nonnull)memberDetails toList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+-(void)addNewMember:(Member * _Nonnull)member toLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+
+/**
+ @method updateMemberWithID:details:andLists:completionHandler
+ @param memberID id of the member
+ @param member the details of member
+ @param lists the array of list IDs for the member
+ @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @discussion This is the designated to let mPulse client add a new member to the specified list
+ */
+-(void)updateMemberWithID:(NSString *_Nonnull)memberID details:(Member * _Nonnull)member andLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+
+/**
+ @method createMemberWithFirstName:lastName:email:phoneNumber
+ @param firstName the first name of new member
+ @param lastName the last name of new member
+ @param email the email of new member
+ @param phoneNumber the phone number of new member
+ @returns Member for using with addNewMember:toList:completionHandler
+ @discussion This is the designated to let mPulse client create a new member instance
+ */
+-(Member *_Nonnull)createMemberWithFirstName:(NSString *_Nullable)firstName lastName:(NSString *_Nullable)lastName email:(NSString *_Nullable)email phoneNumber:(NSString *_Nullable)phoneNumber;
 
 @end
 

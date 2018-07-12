@@ -13,6 +13,9 @@
 @interface MpulseAdmin : NSObject
 
 -(id _Nonnull)init;
--(void)createNewMember:(Member* _Nonnull)member inList:(NSString* _Nonnull)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+
+-(void)createNewMember:(Member* _Nonnull)member inLists:(NSArray* _Nonnull)lists completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+
+-(void)updateMemberWithID:(NSString *_Nonnull)memberID details:(Member *_Nonnull)member andLists:(NSArray*_Nonnull)lists completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
 @end
