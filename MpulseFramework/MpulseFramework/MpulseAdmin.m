@@ -39,9 +39,9 @@
             NSDictionary *memberJson = [Member getDictionaryFor:member];
             NSMutableDictionary *mutableMemberJson = [NSMutableDictionary dictionaryWithDictionary:memberJson];
             
-           // [mutableMemberJson setValue:<#(nullable id)#> forKey:<#(nonnull NSString *)#>]
+            [mutableMemberJson setValue:memberID forKey:@"memberid"];
             
-            [jsonRequest setValue:memberJson forKey:@"member"];
+            [jsonRequest setValue:mutableMemberJson forKey:@"member"];
             [jsonRequest setValue:listID forKey:@"listid"];
 
             NSData *postdata = [NSJSONSerialization dataWithJSONObject:@{@"body":jsonRequest} options:0 error:&error];

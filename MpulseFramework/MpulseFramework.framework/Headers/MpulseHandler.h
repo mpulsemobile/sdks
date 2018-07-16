@@ -122,7 +122,7 @@ typedef enum
  @param lastName the last name of new member
  @param email the email of new member
  @param phoneNumber the phone number of new member
- @param otherAttributes other attributes of new member; Attribute must be available on the Back-end
+ @param otherAttributes other attributes of new member; Attributes must be present on the Mpulse platform
  @returns Member for using with addNewMember:toList:completionHandler
  @discussion This is the designated to let mPulse client create a new member instance
  */
@@ -160,6 +160,6 @@ typedef enum
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client trigger events to the audience
  */
--(void)triggerEvent:(Event *_Nonnull)event inList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+-(void)triggerEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 @end
 

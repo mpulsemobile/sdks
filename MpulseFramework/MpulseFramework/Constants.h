@@ -22,6 +22,7 @@
 #define mPulseAppId @"APP_ID"
 #define mPulseAccountId @"ACCOUNT_ID"
 #define mPulseAPIURL @"MPULSE_URL"
+#define mPulseControlPanelURL @"MPULSE_CONTROL_PANEL_URL"
 #define mPulseAccessKey @"ACCESS_KEY"
 #define mPulseConfigFile @"mpulseServices-Info"
 #define mPulseConfigFileType @"plist"

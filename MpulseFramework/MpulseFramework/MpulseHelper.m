@@ -188,7 +188,7 @@
     }];
     
     if(mpulseDataDict){
-        mpulseURLString = mpulseDataDict[mPulseAPIURL];
+        mpulseURLString = mpulseDataDict[mPulseControlPanelURL];
         NSString *endPointURL = [NSString stringWithFormat:@"%@/",mpulseURLString];
         mpulseURLString = endPointURL;
         if (mpulseURLString == nil) {
