@@ -136,11 +136,13 @@
     [MpulseHelper  getControlPanelAPIUrlForAction:TriggerEvent resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
             NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: authorizationHeader};
+            
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
-            /*
-             [jsonRequest setValue:memberJson forKey:@"member"];
-             [jsonRequest setValue:lists forKey:@"listid"];
-             */
+            NSMutableDictionary *eventDictionary = [NSMutableDictionary dictionary];
+            [eventDictionary setValue:event.name forKey:@"name"];
+            [eventDictionary setValue:[Event getDictionaryFor:event] forKey:@"event"];
+            [jsonRequest setValue:eventDictionary forKey:@"events"];
+            
             NSData *postdata = [NSJSONSerialization dataWithJSONObject:@{@"body":jsonRequest} options:0 error:&error];
             
             [MpulseHelper makeAPICallToPlatformForURL:mpulseURL withMethod:@"POST" headerDict:headerDict andBody:postdata completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -191,7 +193,7 @@
                }];
 }
 
--(void)sendEvent:(Event *_Nonnull)event toMembers:(NSArray *_Nullable)memberIDs inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+-(void)sendEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     [self shoudlSendEvent:event
                    inList:listID
         completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {

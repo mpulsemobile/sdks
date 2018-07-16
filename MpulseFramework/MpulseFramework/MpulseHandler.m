@@ -111,6 +111,18 @@ NSString *_appMemberId = nil;
     return member;
 }
 
+-(Event *_Nonnull)createEventWithName:(NSString *_Nonnull)name scheduledOn:(NSString *_Nonnull)scheduledOn evaluationScope:(NSString *_Nonnull)scope timezone:(NSString *_Nonnull)timezone memberID:(NSString *_Nonnull)memberID correlationID:(NSString *_Nullable)correlationID customAttributes:(NSDictionary *_Nullable)customAttributes {
+    Event *event = [[Event alloc] init];
+    event.name = name;
+    event.scheduledOn = scheduledOn;
+    event.evaluationScope = scope;
+    event.timezone = timezone;
+    event.memberid = memberID;
+    event.correlationid = correlationID;
+    event.customAttributes = customAttributes;
+    return event;
+}
+
 -(void)triggerEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
     MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] init];
     [mPulseAdmin sendEvent:event inList:listID completionHandler:^(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
