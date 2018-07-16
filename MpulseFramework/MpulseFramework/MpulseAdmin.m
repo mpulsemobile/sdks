@@ -29,18 +29,20 @@
     return self;
 }
 
-- (void)shouldUpdateMemberWithID:(NSString * _Nonnull)memberID details:(Member *_Nonnull)member andLists:(NSArray* _Nonnull)lists completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+- (void)shouldUpdateMemberWithID:(NSString * _Nullable)memberID details:(Member *_Nonnull)member andList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     __block NSError *error;
     __block MpulsePNResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:UpdateMember resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
-            // check here later
-            mpulseURL = [mpulseURL URLByAppendingPathComponent:[NSString stringWithFormat:@"/%@",memberID]];
             NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: authorizationHeader};
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
             NSDictionary *memberJson = [Member getDictionaryFor:member];
+            NSMutableDictionary *mutableMemberJson = [NSMutableDictionary dictionaryWithDictionary:memberJson];
+            
+           // [mutableMemberJson setValue:<#(nullable id)#> forKey:<#(nonnull NSString *)#>]
+            
             [jsonRequest setValue:memberJson forKey:@"member"];
-            [jsonRequest setValue:lists forKey:@"listid"];
+            [jsonRequest setValue:listID forKey:@"listid"];
 
             NSData *postdata = [NSJSONSerialization dataWithJSONObject:@{@"body":jsonRequest} options:0 error:&error];
             
@@ -79,7 +81,7 @@
     
 }
 
-- (void)shouldCreateNewMember:(Member * _Nonnull)member inLists:(NSArray* _Nonnull)lists completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+- (void)shouldCreateNewMember:(Member * _Nonnull)member inList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     __block NSError *error;
     __block MpulsePNResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:AddMember resultAs:^(NSURL *mpulseURL, NSError *err) {
@@ -89,7 +91,7 @@
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
             NSDictionary *memberJson = [Member getDictionaryFor:member];
             [jsonRequest setValue:memberJson forKey:@"member"];
-            [jsonRequest setValue:lists forKey:@"listid"];
+            [jsonRequest setValue:listID forKey:@"listid"];
             
             NSData *postdata = [NSJSONSerialization dataWithJSONObject:@{@"body":jsonRequest} options:0 error:&error];
             
@@ -128,7 +130,7 @@
     
 }
 
-- (void)shoudlSendEvent:(NSString *_Nonnull)event toMembers:(NSArray *_Nullable)memberIDs inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+- (void)shoudlSendEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
     __block NSError *error;
     __block MpulsePNResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:TriggerEvent resultAs:^(NSURL *mpulseURL, NSError *err) {
@@ -175,23 +177,22 @@
     }];
 }
 
--(void)updateMemberWithID:(NSString *_Nonnull)memberID details:(Member *_Nonnull)member andLists:(NSArray*_Nonnull)lists completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler {
-    [self shouldUpdateMemberWithID:memberID details:member andLists:lists completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+-(void)updateMemberWithID:(NSString *_Nullable)memberID details:(Member *_Nonnull)member andList:(NSString*_Nullable)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+    [self shouldUpdateMemberWithID:memberID details:member andList:listID completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result, apiMessage, error);
     }];
 }
 
--(void)createNewMember:(Member* _Nonnull)member inLists:(NSArray* _Nonnull)lists completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+-(void)createNewMember:(Member* _Nonnull)member inList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler {
     [self  shouldCreateNewMember:member
-                          inLists:lists
+                          inList:listID
                completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
                    completionHandler(result, apiMessage, error);
                }];
 }
 
--(void)sendEvent:(NSString *_Nonnull)event toMembers:(NSArray *_Nullable)memberIDs inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+-(void)sendEvent:(Event *_Nonnull)event toMembers:(NSArray *_Nullable)memberIDs inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
     [self shoudlSendEvent:event
-                toMembers:memberIDs
                    inList:listID
         completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
             completionHandler(result, apiMessage, error);

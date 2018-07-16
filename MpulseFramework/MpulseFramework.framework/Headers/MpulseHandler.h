@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Member.h"
+#import "Event.h"
 
 @class MpulseInboxView;
 
@@ -97,23 +98,23 @@ typedef enum
 -(void)getInboxMessageCount:(void (^_Nullable)(NSDictionary * _Nullable json, NSError * _Nullable error)) completionHandler;
 
 /**
- @method addNewMember:toLists:completionHandler
+ @method addNewMember:toList:completionHandler
  @param member the details of new member
- @param lists array of list IDs to which member has to be added
+ @param listID ID of the list to which member has to be added
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client add a new member to specified lists
  */
--(void)addNewMember:(Member * _Nonnull)member toLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+-(void)addNewMember:(Member * _Nonnull)member toList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
 /**
- @method updateMemberWithID:details:andLists:completionHandler
+ @method updateMemberWithID:details:andList:completionHandler
  @param memberID id of the member
  @param member the details of member
- @param lists the array of list IDs for the member
+ @param listID ID of the list
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client update an existing member and his lists
  */
--(void)updateMemberWithID:(NSString *_Nonnull)memberID details:(Member * _Nonnull)member andLists:(NSArray *_Nonnull)lists completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+-(void)updateMemberWithID:(NSString *_Nullable)memberID details:(Member * _Nonnull)member andList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
 /**
  @method createMemberWithFirstName:lastName:email:phoneNumber
@@ -121,19 +122,44 @@ typedef enum
  @param lastName the last name of new member
  @param email the email of new member
  @param phoneNumber the phone number of new member
+ @param otherAttributes other attributes of new member; Attribute must be available on the Back-end
  @returns Member for using with addNewMember:toList:completionHandler
  @discussion This is the designated to let mPulse client create a new member instance
  */
--(Member *_Nonnull)createMemberWithFirstName:(NSString *_Nullable)firstName lastName:(NSString *_Nullable)lastName email:(NSString *_Nullable)email phoneNumber:(NSString *_Nullable)phoneNumber;
+-(Member *_Nonnull)createMemberWithFirstName:(NSString *_Nullable)firstName lastName:(NSString *_Nullable)lastName email:(NSString *_Nullable)email phoneNumber:(NSString *_Nullable)phoneNumber otherAttributes:(NSDictionary *_Nullable)otherAttributes;
 
 /**
- @method triggerEvent:toMembers:inList:completionHandler
- @param event the name of the event
- @param memberIDs IDs of members to whom event is triggered
- @param listID ID of the list belonging to members
+ @method createEventWithName:scheduledOn:evaluationScope:timezone:memberID:correlationID:customAttributes
+ @param name the name of the Event in the mPulse Platform
+ @param scheduledOn the date string at which event has to be triggered
+ Accepted formats: YYYY-MM-DD HH:MM | +HH:MM.
+ It Supports scheduling messagesat a specifieddate and time(YYYY-MM-DD HH:MM)orrelative to when the request is processed(+HH:MM).
+ -Valid values for HH:Integers in the range from 0 to 24.
+ -Value values for MM: Integers in the range from0 to 59.
+ -If `scheduled_on` = “2018-01-01 09:30”, then the message will be scheduled for January 1, 2018 at 9:30 AM.
+ -If `scheduled_on` = “+02:30”, then the message will be schedule for2 hours and 30 minutes after the Event Instance is processed.
+ -If `scheduled_on` = “+00:00”, then the message will be sentimmediately after the requestis processed
+ @param scope the scope of the event
+ Accepted values:no_rule | with_rule | all.
+ -no_rule: Only messages with Custom Event triggers thatonly specify an Event Definition Name will be considered for processing.
+ -with_rule: Only messages with Custom Event triggers that specify both an Event Definition Name and a rule based on an Event Attribute will be considered for processing.
+ -all: All messages with Custom Event triggersfor the given Event Definition Name will be considered for processing
+ @param timezone the timezone of the event
+ @param memberID id of the member receiving the event
+ @param correlationID the tag of the event. The value provided can be used to retrieve information using theMessage Delivery Report API about Messages that were scheduled because of an Event
+ @param customAttributes attributes of the event that are set as "Required" in event definition on control panel. It is used in the rule for the Custom Event riggered message you want to schedule
+ @returns Event for using with triggerEvent:toMembers:inList:completionHandler
+ @discussion This is the designated to let mPulse client create a new event instance
+ */
+-(Event *_Nonnull)createEventWithName:(NSString *_Nonnull)name scheduledOn:(NSString *_Nonnull)scheduledOn evaluationScope:(NSString *_Nonnull)scope timezone:(NSString *_Nonnull)timezone memberID:(NSString *_Nonnull)memberID correlationID:(NSString *_Nullable)correlationID customAttributes:(NSDictionary *_Nullable)customAttributes;
+
+/**
+ @method triggerEvent:inList:completionHandler
+ @param event the details of event
+ @param listID a valid List ID created in your Control Panel Account. Members included in the event must be subscribed to thelist
  @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client trigger events to the audience
  */
--(void)triggerEvent:(NSString *_Nonnull)event toMembers:(NSArray *_Nullable)memberIDs inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
+-(void)triggerEvent:(Event *_Nonnull)event inList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 @end
 

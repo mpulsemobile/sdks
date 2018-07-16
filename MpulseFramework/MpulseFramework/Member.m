@@ -16,6 +16,9 @@
     [dictionary setValue:member.lastName forKey:@"lastname"];
     [dictionary setValue:member.email forKey:@"email"];
     [dictionary setValue:member.phoneNumber forKey:@"mobilephone"];
+    for(id key in member.otherAttributes) {
+        [dictionary setValue:[member.otherAttributes objectForKey:key] forKey:key];
+    }
     return dictionary;
 }
 

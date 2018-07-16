@@ -215,6 +215,10 @@
                 mpulseURLString = [NSString stringWithFormat:@"%@%@",mpulseURLString,@"/members"];
             }
                 break;
+            case TriggerEvent : {
+                mpulseURLString = [NSString stringWithFormat:@"%@%@",mpulseURLString,@"/uploadEvent"];
+
+            }
             default:
                 break;
         }
