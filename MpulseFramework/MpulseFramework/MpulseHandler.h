@@ -23,10 +23,16 @@
  *
  */
 
-#pragma mark *** MpulsePNResult - Enum ***
+#pragma mark *** MpulsePNResult, MpulseAudienceResult, MpulseEventUploadResult - Enum ***
 /*
  MpulsePNResult gives Success or Failure
  as result of register/unregister with Push Notification on mpulse platform
+ 
+ MpulseAudienceResult gives Success or Failure
+ as result of adding or updating members on mpulse platform
+ 
+ MpulseEventUploadResult gives Success or Failure
+ as result of triggering events to audience
  */
 typedef enum
 {
@@ -58,7 +64,7 @@ typedef enum
  @method addNewMember:toList:completionHandler
  @param member the details of new member
  @param listID ID of the list to which member has to be added
- @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @param completionHandler the response with MpulseAudienceResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client add a new member to specified lists
  */
 -(void)addNewMember:(Member * _Nonnull)member toList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
@@ -68,7 +74,7 @@ typedef enum
  @param memberID id of the member
  @param member the details of member
  @param listID ID of the list
- @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @param completionHandler the response with MpulseAudienceResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client update an existing member and his lists
  */
 -(void)updateMemberWithID:(NSString *_Nullable)memberID details:(Member * _Nonnull)member andList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
@@ -114,7 +120,7 @@ typedef enum
  @method triggerEvent:inList:completionHandler
  @param event the details of event
  @param listID a valid List ID created in your Control Panel Account. Members included in the event must be subscribed to thelist
- @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @param completionHandler the response with MpulseEventUploadResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client trigger events to the audience
  */
 -(void)triggerEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;

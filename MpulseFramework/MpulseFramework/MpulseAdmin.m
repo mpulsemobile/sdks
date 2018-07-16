@@ -11,7 +11,7 @@
 #import "Constants.h"
 #import "MpulseError.h"
 #import "Member.h"
-
+#import "MpulseHandler.h"
 @implementation MpulseAdmin {
     NSString* _accessToken;
 }
@@ -24,9 +24,9 @@
     return self;
 }
 
-- (void)shouldUpdateMemberWithID:(NSString * _Nullable)memberID details:(Member *_Nonnull)member andList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+- (void)shouldUpdateMemberWithID:(NSString * _Nullable)memberID details:(Member *_Nonnull)member andList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulseAudienceResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     __block NSError *error;
-    __block MpulsePNResult res;
+    __block MpulseAudienceResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:UpdateMember resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
             NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: _accessToken};
@@ -76,9 +76,9 @@
     
 }
 
-- (void)shouldCreateNewMember:(Member * _Nonnull)member inList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+- (void)shouldCreateNewMember:(Member * _Nonnull)member inList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulseAudienceResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     __block NSError *error;
-    __block MpulsePNResult res;
+    __block MpulseAudienceResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:AddMember resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
             // check here later
@@ -125,9 +125,9 @@
     
 }
 
-- (void)shoudlSendEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+- (void)shoudlSendEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
     __block NSError *error;
-    __block MpulsePNResult res;
+    __block MpulseEventUploadResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:TriggerEvent resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
             NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: _accessToken};
@@ -174,24 +174,24 @@
     }];
 }
 
--(void)updateMemberWithID:(NSString *_Nullable)memberID details:(Member *_Nonnull)member andList:(NSString*_Nullable)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler {
-    [self shouldUpdateMemberWithID:memberID details:member andList:listID completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+-(void)updateMemberWithID:(NSString *_Nullable)memberID details:(Member *_Nonnull)member andList:(NSString*_Nullable)listID completionHandler: (void (^_Nonnull)(MpulseAudienceResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+    [self shouldUpdateMemberWithID:memberID details:member andList:listID completionHandler:^(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result, apiMessage, error);
     }];
 }
 
--(void)createNewMember:(Member* _Nonnull)member inList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+-(void)createNewMember:(Member* _Nonnull)member inList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulseAudienceResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler {
     [self  shouldCreateNewMember:member
                           inList:listID
-               completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+               completionHandler:^(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
                    completionHandler(result, apiMessage, error);
                }];
 }
 
--(void)sendEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+-(void)sendEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     [self shoudlSendEvent:event
                    inList:listID
-        completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+        completionHandler:^(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
             completionHandler(result, apiMessage, error);
         }];
 }

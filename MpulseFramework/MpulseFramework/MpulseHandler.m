@@ -115,24 +115,24 @@ NSString *_appMemberId = nil;
     return NULL;
 }
 
--(void)addNewMember:(Member * _Nonnull)member toList:(NSString * _Nullable)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+-(void)addNewMember:(Member * _Nonnull)member toList:(NSString * _Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     if (_accessToken == nil) {
         completionHandler(Failure,nil,[MpulseError returnMpulseErrorWithCode:kNoAccessToken]);
         return;
     }
     MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] initWithAccessToken:_accessToken];
-    [mPulseAdmin createNewMember:member inList:listID completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+    [mPulseAdmin createNewMember:member inList:listID completionHandler:^(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }
 
--(void)updateMemberWithID:(NSString *_Nullable)memberID details:(Member * _Nonnull)member andList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
+-(void)updateMemberWithID:(NSString *_Nullable)memberID details:(Member * _Nonnull)member andList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     if (_accessToken == nil) {
         completionHandler(Failure,nil,[MpulseError returnMpulseErrorWithCode:kNoAccessToken]);
         return;
     }
     MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] initWithAccessToken:_accessToken];
-    [mPulseAdmin updateMemberWithID:memberID details:member andList:listID completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+    [mPulseAdmin updateMemberWithID:memberID details:member andList:listID completionHandler:^(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }
@@ -159,7 +159,7 @@ NSString *_appMemberId = nil;
     return event;
 }
 
--(void)triggerEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
+-(void)triggerEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
     if (_accessToken == nil) {
         completionHandler(Failure,nil,[MpulseError returnMpulseErrorWithCode:kNoAccessToken]);
         return;
