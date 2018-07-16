@@ -12,7 +12,7 @@
 
 @interface MpulseAdmin : NSObject
 
--(id _Nonnull)init;
+-(id _Nonnull)initWithAccessToken:(NSString *_Nonnull)accessToken;
 
 -(void)createNewMember:(Member* _Nonnull)member inList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulsePNResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 

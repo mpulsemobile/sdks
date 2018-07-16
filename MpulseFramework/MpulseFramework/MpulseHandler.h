@@ -44,58 +44,15 @@ typedef enum
     TriggerEvent
 } MpulseAdminActionType;
 
-#pragma mark *** MpulseHandler ***
-@interface MpulseHandler : NSObject
 
-/*
- *   appMemberId is read-only property
- *   You can get it any time from shared instance of this class
- */
-@property (readonly, nonatomic)NSString* _Nullable appMemberId;
-
-/*  @method shared
- *  @discussion This gives gives shared instance of this class as a singleton
- *  The initializers not available to subclasses or initialise new instance
- *  only sharedInstance should be used
- */
-+ (instancetype _Nonnull)shared;
-
-/*
- *  @method configure:withAppMemberId
- *  @param withAppMemberId the memberId that is registered with mpulse
- *  @discussion This is the designated to configure MpulseHandler with appMemberId that can be used for all functionality
- */
--(void)configure:(NSString* _Nonnull) withAppMemberId;
+@interface MpulseControlPanel : NSObject
 
 /**
- @method registerForPushNotificationWithDeviceToken:withDeviceToken:completionHandler
- @param withDeviceToken the token that identifies the device to APNs. which you get in AppDelegate's didRegisterForRemoteNotificationsWithDeviceToken
- @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
- @discussion This is the designated to register device token for app member id to mpulse platform to recieve push notifications from platform.
+ @method initWithAccessToken
+ @param accessToken token obtained in exchange of OAuth credentials
+ @discussion This is the designated to let mPulse client obtain an access token in order to access the Control Panel
  */
--(void)registerForPushNotificationWithDeviceToken:(NSString* _Nonnull) withDeviceToken completionHandler:(void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error)) completionHandler;
-
-/**
- @method unregisterForPushNotificationWithDeviceToken:withDeviceToken:completionHandler
- @param withDeviceToken the token that identifies the device to APNs. which you get in AppDelegate's didRegisterForRemoteNotificationsWithDeviceToken
- @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
- @discussion This is the designated to un-register device token for app member id to mpulse platform to stop recieving push notifications from platform.
- */
--(void)unregisterForPushNotificationWithDeviceToken:(NSString* _Nonnull) withDeviceToken completionHandler:(void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error)) completionHandler;
-
-/**
- @method inboxView
- @returns MpulseInboxView for secure message inbox for configured appmemberId in MpulseHandler
- @discussion This is the designated to get inbox view of secure mail messages for app member id in mpulse platform
- */
--(MpulseInboxView* _Nonnull)inboxView;
-
-/**
- @method getInboxMessageCount:completionHandler
- @param completionHandler the response with JSON with count of read, unread, deleted, undeleted inbox messages and error if any
- @discussion This is the designated to get message count of secure mail inbox for app member id in mpulse platform
- */
--(void)getInboxMessageCount:(void (^_Nullable)(NSDictionary * _Nullable json, NSError * _Nullable error)) completionHandler;
+-(MpulseControlPanel *_Nullable)initWithAccessToken:(NSString *_Nonnull) accessToken;
 
 /**
  @method addNewMember:toList:completionHandler
@@ -163,3 +120,64 @@ typedef enum
 -(void)triggerEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 @end
 
+#pragma mark *** MpulseHandler ***
+@interface MpulseHandler : NSObject
+
+/*
+ *   appMemberId is read-only property
+ *   You can get it any time from shared instance of this class
+ */
+@property (readonly, nonatomic)NSString* _Nullable appMemberId;
+
+/*  @method shared
+ *  @discussion This gives gives shared instance of this class as a singleton
+ *  The initializers not available to subclasses or initialise new instance
+ *  only sharedInstance should be used
+ */
++ (instancetype _Nonnull)shared;
+
+/*
+ *  @method configure:withAppMemberId
+ *  @param withAppMemberId the memberId that is registered with mpulse
+ *  @discussion This is the designated to configure MpulseHandler with appMemberId that can be used for all functionality
+ */
+-(void)configure:(NSString* _Nonnull) withAppMemberId;
+
+/**
+ @method registerForPushNotificationWithDeviceToken:withDeviceToken:completionHandler
+ @param withDeviceToken the token that identifies the device to APNs. which you get in AppDelegate's didRegisterForRemoteNotificationsWithDeviceToken
+ @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @discussion This is the designated to register device token for app member id to mpulse platform to recieve push notifications from platform.
+ */
+-(void)registerForPushNotificationWithDeviceToken:(NSString* _Nonnull) withDeviceToken completionHandler:(void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error)) completionHandler;
+
+/**
+ @method unregisterForPushNotificationWithDeviceToken:withDeviceToken:completionHandler
+ @param withDeviceToken the token that identifies the device to APNs. which you get in AppDelegate's didRegisterForRemoteNotificationsWithDeviceToken
+ @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @discussion This is the designated to un-register device token for app member id to mpulse platform to stop recieving push notifications from platform.
+ */
+-(void)unregisterForPushNotificationWithDeviceToken:(NSString* _Nonnull) withDeviceToken completionHandler:(void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error)) completionHandler;
+
+/**
+ @method inboxView
+ @returns MpulseInboxView for secure message inbox for configured appmemberId in MpulseHandler
+ @discussion This is the designated to get inbox view of secure mail messages for app member id in mpulse platform
+ */
+-(MpulseInboxView* _Nonnull)inboxView;
+
+/**
+ @method getInboxMessageCount:completionHandler
+ @param completionHandler the response with JSON with count of read, unread, deleted, undeleted inbox messages and error if any
+ @discussion This is the designated to get message count of secure mail inbox for app member id in mpulse platform
+ */
+-(void)getInboxMessageCount:(void (^_Nullable)(NSDictionary * _Nullable json, NSError * _Nullable error)) completionHandler;
+
+/**
+ @method logIntoControlPanelWithOauthUsername:andPassword
+ @param username the username of client obtained from Mpulse platform
+ @param password the password of client obtained from Mpulse platform
+ @discussion This is the designated to get message count of secure mail inbox for app member id in mpulse platform
+ */
++ (MpulseControlPanel *_Nullable)logIntoControlPanelWithOauthUsername:(NSString *_Nonnull)username andPassword:(NSString *_Nonnull)password;
+@end

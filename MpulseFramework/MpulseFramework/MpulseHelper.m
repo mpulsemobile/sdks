@@ -188,7 +188,8 @@
     }];
     
     if(mpulseDataDict){
-        mpulseURLString = mpulseDataDict[mPulseControlPanelURL];
+        // mPulseControlPanelURL
+        mpulseURLString = mpulseDataDict[mPulseAPIURL];
         NSString *endPointURL = [NSString stringWithFormat:@"%@/",mpulseURLString];
         mpulseURLString = endPointURL;
         if (mpulseURLString == nil) {
@@ -219,6 +220,7 @@
                 mpulseURLString = [NSString stringWithFormat:@"%@%@",mpulseURLString,@"/uploadEvent"];
 
             }
+                break;
             default:
                 break;
         }

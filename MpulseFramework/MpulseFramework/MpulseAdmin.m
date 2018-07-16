@@ -13,19 +13,14 @@
 #import "Member.h"
 
 @implementation MpulseAdmin {
-    NSString* authorizationHeader;
+    NSString* _accessToken;
 }
 
--(id)init {
+-(id _Nonnull)initWithAccessToken:(NSString *_Nonnull)accessToken {
     self = [super init];
     if (self) {
-        NSString * username = @"user";
-        NSString * accessKey = @"pass";
-        NSString * loginString = [NSString stringWithFormat:@"%@:%@",username,accessKey];
-        NSData * loginData = [loginString dataUsingEncoding:NSUTF8StringEncoding];
-        authorizationHeader = [loginData base64EncodedStringWithOptions:0];
+        _accessToken = accessToken;
     }
-    
     return self;
 }
 
@@ -34,7 +29,7 @@
     __block MpulsePNResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:UpdateMember resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
-            NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: authorizationHeader};
+            NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: _accessToken};
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
             NSDictionary *memberJson = [Member getDictionaryFor:member];
             NSMutableDictionary *mutableMemberJson = [NSMutableDictionary dictionaryWithDictionary:memberJson];
@@ -87,7 +82,7 @@
     [MpulseHelper  getControlPanelAPIUrlForAction:AddMember resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
             // check here later
-            NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: authorizationHeader};
+            NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: _accessToken};
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
             NSDictionary *memberJson = [Member getDictionaryFor:member];
             [jsonRequest setValue:memberJson forKey:@"member"];
@@ -135,7 +130,7 @@
     __block MpulsePNResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:TriggerEvent resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
-            NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: authorizationHeader};
+            NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: _accessToken};
             
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
             NSMutableDictionary *eventDictionary = [NSMutableDictionary dictionary];

@@ -12,6 +12,7 @@
 #import "MpulseManager.h"
 #import "Constants.h"
 #import "MpulseAdmin.h"
+#import "MpulseError.h"
 
 @interface MpulseHandler()
 /* The initializers not available to subclasses or initialise new instance
@@ -87,15 +88,50 @@ NSString *_appMemberId = nil;
     }
 }
 
++ (MpulseControlPanel *_Nullable)logIntoControlPanelWithOauthUsername:(NSString *_Nonnull)username andPassword:(NSString *_Nonnull)password {
+    __block MpulseControlPanel *controlPanel;
+    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        sleep(4);
+        controlPanel = [[MpulseControlPanel alloc] initWithAccessToken:@"token heye heh he"];
+        dispatch_semaphore_signal(sem);
+    });
+    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+    return controlPanel;
+}
+
+@end
+
+@implementation MpulseControlPanel {
+    NSString *_accessToken;
+}
+
+-(MpulseControlPanel *)initWithAccessToken:(NSString *_Nonnull) accessToken {
+    self = [super init];
+    if (self && accessToken) {
+        _accessToken = accessToken;
+        return self;
+    }
+    return NULL;
+}
+
 -(void)addNewMember:(Member * _Nonnull)member toList:(NSString * _Nullable)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
-    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] init];
+    if (_accessToken == nil) {
+        completionHandler(Failure,nil,[MpulseError returnMpulseErrorWithCode:kNoAccessToken]);
+        return;
+    }
+    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] initWithAccessToken:_accessToken];
     [mPulseAdmin createNewMember:member inList:listID completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }
 
 -(void)updateMemberWithID:(NSString *_Nullable)memberID details:(Member * _Nonnull)member andList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
-    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] init];
+    if (_accessToken == nil) {
+        completionHandler(Failure,nil,[MpulseError returnMpulseErrorWithCode:kNoAccessToken]);
+        return;
+    }
+    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] initWithAccessToken:_accessToken];
     [mPulseAdmin updateMemberWithID:memberID details:member andList:listID completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
@@ -124,7 +160,11 @@ NSString *_appMemberId = nil;
 }
 
 -(void)triggerEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler {
-    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] init];
+    if (_accessToken == nil) {
+        completionHandler(Failure,nil,[MpulseError returnMpulseErrorWithCode:kNoAccessToken]);
+        return;
+    }
+    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] initWithAccessToken:_accessToken];
     [mPulseAdmin sendEvent:event inList:listID completionHandler:^(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];

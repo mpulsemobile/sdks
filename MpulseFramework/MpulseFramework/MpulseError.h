@@ -18,6 +18,7 @@ enum mpulseErrorCode {kNoPlist=5001,\
     kNoDeviceId,\
     kCouldNotGenerateURL,\
     kJSONSerialisationError,\
+    kNoAccessToken,\
     kBadRequest
 };
 
