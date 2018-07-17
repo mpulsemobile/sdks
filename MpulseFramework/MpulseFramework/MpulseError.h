@@ -13,6 +13,8 @@ enum mpulseErrorCode {kNoPlist=5001,\
     kNoAccountId,\
     kNoAccessKey,\
     kNoAppMemberId,\
+    kNoClientID,\
+    kNoClientSecret,\
     kNoInternet,\
     kSomeErrorOccured,\
     kNoDeviceId,\
@@ -20,6 +22,7 @@ enum mpulseErrorCode {kNoPlist=5001,\
     kJSONSerialisationError,\
     kNoAccessToken,\
     kInvalidRefreshToken,\
+    kNoOAuthEndpoint,\
     kBadRequest
 };
 

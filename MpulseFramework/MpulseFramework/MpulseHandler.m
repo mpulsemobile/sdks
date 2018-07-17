@@ -13,6 +13,7 @@
 #import "Constants.h"
 #import "MpulseAdmin.h"
 #import "MpulseError.h"
+#import "MpulseHelper.h"
 
 @interface MpulseHandler()
 /* The initializers not available to subclasses or initialise new instance
@@ -91,11 +92,49 @@ NSString *_appMemberId = nil;
 + (MpulseControlPanel *_Nullable)logIntoControlPanelWithOauthUsername:(NSString *_Nonnull)username andPassword:(NSString *_Nonnull)password {
     __block MpulseControlPanel *controlPanel;
     dispatch_semaphore_t sem = dispatch_semaphore_create(0);
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        sleep(4);
-        controlPanel = [[MpulseControlPanel alloc] initWithAccessToken:@"token heye heh he" andRefresehToken:@"refreshtoken"];
+    __block NSString *clientId;
+    __block NSString *clientSecret;
+    __block NSString *oauthEndoint;
+    __block NSDictionary *mpulseDataDict;
+    __block NSError *error;
+    [MpulseHelper getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+        mpulseDataDict = dataDict;
+        error = err;
+    }];
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+        return nil;
+    }
+    clientId = mpulseDataDict[mPulseClientId];
+    clientSecret = mpulseDataDict[mPulseClientSecret];
+    oauthEndoint = mpulseDataDict[mPulseOauthEndpoint];
+
+    if ( clientId  == nil) {
+        NSLog(@"%@", (NSString *)[MpulseError returnMpulseErrorWithCode:kNoClientID]);
+        return nil;
+    }
+    if ( clientSecret  == nil) {
+        NSLog(@"%@", (NSString *)[MpulseError returnMpulseErrorWithCode:kNoClientSecret]);
+        return nil;
+    }
+    if ( oauthEndoint  == nil) {
+        NSLog(@"%@", (NSString *)[MpulseError returnMpulseErrorWithCode:kNoOAuthEndpoint]);
+        return nil;
+    }
+    
+    NSString *oauthQueryString =[NSString stringWithFormat:@"grant_type=password&client_id=%@&client_secret=%@&username=%@&password=%@",clientId,clientSecret,username,password];
+    NSData *postData = [oauthQueryString dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    [MpulseHelper makeAPICallToPlatformForURL:[NSURL URLWithString:oauthEndoint] withMethod:@"POST" headerDict:@{@"content-type":@"application/x-www-form-urlencoded"} andBody:postData completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        } else if (data == nil) {
+            NSLog(@"%@", [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
+        } else {
+            NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            controlPanel = [[MpulseControlPanel alloc] initWithAccessToken:response[@"access_token"] andRefresehToken:response[@"refresh_token"]];
+        }
         dispatch_semaphore_signal(sem);
-    });
+    }];
     dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
     return controlPanel;
 }
