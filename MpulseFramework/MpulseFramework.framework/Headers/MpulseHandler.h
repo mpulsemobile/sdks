@@ -23,10 +23,16 @@
  *
  */
 
-#pragma mark *** MpulsePNResult - Enum ***
+#pragma mark *** MpulsePNResult, MpulseAudienceResult, MpulseEventUploadResult - Enum ***
 /*
  MpulsePNResult gives Success or Failure
  as result of register/unregister with Push Notification on mpulse platform
+ 
+ MpulseAudienceResult gives Success or Failure
+ as result of adding or updating members on mpulse platform
+ 
+ MpulseEventUploadResult gives Success or Failure
+ as result of triggering events to audience
  */
 typedef enum
 {
@@ -47,18 +53,27 @@ typedef enum
 
 @interface MpulseControlPanel : NSObject
 
+@property (strong, nonatomic) NSString *_Nonnull refreshToken;
+/**
+ @method renewAccessTokenWithRefreshToken:completionHandler
+ @param refreshToken token used to renew access token
+ @param completionHandler the response with isSuccess as True or Fail and error if there is any
+ @discussion This is the designated to let mPulse client renew the access token in case it expires
+ */
+-(void)renewAccessTokenWithRefreshToken:(NSString *_Nonnull)refreshToken completionHandler: (void (^_Nullable)(BOOL isSuccess, NSError * _Nullable error))completionHandler;
+
 /**
  @method initWithAccessToken
  @param accessToken token obtained in exchange of OAuth credentials
  @discussion This is the designated to let mPulse client obtain an access token in order to access the Control Panel
  */
--(MpulseControlPanel *_Nullable)initWithAccessToken:(NSString *_Nonnull) accessToken;
+-(MpulseControlPanel *_Nullable)initWithAccessToken:(NSString *_Nonnull) accessToken andRefresehToken:(NSString *_Nonnull)refreshToken;
 
 /**
  @method addNewMember:toList:completionHandler
  @param member the details of new member
  @param listID ID of the list to which member has to be added
- @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @param completionHandler the response with MpulseAudienceResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client add a new member to specified lists
  */
 -(void)addNewMember:(Member * _Nonnull)member toList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
@@ -68,7 +83,7 @@ typedef enum
  @param memberID id of the member
  @param member the details of member
  @param listID ID of the list
- @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @param completionHandler the response with MpulseAudienceResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client update an existing member and his lists
  */
 -(void)updateMemberWithID:(NSString *_Nullable)memberID details:(Member * _Nonnull)member andList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
@@ -114,7 +129,7 @@ typedef enum
  @method triggerEvent:inList:completionHandler
  @param event the details of event
  @param listID a valid List ID created in your Control Panel Account. Members included in the event must be subscribed to thelist
- @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @param completionHandler the response with MpulseEventUploadResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client trigger events to the audience
  */
 -(void)triggerEvent:(Event *_Nonnull)event inList:(NSString *_Nonnull)listID completionHandler: (void (^_Nullable)(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
@@ -176,8 +191,7 @@ typedef enum
 /**
  @method logIntoControlPanelWithOauthUsername:andPassword
  @param username the username of client obtained from Mpulse platform
- @param password the password of client obtained from Mpulse platform
- @discussion This is the designated to get message count of secure mail inbox for app member id in mpulse platform
+ @param password the password of client obtained from Mpulse platform @discussion This is the designated to obtain an access token and intitialize MpulseControlPanel instance
  */
 + (MpulseControlPanel *_Nullable)logIntoControlPanelWithOauthUsername:(NSString *_Nonnull)username andPassword:(NSString *_Nonnull)password;
 @end

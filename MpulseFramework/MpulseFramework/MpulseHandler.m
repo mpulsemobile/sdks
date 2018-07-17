@@ -93,7 +93,7 @@ NSString *_appMemberId = nil;
     dispatch_semaphore_t sem = dispatch_semaphore_create(0);
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         sleep(4);
-        controlPanel = [[MpulseControlPanel alloc] initWithAccessToken:@"token heye heh he"];
+        controlPanel = [[MpulseControlPanel alloc] initWithAccessToken:@"token heye heh he" andRefresehToken:@"refreshtoken"];
         dispatch_semaphore_signal(sem);
     });
     dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
@@ -106,13 +106,24 @@ NSString *_appMemberId = nil;
     NSString *_accessToken;
 }
 
--(MpulseControlPanel *)initWithAccessToken:(NSString *_Nonnull) accessToken {
+-(MpulseControlPanel *_Nullable)initWithAccessToken:(NSString *_Nonnull) accessToken andRefresehToken:(NSString *_Nonnull)refreshToken{
     self = [super init];
     if (self && accessToken) {
         _accessToken = accessToken;
+        self.refreshToken = refreshToken;
         return self;
     }
     return NULL;
+}
+
+-(void)renewAccessTokenWithRefreshToken:(NSString *_Nonnull)refreshToken completionHandler: (void (^_Nullable)(BOOL isSuccess, NSError * _Nullable error))completionHandler{
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        sleep(4);
+        _accessToken = @"new access token";
+        completionHandler(true,nil);
+        return;
+    });
+    completionHandler(false,[MpulseError returnMpulseErrorWithCode:kInvalidRefreshToken]);
 }
 
 -(void)addNewMember:(Member * _Nonnull)member toList:(NSString * _Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{

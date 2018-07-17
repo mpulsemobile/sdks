@@ -53,12 +53,21 @@ typedef enum
 
 @interface MpulseControlPanel : NSObject
 
+@property (strong, nonatomic) NSString *_Nonnull refreshToken;
+/**
+ @method renewAccessTokenWithRefreshToken:completionHandler
+ @param refreshToken token used to renew access token
+ @param completionHandler the response with isSuccess as True or False and error if there is any
+ @discussion This is the designated to let mPulse client renew the access token in case it expires
+ */
+-(void)renewAccessTokenWithRefreshToken:(NSString *_Nonnull)refreshToken completionHandler: (void (^_Nullable)(BOOL isSuccess, NSError * _Nullable error))completionHandler;
+
 /**
  @method initWithAccessToken
  @param accessToken token obtained in exchange of OAuth credentials
  @discussion This is the designated to let mPulse client obtain an access token in order to access the Control Panel
  */
--(MpulseControlPanel *_Nullable)initWithAccessToken:(NSString *_Nonnull) accessToken;
+-(MpulseControlPanel *_Nullable)initWithAccessToken:(NSString *_Nonnull) accessToken andRefresehToken:(NSString *_Nonnull)refreshToken;
 
 /**
  @method addNewMember:toList:completionHandler
@@ -183,7 +192,7 @@ typedef enum
  @method logIntoControlPanelWithOauthUsername:andPassword
  @param username the username of client obtained from Mpulse platform
  @param password the password of client obtained from Mpulse platform
- @discussion This is the designated to get message count of secure mail inbox for app member id in mpulse platform
+ @discussion This is the designated to obtain an access token and intitialize MpulseControlPanel instance
  */
 + (MpulseControlPanel *_Nullable)logIntoControlPanelWithOauthUsername:(NSString *_Nonnull)username andPassword:(NSString *_Nonnull)password;
 @end

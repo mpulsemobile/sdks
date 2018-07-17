@@ -19,7 +19,8 @@
     @"5009":@"URL could not be generated, some parameter is wrong.",\
     @"5010":@"JSON could not be serialised.",\
     @"5011":@"Access token is required to make this request",\
-    @"5012":@"Bad request, some query parameter is missing or wrong.",\
+    @"5012":@"Refresh token is invalid",\
+    @"5013":@"Bad request, some query parameter is missing or wrong.",\
 }
 #define mPulseNoAppMemberIdConfigured @"App member Id not configured"
 #define mPulseNoAppMemberIdConfiguredReason @"Mpulse Handler requires app member Id to be configured, to user any methods related to Mpulse Handler Or Mpulse Inbox View"

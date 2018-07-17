@@ -26,6 +26,4 @@
 +(NSMutableURLRequest*_Nonnull) urlRequestForURL:(NSURL*_Nonnull)url withMethod:(NSString*_Nullable)method headerDict:(NSDictionary*_Nullable)headerDict andBody:(NSData*_Nullable)body;
 
 + (void)getControlPanelAPIUrlForAction:(MpulseAdminActionType)action resultAs:(void (^_Nullable)(NSURL* _Nullable mpulseURL, NSError* _Nullable err))result;
-
-+ (void)generateQueryStringForControlPanelAccessWithCompletion:(void (^_Nonnull)(NSString* _Nullable urlStr, NSError* _Nullable err))result;
 @end
