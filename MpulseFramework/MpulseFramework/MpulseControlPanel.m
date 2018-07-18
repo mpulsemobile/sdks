@@ -155,7 +155,7 @@ static id _instance;
             NSLog(@"%@", [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
         } else {
             NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            controlPanel = [[MpulseControlPanel alloc] initWithAccessToken:response[@"access_token"] andRefresehToken:response[@"refresh_token"]];
+            [self setAccessToken:response[@"access_token"] andRefresehToken:response[@"refresh_token"]];
         }
     }];
     completionHandler(true,nil);
