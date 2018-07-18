@@ -151,14 +151,16 @@ static id _instance;
     [MpulseHelper makeAPICallToPlatformForURL:[NSURL URLWithString:oauthEndoint] withMethod:@"POST" headerDict:@{@"content-type":@"application/x-www-form-urlencoded"} andBody:postData completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"%@", error.localizedDescription);
+            completionHandler(false,error);
         } else if (data == nil) {
             NSLog(@"%@", [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
+            completionHandler(false,[MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
         } else {
             NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             [self setAccessToken:response[@"access_token"] andRefresehToken:response[@"refresh_token"]];
+            completionHandler(true,nil);
         }
     }];
-    completionHandler(true,nil);
 }
 
 @end
