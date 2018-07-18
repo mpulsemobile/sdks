@@ -7,9 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Member.h"
-#import "Event.h"
-#import "MpulseControlPanel.h"
 @class MpulseInboxView;
 
 /**

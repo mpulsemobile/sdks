@@ -50,13 +50,51 @@ static id _instance;
 }
 
 -(void)renewAccessTokenWithRefreshToken:(NSString *_Nonnull)refreshToken completionHandler: (void (^_Nullable)(BOOL isSuccess, NSError * _Nullable error))completionHandler{
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        sleep(4);
-        _accessToken = @"new access token";
-        completionHandler(true,nil);
-        return;
-    });
-    completionHandler(false,[MpulseError returnMpulseErrorWithCode:kInvalidRefreshToken]);
+    __block NSString *clientId;
+    __block NSString *clientSecret;
+    __block NSString *oauthEndoint;
+    __block NSDictionary *mpulseDataDict;
+    __block NSError *error;
+    [MpulseHelper getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+        mpulseDataDict = dataDict;
+        error = err;
+    }];
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+        completionHandler(false,error);
+    }
+    clientId = mpulseDataDict[mPulseClientId];
+    clientSecret = mpulseDataDict[mPulseClientSecret];
+    oauthEndoint = mpulseDataDict[mPulseOauthEndpoint];
+    
+    if ( clientId  == nil) {
+        NSLog(@"%@", (NSString *)[MpulseError returnMpulseErrorWithCode:kNoClientID]);
+        completionHandler(false,error);
+    }
+    if ( clientSecret  == nil) {
+        NSLog(@"%@", (NSString *)[MpulseError returnMpulseErrorWithCode:kNoClientSecret]);
+        completionHandler(false,error);
+    }
+    if ( oauthEndoint  == nil) {
+        NSLog(@"%@", (NSString *)[MpulseError returnMpulseErrorWithCode:kNoOAuthEndpoint]);
+        completionHandler(false,error);
+    }
+    
+    NSString *oauthQueryString =[NSString stringWithFormat:@"grant_type=refresh_token&client_id=%@&client_secret=%@&refresh_token=%@",clientId,clientSecret,refreshToken];
+    NSData *postData = [oauthQueryString dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    [MpulseHelper makeAPICallToPlatformForURL:[NSURL URLWithString:oauthEndoint] withMethod:@"POST" headerDict:@{@"content-type":@"application/x-www-form-urlencoded"} andBody:postData completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            completionHandler(false,error);
+        } else if (data == nil) {
+            NSLog(@"%@", [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
+            completionHandler(false,[MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
+        } else {
+            NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            _accessToken = response[@"access_token"];
+            completionHandler(true,nil);
+        }
+    }];
 }
 
 -(void)addNewMember:(Member * _Nonnull)member toList:(NSString * _Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler{
@@ -115,7 +153,6 @@ static id _instance;
 }
 
 - (void)logInWithOauthUsername:(NSString *_Nonnull)username andPassword:(NSString *_Nonnull)password  completionHandler:(void (^_Nullable)(BOOL isSuccess, NSError * _Nullable error))completionHandler  {
-    __block MpulseControlPanel *controlPanel;
     __block NSString *clientId;
     __block NSString *clientSecret;
     __block NSString *oauthEndoint;

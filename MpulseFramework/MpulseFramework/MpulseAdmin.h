@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MpulseHandler.h"
+#import "MpulseControlPanel.h"
 #import "Member.h"
+#import "Event.h"
 
 @interface MpulseAdmin : NSObject
 

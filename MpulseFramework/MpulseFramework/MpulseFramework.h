@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MpulseFramework/MpulseHandler.h>
 #import <MpulseFramework/MpulseInboxView.h>
+#import <MpulseFramework/MpulseControlPanel.h>
 
 //! Project version number for MpulseFramework.
 FOUNDATION_EXPORT double MpulseFrameworkVersionNumber;

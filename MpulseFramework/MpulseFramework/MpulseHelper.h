@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MpulseHandler.h"
-
+#import "MpulseControlPanel.h"
 @interface MpulseHelper : NSObject
 
 + (void)getDictValues:(void (^_Nullable)(NSDictionary* _Nullable dataDict, NSError* _Nullable err))result;

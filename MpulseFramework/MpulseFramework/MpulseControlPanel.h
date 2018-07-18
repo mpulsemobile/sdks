@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Member.h"
-#import "Event.h"
-#import "MpulseHandler.h"
+@class Member;
+@class Event;
 @interface MpulseControlPanel : NSObject
 /*
  MpulseAdminActionType lets SDK know which action to perform as Admin
