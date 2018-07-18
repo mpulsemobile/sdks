@@ -59,11 +59,12 @@ typedef enum
 -(void)renewAccessTokenWithRefreshToken:(NSString *_Nonnull)refreshToken completionHandler: (void (^_Nullable)(BOOL isSuccess, NSError * _Nullable error))completionHandler;
 
 /**
- @method initWithAccessToken
+ @method setAccessToken:andRefresehToken
  @param accessToken token obtained in exchange of OAuth credentials
+ @param refreshToken token used later to get new access token
  @discussion This is the designated to let mPulse client obtain an access token in order to access the Control Panel
  */
--(MpulseControlPanel *_Nullable)initWithAccessToken:(NSString *_Nonnull) accessToken andRefresehToken:(NSString *_Nonnull)refreshToken;
+-(void)setAccessToken:(NSString *_Nonnull) accessToken andRefresehToken:(NSString *_Nonnull)refreshToken;
 
 /**
  @method addNewMember:toList:completionHandler

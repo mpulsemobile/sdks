@@ -42,14 +42,11 @@ static id _instance;
     return self;
 }
 
--(MpulseControlPanel *_Nullable)initWithAccessToken:(NSString *_Nonnull) accessToken andRefresehToken:(NSString *_Nonnull)refreshToken{
-    self = [super init];
-    if (self && accessToken) {
+-(void)setAccessToken:(NSString *_Nonnull) accessToken andRefresehToken:(NSString *_Nonnull)refreshToken{
+    if (accessToken && accessToken) {
         _accessToken = accessToken;
         self.refreshToken = refreshToken;
-        return self;
     }
-    return NULL;
 }
 
 -(void)renewAccessTokenWithRefreshToken:(NSString *_Nonnull)refreshToken completionHandler: (void (^_Nullable)(BOOL isSuccess, NSError * _Nullable error))completionHandler{
