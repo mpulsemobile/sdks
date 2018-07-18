@@ -30,6 +30,8 @@
 		11854ACF207CC5E200F0E833 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 11854ABF207CC5E200F0E833 /* Reachability.m */; };
 		3A4C591720EF77D200898738 /* MpulseAdmin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4C591520EF77D200898738 /* MpulseAdmin.h */; };
 		3A4C591820EF77D200898738 /* MpulseAdmin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C591620EF77D200898738 /* MpulseAdmin.m */; };
+		3A50DA1320FEFD8100DC479D /* MpulseControlPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A50DA1120FEFD8100DC479D /* MpulseControlPanel.h */; };
+		3A50DA1420FEFD8100DC479D /* MpulseControlPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A50DA1220FEFD8100DC479D /* MpulseControlPanel.m */; };
 		3A6117F620F4C94C006B7607 /* Member.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6117F420F4C94C006B7607 /* Member.h */; };
 		3A6117F720F4C94C006B7607 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6117F520F4C94C006B7607 /* Member.m */; };
 		3A924EBF20FC61910053F9A4 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A924EBD20FC61910053F9A4 /* Event.h */; };
@@ -73,6 +75,8 @@
 		11854ABF207CC5E200F0E833 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3A4C591520EF77D200898738 /* MpulseAdmin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MpulseAdmin.h; sourceTree = "<group>"; };
 		3A4C591620EF77D200898738 /* MpulseAdmin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MpulseAdmin.m; sourceTree = "<group>"; };
+		3A50DA1120FEFD8100DC479D /* MpulseControlPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MpulseControlPanel.h; sourceTree = "<group>"; };
+		3A50DA1220FEFD8100DC479D /* MpulseControlPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MpulseControlPanel.m; sourceTree = "<group>"; };
 		3A6117F420F4C94C006B7607 /* Member.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
 		3A6117F520F4C94C006B7607 /* Member.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
 		3A924EBD20FC61910053F9A4 /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				11854AB5207CC5E200F0E833 /* MpulseError.m */,
 				11854AB6207CC5E200F0E833 /* MpulseHandler.h */,
 				11854AB7207CC5E200F0E833 /* MpulseHandler.m */,
+				3A50DA1120FEFD8100DC479D /* MpulseControlPanel.h */,
+				3A50DA1220FEFD8100DC479D /* MpulseControlPanel.m */,
 				3A6117F420F4C94C006B7607 /* Member.h */,
 				3A6117F520F4C94C006B7607 /* Member.m */,
 				3A924EBD20FC61910053F9A4 /* Event.h */,
@@ -176,6 +182,7 @@
 				3A924EBF20FC61910053F9A4 /* Event.h in Headers */,
 				11854AC1207CC5E200F0E833 /* ErrorConstants.h in Headers */,
 				11854AA7207CC5C200F0E833 /* MpulseFramework.h in Headers */,
+				3A50DA1320FEFD8100DC479D /* MpulseControlPanel.h in Headers */,
 				11854AC8207CC5E200F0E833 /* MpulseHelper.h in Headers */,
 				11854ACE207CC5E200F0E833 /* Reachability.h in Headers */,
 			);
@@ -306,6 +313,7 @@
 				11854ACF207CC5E200F0E833 /* Reachability.m in Sources */,
 				11854ACB207CC5E200F0E833 /* MpulseInboxView.m in Sources */,
 				11854AC9207CC5E200F0E833 /* MpulseHelper.m in Sources */,
+				3A50DA1420FEFD8100DC479D /* MpulseControlPanel.m in Sources */,
 				3A6117F720F4C94C006B7607 /* Member.m in Sources */,
 				3A4C591820EF77D200898738 /* MpulseAdmin.m in Sources */,
 			);

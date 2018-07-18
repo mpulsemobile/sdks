@@ -43,7 +43,7 @@
             
             [MpulseHelper makeAPICallToPlatformForURL:mpulseURL withMethod:@"POST" headerDict:headerDict andBody:postdata completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 if(error){
-                    res = Failure;
+                    res = AudienceAPIFailure;
                     completionHandler(res, nil , error);
                 }else{
                     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
@@ -53,24 +53,24 @@
                     }
                     long responseCode = (long)[httpResponse statusCode];
                     if (responseCode == 200) {
-                        res = Success;
+                        res = AudienceAPISuccess;
                         completionHandler(res, apiMsg, nil);
                     }else if(responseCode == 202){
-                        res = Failure;
+                        res = AudienceAPIFailure;
                         completionHandler(res, apiMsg, nil);
                     }else if(responseCode ==417){
-                        res = Failure;
+                        res = AudienceAPIFailure;
                         completionHandler(res, apiMsg, nil);
                     }
                     else{
-                        res = Failure;
+                        res = AudienceAPIFailure;
                         completionHandler(res,nil,error);
                     }
                 }
             }];
         } else {
             error = [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
-            completionHandler(Failure,nil, error);
+            completionHandler(AudienceAPIFailure,nil, error);
         }
     }];
     
@@ -92,7 +92,7 @@
             
             [MpulseHelper makeAPICallToPlatformForURL:mpulseURL withMethod:@"POST" headerDict:headerDict andBody:postdata completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 if(error){
-                    res = Failure;
+                    res = AudienceAPIFailure;
                     completionHandler(res, nil , error);
                 }else{
                     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
@@ -102,24 +102,24 @@
                     }
                     long responseCode = (long)[httpResponse statusCode];
                     if (responseCode == 200) {
-                        res = Success;
+                        res = AudienceAPISuccess;
                         completionHandler(res, apiMsg, nil);
                     }else if(responseCode == 202){
-                        res = Failure;
+                        res = AudienceAPIFailure;
                         completionHandler(res, apiMsg, nil);
                     }else if(responseCode ==417){
-                        res = Failure;
+                        res = AudienceAPIFailure;
                         completionHandler(res, apiMsg, nil);
                     }
                     else{
-                        res = Failure;
+                        res = AudienceAPIFailure;
                         completionHandler(res,nil,error);
                     }
                 }
             }];
         } else {
             error = [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
-            completionHandler(Failure,nil, error);
+            completionHandler(AudienceAPIFailure,nil, error);
         }
     }];
     
@@ -142,7 +142,7 @@
             
             [MpulseHelper makeAPICallToPlatformForURL:mpulseURL withMethod:@"POST" headerDict:headerDict andBody:postdata completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 if(error){
-                    res = Failure;
+                    res = EventAPIFailure;
                     completionHandler(res, nil , error);
                 }else{
                     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
@@ -152,24 +152,24 @@
                     }
                     long responseCode = (long)[httpResponse statusCode];
                     if (responseCode == 200) {
-                        res = Success;
+                        res = EventAPISuccess;
                         completionHandler(res, apiMsg, nil);
                     }else if(responseCode == 202){
-                        res = Failure;
+                        res = EventAPIFailure;
                         completionHandler(res, apiMsg, nil);
                     }else if(responseCode ==417){
-                        res = Failure;
+                        res = EventAPIFailure;
                         completionHandler(res, apiMsg, nil);
                     }
                     else{
-                        res = Failure;
+                        res = EventAPIFailure;
                         completionHandler(res,nil,error);
                     }
                 }
             }];
         } else {
             error = [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
-            completionHandler(Failure,nil, error);
+            completionHandler(EventAPIFailure,nil, error);
         }
     }];
 }
