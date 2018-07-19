@@ -189,7 +189,7 @@
     
     if(mpulseDataDict){
         // mPulseControlPanelURL
-        mpulseURLString = mpulseDataDict[mPulseAPIURL];
+        mpulseURLString = mpulseDataDict[mPulseControlPanelEndpoint];
         NSString *endPointURL = [NSString stringWithFormat:@"%@/",mpulseURLString];
         mpulseURLString = endPointURL;
         if (mpulseURLString == nil) {
@@ -270,7 +270,7 @@
             result(nil,error);
             return;
         }
-        queryString = [NSString stringWithFormat:@"account/%@",accountId];
+        queryString = [NSString stringWithFormat:@"sdk/accounts/%@",accountId];
         result(queryString, nil);
     }
 }

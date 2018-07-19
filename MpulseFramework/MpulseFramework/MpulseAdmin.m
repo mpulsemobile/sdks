@@ -29,7 +29,7 @@
     __block MpulseAudienceResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:UpdateMember resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
-            NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: _accessToken};
+            NSDictionary *headerDict = @{mPulseAccessTokenHeaderKey: _accessToken};
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
             NSDictionary *memberJson = [Member getDictionaryFor:member];
             NSMutableDictionary *mutableMemberJson = [NSMutableDictionary dictionaryWithDictionary:memberJson];
@@ -82,7 +82,7 @@
     [MpulseHelper  getControlPanelAPIUrlForAction:AddMember resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
             // check here later
-            NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: _accessToken};
+            NSDictionary *headerDict = @{mPulseAccessTokenHeaderKey: _accessToken};
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
             NSDictionary *memberJson = [Member getDictionaryFor:member];
             [jsonRequest setValue:memberJson forKey:@"member"];
@@ -130,14 +130,15 @@
     __block MpulseEventUploadResult res;
     [MpulseHelper  getControlPanelAPIUrlForAction:TriggerEvent resultAs:^(NSURL *mpulseURL, NSError *err) {
         if(mpulseURL) {
-            NSDictionary *headerDict = @{mPulseUserAgentFromHeaderKey: mPulseSDKRequest, mPulseAccessKeyHeaderKey: _accessToken};
+            NSDictionary *headerDict = @{mPulseAccessTokenHeaderKey: _accessToken};
             
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
             NSMutableDictionary *eventDictionary = [NSMutableDictionary dictionary];
             [eventDictionary setValue:event.name forKey:@"name"];
             [eventDictionary setValue:[Event getDictionaryFor:event] forKey:@"event"];
             [jsonRequest setValue:eventDictionary forKey:@"events"];
-            
+            [jsonRequest setValue:listID forKey:@"listid"];
+
             NSData *postdata = [NSJSONSerialization dataWithJSONObject:@{@"body":jsonRequest} options:0 error:&error];
             
             [MpulseHelper makeAPICallToPlatformForURL:mpulseURL withMethod:@"POST" headerDict:headerDict andBody:postdata completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {

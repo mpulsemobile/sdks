@@ -65,7 +65,7 @@ static id _instance;
     }
     clientId = mpulseDataDict[mPulseClientId];
     clientSecret = mpulseDataDict[mPulseClientSecret];
-    oauthEndoint = mpulseDataDict[mPulseOauthEndpoint];
+    oauthEndoint = mpulseDataDict[mPulseControlPanelEndpoint];
     
     if ( clientId  == nil) {
         NSLog(@"%@", (NSString *)[MpulseError returnMpulseErrorWithCode:kNoClientID]);
@@ -82,7 +82,7 @@ static id _instance;
     
     NSString *oauthQueryString =[NSString stringWithFormat:@"grant_type=refresh_token&client_id=%@&client_secret=%@&refresh_token=%@",clientId,clientSecret,refreshToken];
     NSData *postData = [oauthQueryString dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    [MpulseHelper makeAPICallToPlatformForURL:[NSURL URLWithString:oauthEndoint] withMethod:@"POST" headerDict:@{@"content-type":@"application/x-www-form-urlencoded"} andBody:postData completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [MpulseHelper makeAPICallToPlatformForURL:[NSURL URLWithString:[oauthEndoint stringByAppendingString:@"/token"]] withMethod:@"POST" headerDict:@{@"content-type":@"application/x-www-form-urlencoded"} andBody:postData completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"%@", error.localizedDescription);
             completionHandler(false,error);
@@ -168,7 +168,7 @@ static id _instance;
     }
     clientId = mpulseDataDict[mPulseClientId];
     clientSecret = mpulseDataDict[mPulseClientSecret];
-    oauthEndoint = mpulseDataDict[mPulseOauthEndpoint];
+    oauthEndoint = mpulseDataDict[mPulseControlPanelEndpoint];
     
     if ( clientId  == nil) {
         NSLog(@"%@", (NSString *)[MpulseError returnMpulseErrorWithCode:kNoClientID]);
@@ -185,7 +185,7 @@ static id _instance;
     
     NSString *oauthQueryString =[NSString stringWithFormat:@"grant_type=password&client_id=%@&client_secret=%@&username=%@&password=%@",clientId,clientSecret,username,password];
     NSData *postData = [oauthQueryString dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    [MpulseHelper makeAPICallToPlatformForURL:[NSURL URLWithString:oauthEndoint] withMethod:@"POST" headerDict:@{@"content-type":@"application/x-www-form-urlencoded"} andBody:postData completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [MpulseHelper makeAPICallToPlatformForURL:[NSURL URLWithString:[oauthEndoint stringByAppendingString:@"/token"]] withMethod:@"POST" headerDict:@{@"content-type":@"application/x-www-form-urlencoded"} andBody:postData completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"%@", error.localizedDescription);
             completionHandler(false,error);
