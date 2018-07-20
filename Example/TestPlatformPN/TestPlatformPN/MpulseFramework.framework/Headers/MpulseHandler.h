@@ -85,4 +85,3 @@ typedef enum
 -(void)getInboxMessageCount:(void (^_Nullable)(NSDictionary * _Nullable json, NSError * _Nullable error)) completionHandler;
 
 @end
-

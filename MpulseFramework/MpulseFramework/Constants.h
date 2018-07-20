@@ -32,7 +32,7 @@
 #define mPulseSDKRequest @"sdk"
 #define mPulseUserAgentFromHeaderKey @"user-agent-from"
 #define mPulseAccessKeyHeaderKey @"access-key"
-#define mPulseAccessTokenHeaderKey @"access_token"
+#define mPulseAccessTokenHeaderKey @"Access-Token"
 #define mPulsePOSTmethod @"POST"
 #define mPulseUserAgentHeaderKey @"User-Agent"
 #define mPulseUserAgentHeaderValue @"mobile"

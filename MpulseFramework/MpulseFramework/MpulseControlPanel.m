@@ -90,9 +90,16 @@ static id _instance;
             NSLog(@"%@", [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
             completionHandler(false,[MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
         } else {
-            NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            _accessToken = response[@"access_token"];
-            completionHandler(true,nil);
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            long responseCode = (long)[httpResponse statusCode];
+            if (responseCode == 200 ) {
+                NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                _accessToken = response[@"access_token"];
+                completionHandler(true,nil);
+            } else {
+                NSLog(@"%@",[NSHTTPURLResponse localizedStringForStatusCode:responseCode]);
+                completionHandler(false,[MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
+            }
         }
     }];
 }
@@ -193,11 +200,24 @@ static id _instance;
             NSLog(@"%@", [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
             completionHandler(false,[MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
         } else {
-            NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            [self setAccessToken:response[@"access_token"] andRefresehToken:response[@"refresh_token"]];
-            completionHandler(true,nil);
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            long responseCode = (long)[httpResponse statusCode];
+            if (responseCode == 200 ) {
+                NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                [self setAccessToken:response[@"access_token"] andRefresehToken:response[@"refresh_token"]];
+                completionHandler(true,nil);
+            } else {
+                NSLog(@"%@",[NSHTTPURLResponse localizedStringForStatusCode:responseCode]);
+                [self clearSession];
+                completionHandler(false,[MpulseError returnMpulseErrorWithCode:kSomeErrorOccured]);
+            }
         }
     }];
+}
+
+- (void)clearSession {
+    _accessToken = nil;
+    self.refreshToken = nil;
 }
 
 @end
