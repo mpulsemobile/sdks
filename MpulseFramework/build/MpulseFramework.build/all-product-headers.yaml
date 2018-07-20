@@ -8,6 +8,16 @@
       'contents': [
         {
           'type': 'file',
+          'name': "Event.h",
+          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/Event.h"
+        },
+        {
+          'type': 'file',
+          'name': "Member.h",
+          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/Member.h"
+        },
+        {
+          'type': 'file',
           'name': "MpulseControlPanel.h",
           'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/MpulseControlPanel.h"
         },

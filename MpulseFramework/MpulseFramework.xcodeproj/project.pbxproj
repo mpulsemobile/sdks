@@ -32,9 +32,9 @@
 		3A4C591820EF77D200898738 /* MpulseAdmin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C591620EF77D200898738 /* MpulseAdmin.m */; };
 		3A50DA1320FEFD8100DC479D /* MpulseControlPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A50DA1120FEFD8100DC479D /* MpulseControlPanel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A50DA1420FEFD8100DC479D /* MpulseControlPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A50DA1220FEFD8100DC479D /* MpulseControlPanel.m */; };
-		3A6117F620F4C94C006B7607 /* Member.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6117F420F4C94C006B7607 /* Member.h */; };
+		3A6117F620F4C94C006B7607 /* Member.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6117F420F4C94C006B7607 /* Member.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A6117F720F4C94C006B7607 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6117F520F4C94C006B7607 /* Member.m */; };
-		3A924EBF20FC61910053F9A4 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A924EBD20FC61910053F9A4 /* Event.h */; };
+		3A924EBF20FC61910053F9A4 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A924EBD20FC61910053F9A4 /* Event.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A924EC020FC61910053F9A4 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A924EBE20FC61910053F9A4 /* Event.m */; };
 /* End PBXBuildFile section */
 

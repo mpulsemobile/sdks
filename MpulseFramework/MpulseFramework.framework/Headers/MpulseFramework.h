@@ -10,6 +10,8 @@
 #import <MpulseFramework/MpulseHandler.h>
 #import <MpulseFramework/MpulseInboxView.h>
 #import <MpulseFramework/MpulseControlPanel.h>
+#import <MpulseFramework/Event.h>
+#import <MpulseFramework/Member.h>
 
 //! Project version number for MpulseFramework.
 FOUNDATION_EXPORT double MpulseFrameworkVersionNumber;

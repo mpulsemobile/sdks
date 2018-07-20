@@ -9,13 +9,17 @@
 import UIKit
 import MpulseFramework
 
-class ControlPanelLoginViewController: UIViewController {
+class CPLoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Remove later
+        self.usernameTextField.text = "rahul.verma"
+        self.passwordTextField.text = "qwerty123!"
+        self.LoginButtonClicked(UIButton())
     }
 
     override func didReceiveMemoryWarning() {
