@@ -27,13 +27,13 @@ class CPAddEventViewController: UIViewController {
             customAttributes[field.label ?? ""] = field.value
         }
         
-        let event =  MpulseControlPanel.shared().createEvent(withName: memberDetails[0].value!,
-                                                scheduledOn: memberDetails[1].value!,
-                                                evaluationScope: memberDetails[2].value!,
-                                                timezone: memberDetails[3].value!,
-                                                memberID: memberDetails[4].value!,
-                                                correlationID:  memberDetails[5].value,
-                                                customAttributes: customAttributes)
+        let event =  Event(name: memberDetails[0].value!,
+                           scheduledOn: memberDetails[1].value!,
+                           evaluationScope: memberDetails[2].value!,
+                           timezone: memberDetails[3].value!,
+                           memberID: memberDetails[4].value!,
+                           correlationID:  memberDetails[5].value,
+                           customAttributes: customAttributes)
       
         MpulseControlPanel.shared().triggerEvent(event, inList: "20") { (result, apiMessage, error) in
             

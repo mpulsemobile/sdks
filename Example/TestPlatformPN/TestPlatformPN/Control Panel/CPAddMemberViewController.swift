@@ -43,7 +43,7 @@ class CPAddMemberViewController: UIViewController {
             let field = memberDetails[i]
             otherAttributes[field.label ?? "" ] = field.value 
         }
-        let member =  MpulseControlPanel.shared().createMember(withFirstName: memberDetails[0].value, lastName: memberDetails[1].value, email: memberDetails[2].value, phoneNumber: memberDetails[3].value, otherAttributes: otherAttributes)
+        let member =  Member(firstName: memberDetails[0].value, lastName: memberDetails[1].value, email: memberDetails[2].value, phoneNumber: memberDetails[3].value, otherAttributes: otherAttributes)
         if isUpdating == true {
             MpulseControlPanel.shared().updateMember(withID: memberidTextField.text ?? nil, details: member, andList: nil, completionHandler: { (result, apiMessage, error) in
                 

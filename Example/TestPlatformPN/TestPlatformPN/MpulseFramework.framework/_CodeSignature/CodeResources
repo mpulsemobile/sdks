@@ -4,13 +4,25 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/Event.h</key>
+		<data>
+		1/R02vwv3IdF5R4XaVWqiMaOWYs=
+		</data>
+		<key>Headers/Member.h</key>
+		<data>
+		p4ygF7MtKJwZSAAjnpbxA1iDWZU=
+		</data>
+		<key>Headers/MpulseControlPanel.h</key>
+		<data>
+		dWBXJ7hNa2bWDKhXR2h3N7ILOa0=
+		</data>
 		<key>Headers/MpulseFramework.h</key>
 		<data>
-		+fLQc3TS7PX1b4WKTL7Oek8LnqM=
+		yD51RIV3FYKA9uoCrzqo0nHIeKc=
 		</data>
 		<key>Headers/MpulseHandler.h</key>
 		<data>
-		7ls2UZMdpVYybUFDAtNuW9Ppgyc=
+		bkUBfPLfP7f3TNQN4jqHZeOpxqw=
 		</data>
 		<key>Headers/MpulseInboxView.h</key>
 		<data>
@@ -27,26 +39,59 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/Event.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			1/R02vwv3IdF5R4XaVWqiMaOWYs=
+			</data>
+			<key>hash2</key>
+			<data>
+			WIx4kRty5euNM7Ao6mO1ySKwdDwlkpQcTCucEQ7cYIc=
+			</data>
+		</dict>
+		<key>Headers/Member.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			p4ygF7MtKJwZSAAjnpbxA1iDWZU=
+			</data>
+			<key>hash2</key>
+			<data>
+			9tyvx5nz4JOfzb5d3hqkE8hiL9DIQZU53l/BIKiKZ+s=
+			</data>
+		</dict>
+		<key>Headers/MpulseControlPanel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			dWBXJ7hNa2bWDKhXR2h3N7ILOa0=
+			</data>
+			<key>hash2</key>
+			<data>
+			lHITOdYGBzb1+oOgAUYfXpxy9WqpIqlR8FfsMFEV+hE=
+			</data>
+		</dict>
 		<key>Headers/MpulseFramework.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+fLQc3TS7PX1b4WKTL7Oek8LnqM=
+			yD51RIV3FYKA9uoCrzqo0nHIeKc=
 			</data>
 			<key>hash2</key>
 			<data>
-			kZsIdaYnuonPE/dp1ToXR/v6qcPyo6l4Xd1L6JbpEjw=
+			Fd5KobTxJ4UNmioHp0M0Frhc4iBE5emm9OgVwrJTg5U=
 			</data>
 		</dict>
 		<key>Headers/MpulseHandler.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7ls2UZMdpVYybUFDAtNuW9Ppgyc=
+			bkUBfPLfP7f3TNQN4jqHZeOpxqw=
 			</data>
 			<key>hash2</key>
 			<data>
-			xthQpe3VXAEJv1acjC2vDUbq7x88eyhkCMRqYHcIDhc=
+			vXBv08WINp/6l7sHi6rE+gR64bnY8KejIuwUtVccGGA=
 			</data>
 		</dict>
 		<key>Headers/MpulseInboxView.h</key>

@@ -19,13 +19,12 @@
 		11987D242063BF2300BC9A05 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11987D232063BF2300BC9A05 /* InboxViewController.swift */; };
 		119AC5DD2060EA69007BE295 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116A79062057E3B500B9218F /* UserNotifications.framework */; };
 		3A4358F52105B19300E06DDE /* CPAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4358F42105B19300E06DDE /* CPAddEventViewController.swift */; };
+		3A4358FA2105E9AA00E06DDE /* MpulseFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4358F82105E99100E06DDE /* MpulseFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A54FE212101C4FC00076BEB /* CPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE202101C4FC00076BEB /* CPLoginViewController.swift */; };
 		3A54FE262101C7D600076BEB /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE252101C7D600076BEB /* AlertHelper.swift */; };
 		3A54FE282101CC5200076BEB /* CPWelcomeViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE272101CC5200076BEB /* CPWelcomeViewCotroller.swift */; };
 		3A54FE552101EE1C00076BEB /* CPAddMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE542101EE1C00076BEB /* CPAddMemberViewController.swift */; };
 		3A54FE572101EF0C00076BEB /* MemberFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE562101EF0C00076BEB /* MemberFieldCell.swift */; };
-		3A54FE5A210211F200076BEB /* MpulseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A54FE592102087600076BEB /* MpulseFramework.framework */; };
-		3A54FE5B210211F200076BEB /* MpulseFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A54FE592102087600076BEB /* MpulseFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A66EC502105ADE80057CA8B /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4A2105ADE60057CA8B /* TPKeyboardAvoidingCollectionView.m */; };
 		3A66EC512105ADE80057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4D2105ADE70057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		3A66EC522105ADE80057CA8B /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */; };
@@ -40,7 +39,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3A54FE5B210211F200076BEB /* MpulseFramework.framework in Embed Frameworks */,
+				3A4358FA2105E9AA00E06DDE /* MpulseFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,12 +63,12 @@
 		11987D232063BF2300BC9A05 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
 		3A4358F42105B19300E06DDE /* CPAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAddEventViewController.swift; sourceTree = "<group>"; };
+		3A4358F82105E99100E06DDE /* MpulseFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MpulseFramework.framework; sourceTree = "<group>"; };
 		3A54FE202101C4FC00076BEB /* CPLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPLoginViewController.swift; sourceTree = "<group>"; };
 		3A54FE252101C7D600076BEB /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		3A54FE272101CC5200076BEB /* CPWelcomeViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPWelcomeViewCotroller.swift; sourceTree = "<group>"; };
 		3A54FE542101EE1C00076BEB /* CPAddMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAddMemberViewController.swift; sourceTree = "<group>"; };
 		3A54FE562101EF0C00076BEB /* MemberFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberFieldCell.swift; sourceTree = "<group>"; };
-		3A54FE592102087600076BEB /* MpulseFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MpulseFramework.framework; sourceTree = "<group>"; };
 		3A66EC3B2105A2AF0057CA8B /* TestPlatformPN-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestPlatformPN-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A66EC482105ADE60057CA8B /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		3A66EC492105ADE60057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
@@ -87,7 +86,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1103807F2077EFAB00BF960D /* SystemConfiguration.framework in Frameworks */,
-				3A54FE5A210211F200076BEB /* MpulseFramework.framework in Frameworks */,
 				119AC5DD2060EA69007BE295 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,8 +115,8 @@
 			children = (
 				3A66EC552105AE250057CA8B /* TPKeyboardAvoiding */,
 				116A79042057C96A00B9218F /* TestPlatformPN.entitlements */,
+				3A4358F82105E99100E06DDE /* MpulseFramework.framework */,
 				3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */,
-				3A54FE592102087600076BEB /* MpulseFramework.framework */,
 				116A78F22057BEFC00B9218F /* AppDelegate.swift */,
 				3A54FE252101C7D600076BEB /* AlertHelper.swift */,
 				116A78F42057BEFC00B9218F /* ViewController.swift */,
