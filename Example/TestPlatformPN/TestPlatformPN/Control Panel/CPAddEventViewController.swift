@@ -8,51 +8,37 @@
 
 import UIKit
 import MpulseFramework
-class Field {
-    var label:String?
-    var value:String?
-    init(_ label:String?, value:String?) {
-        self.label = label
-        self.value = value
-    }
-}
 
-class CPAddMemberViewController: UIViewController {
+class CPAddEventViewController: UIViewController {
     
-    var isUpdating:Bool = false
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var memberidTextField: UITextField!
     @IBOutlet weak var tableView: TPKeyboardAvoidingTableView!
-    var memberDetails:[Field] = [Field("First Name", value: nil),Field("Last Name", value: nil),Field("Email", value: nil),Field("Phone", value: nil)]
+    var memberDetails:[Field] = [Field("Event Name", value: nil),Field("Scheduled On", value: nil),Field("Evaluation Scope", value: nil),Field("Timezone", value: nil),Field("Member ID", value: nil), Field("Correlation ID (optional)", value: nil)]
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = isUpdating ? "Update member" : "Add new member"
-        if isUpdating == false {
-            headerView.removeFromSuperview()
-            headerView = nil
-            self.tableView.tableHeaderView = UIView.init(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: 1.0))
-        }
-        
+        self.title = "Add new event"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTapped))
     }
     
     @objc func doneTapped() {
-        var otherAttributes = [String:String]()
+        var customAttributes = [String:String]()
         
         for i in  4..<memberDetails.count {
             let field = memberDetails[i]
-            otherAttributes[field.label ?? "" ] = field.value 
+            customAttributes[field.label ?? ""] = field.value
         }
-        let member =  MpulseControlPanel.shared().createMember(withFirstName: memberDetails[0].value, lastName: memberDetails[1].value, email: memberDetails[2].value, phoneNumber: memberDetails[3].value, otherAttributes: otherAttributes)
-        if isUpdating == true {
-            MpulseControlPanel.shared().updateMember(withID: memberidTextField.text ?? nil, details: member, andList: nil, completionHandler: { (result, apiMessage, error) in
-                
-            })
-        } else {
-            MpulseControlPanel.shared().addNewMember(member, toList: nil) { (result, apiMessage, error) in
-                
-            }
+        
+        let event =  MpulseControlPanel.shared().createEvent(withName: memberDetails[0].value!,
+                                                scheduledOn: memberDetails[1].value!,
+                                                evaluationScope: memberDetails[2].value!,
+                                                timezone: memberDetails[3].value!,
+                                                memberID: memberDetails[4].value!,
+                                                correlationID:  memberDetails[5].value,
+                                                customAttributes: customAttributes)
+      
+        MpulseControlPanel.shared().triggerEvent(event, inList: "20") { (result, apiMessage, error) in
+            
         }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,7 +56,7 @@ class CPAddMemberViewController: UIViewController {
     }
 }
 
-extension CPAddMemberViewController:UITableViewDataSource {
+extension CPAddEventViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memberDetails.count
     }
@@ -84,7 +70,7 @@ extension CPAddMemberViewController:UITableViewDataSource {
     }
 }
 
-extension CPAddMemberViewController:MemberDelegate {
+extension CPAddEventViewController:MemberDelegate {
     func didChangeFieldLabel(_ cell: MemberFieldCell,text:String) {
         let indexPath = tableView.indexPath(for: cell)
         let field = memberDetails[(indexPath?.row)!]

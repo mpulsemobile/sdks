@@ -18,6 +18,7 @@
 		11758AD0207CDC0F00A232FA /* MpulseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11758ACF207CDC0F00A232FA /* MpulseTabViewController.swift */; };
 		11987D242063BF2300BC9A05 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11987D232063BF2300BC9A05 /* InboxViewController.swift */; };
 		119AC5DD2060EA69007BE295 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116A79062057E3B500B9218F /* UserNotifications.framework */; };
+		3A4358F52105B19300E06DDE /* CPAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4358F42105B19300E06DDE /* CPAddEventViewController.swift */; };
 		3A54FE212101C4FC00076BEB /* CPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE202101C4FC00076BEB /* CPLoginViewController.swift */; };
 		3A54FE262101C7D600076BEB /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE252101C7D600076BEB /* AlertHelper.swift */; };
 		3A54FE282101CC5200076BEB /* CPWelcomeViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE272101CC5200076BEB /* CPWelcomeViewCotroller.swift */; };
@@ -25,6 +26,10 @@
 		3A54FE572101EF0C00076BEB /* MemberFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE562101EF0C00076BEB /* MemberFieldCell.swift */; };
 		3A54FE5A210211F200076BEB /* MpulseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A54FE592102087600076BEB /* MpulseFramework.framework */; };
 		3A54FE5B210211F200076BEB /* MpulseFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A54FE592102087600076BEB /* MpulseFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A66EC502105ADE80057CA8B /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4A2105ADE60057CA8B /* TPKeyboardAvoidingCollectionView.m */; };
+		3A66EC512105ADE80057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4D2105ADE70057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		3A66EC522105ADE80057CA8B /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */; };
+		3A66EC532105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4F2105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m */; };
 		3AC0CA7220E4BA65000A998C /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -58,12 +63,22 @@
 		11758ACF207CDC0F00A232FA /* MpulseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MpulseTabViewController.swift; sourceTree = "<group>"; };
 		11987D232063BF2300BC9A05 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
+		3A4358F42105B19300E06DDE /* CPAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAddEventViewController.swift; sourceTree = "<group>"; };
 		3A54FE202101C4FC00076BEB /* CPLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPLoginViewController.swift; sourceTree = "<group>"; };
 		3A54FE252101C7D600076BEB /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		3A54FE272101CC5200076BEB /* CPWelcomeViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPWelcomeViewCotroller.swift; sourceTree = "<group>"; };
 		3A54FE542101EE1C00076BEB /* CPAddMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAddMemberViewController.swift; sourceTree = "<group>"; };
 		3A54FE562101EF0C00076BEB /* MemberFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberFieldCell.swift; sourceTree = "<group>"; };
 		3A54FE592102087600076BEB /* MpulseFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MpulseFramework.framework; sourceTree = "<group>"; };
+		3A66EC3B2105A2AF0057CA8B /* TestPlatformPN-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestPlatformPN-Bridging-Header.h"; sourceTree = "<group>"; };
+		3A66EC482105ADE60057CA8B /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		3A66EC492105ADE60057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		3A66EC4A2105ADE60057CA8B /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		3A66EC4B2105ADE70057CA8B /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		3A66EC4C2105ADE70057CA8B /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		3A66EC4D2105ADE70057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		3A66EC4F2105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +115,7 @@
 		116A78F12057BEFB00B9218F /* TestPlatformPN */ = {
 			isa = PBXGroup;
 			children = (
+				3A66EC552105AE250057CA8B /* TPKeyboardAvoiding */,
 				116A79042057C96A00B9218F /* TestPlatformPN.entitlements */,
 				3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */,
 				3A54FE592102087600076BEB /* MpulseFramework.framework */,
@@ -115,6 +131,7 @@
 				11018448206B85AA005113AF /* Manager.swift */,
 				1101844A206BB967005113AF /* MessageViewController.swift */,
 				11758ACF207CDC0F00A232FA /* MpulseTabViewController.swift */,
+				3A66EC3B2105A2AF0057CA8B /* TestPlatformPN-Bridging-Header.h */,
 			);
 			path = TestPlatformPN;
 			sourceTree = "<group>";
@@ -134,9 +151,25 @@
 				3A54FE202101C4FC00076BEB /* CPLoginViewController.swift */,
 				3A54FE272101CC5200076BEB /* CPWelcomeViewCotroller.swift */,
 				3A54FE542101EE1C00076BEB /* CPAddMemberViewController.swift */,
+				3A4358F42105B19300E06DDE /* CPAddEventViewController.swift */,
 				3A54FE562101EF0C00076BEB /* MemberFieldCell.swift */,
 			);
 			path = "Control Panel";
+			sourceTree = "<group>";
+		};
+		3A66EC552105AE250057CA8B /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				3A66EC482105ADE60057CA8B /* TPKeyboardAvoidingCollectionView.h */,
+				3A66EC4A2105ADE60057CA8B /* TPKeyboardAvoidingCollectionView.m */,
+				3A66EC4B2105ADE70057CA8B /* TPKeyboardAvoidingScrollView.h */,
+				3A66EC4F2105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m */,
+				3A66EC4C2105ADE70057CA8B /* TPKeyboardAvoidingTableView.h */,
+				3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */,
+				3A66EC492105ADE60057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				3A66EC4D2105ADE70057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,13 +255,18 @@
 				116A78F52057BEFC00B9218F /* ViewController.swift in Sources */,
 				11987D242063BF2300BC9A05 /* InboxViewController.swift in Sources */,
 				11758AD0207CDC0F00A232FA /* MpulseTabViewController.swift in Sources */,
+				3A66EC512105ADE80057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				11018449206B85AA005113AF /* Manager.swift in Sources */,
 				3A54FE282101CC5200076BEB /* CPWelcomeViewCotroller.swift in Sources */,
+				3A4358F52105B19300E06DDE /* CPAddEventViewController.swift in Sources */,
+				3A66EC532105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3A54FE262101C7D600076BEB /* AlertHelper.swift in Sources */,
 				3A54FE572101EF0C00076BEB /* MemberFieldCell.swift in Sources */,
 				1101844B206BB967005113AF /* MessageViewController.swift in Sources */,
+				3A66EC522105ADE80057CA8B /* TPKeyboardAvoidingTableView.m in Sources */,
 				3A54FE552101EE1C00076BEB /* CPAddMemberViewController.swift in Sources */,
 				116A78F32057BEFC00B9218F /* AppDelegate.swift in Sources */,
+				3A66EC502105ADE80057CA8B /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				3A54FE212101C4FC00076BEB /* CPLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,7 +423,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestPlatformPN/TestPlatformPN-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,7 +453,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestPlatformPN/TestPlatformPN-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

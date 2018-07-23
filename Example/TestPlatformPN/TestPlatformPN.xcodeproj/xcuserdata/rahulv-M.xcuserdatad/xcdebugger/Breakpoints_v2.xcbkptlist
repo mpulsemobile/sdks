@@ -42,7 +42,7 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "553784931.922061"
+                  timestampString = "554025838.16579"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "88"
@@ -57,7 +57,7 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "553784931.925722"
+                  timestampString = "554025838.169982"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
@@ -90,7 +90,7 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "553784931.935691"
+                  timestampString = "554025838.179163"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
@@ -105,7 +105,7 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "553784931.939551"
+                  timestampString = "554025838.183439"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
@@ -170,7 +170,7 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "553784931.96928"
+                  timestampString = "554025838.2103209"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "87"
@@ -185,7 +185,7 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "553784931.973261"
+                  timestampString = "554025838.214775"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "88"
@@ -378,7 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/AlertHelper.swift"
-            timestampString = "553779901.5947911"
+            timestampString = "554020384.963572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/AlertHelper.swift"
-            timestampString = "553779901.594902"
+            timestampString = "554020384.964202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/Control Panel/CPAddMemberViewController.swift"
-            timestampString = "553784931.744604"
+            timestampString = "554026020.715016"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "doneTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -425,94 +425,78 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestPlatformPN/Control Panel/CPAddMemberViewController.swift"
-            timestampString = "553784931.7447931"
+            filePath = "TestPlatformPN/Control Panel/CPAddEventViewController.swift"
+            timestampString = "554026020.716035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestPlatformPN/Control Panel/CPAddEventViewController.swift"
+            timestampString = "554026020.716206"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestPlatformPN/Control Panel/CPAddEventViewController.swift"
+            timestampString = "554026020.71636"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "doneTapped()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestPlatformPN/Control Panel/CPAddMemberViewController.swift"
-            timestampString = "553784931.744903"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "didChangeFieldValue(_:text:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestPlatformPN/Control Panel/CPAddMemberViewController.swift"
-            timestampString = "553784931.74501"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "didChangeFieldLabel(_:text:)"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TestPlatformPN.CPAddMemberViewController.didChangeFieldLabel(TestPlatformPN.MemberFieldCell, text: Swift.String) -&gt; ()"
+                  symbolName = "TestPlatformPN.CPAddEventViewController.doneTapped() -&gt; ()"
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/Control%20Panel/CPAddMemberViewController.swift"
-                  timestampString = "553784932.106359"
+                  urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/Control%20Panel/CPAddEventViewController.swift"
+                  timestampString = "554025838.337592"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "503">
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "3982">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TestPlatformPN.CPAddMemberViewController.didChangeFieldLabel(TestPlatformPN.MemberFieldCell, text: Swift.String) -&gt; ()"
+                  symbolName = "closure #1 (__C.MpulseEventUploadResult, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TestPlatformPN.CPAddEventViewController.doneTapped() -&gt; ()"
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/Control%20Panel/CPAddMemberViewController.swift"
-                  timestampString = "553784932.1121939"
+                  urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/Control%20Panel/CPAddEventViewController.swift"
+                  timestampString = "554025838.341956"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "1313">
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "41">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestPlatformPN/Control Panel/CPAddMemberViewController.swift"
-            timestampString = "553784931.745115"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "didChangeFieldValue(_:text:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -22,19 +22,22 @@ class CPWelcomeViewCotroller: UIViewController {
     
     @IBAction func selectAction(_ sender: UIButton) {
         let alert = UIAlertController(title: "Control Panel", message: "Please Select an Action", preferredStyle: .actionSheet)
-        
+        let MainStoryboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         alert.addAction(UIAlertAction(title: "Add Member", style: .default , handler:{ (UIAlertAction)in
-            let MainStoryboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        
             let controller = MainStoryboard.instantiateViewController(withIdentifier: "addMember")
             self.navigationController?.pushViewController(controller, animated: true)
         }))
         
         alert.addAction(UIAlertAction(title: "Update Member", style: .default , handler:{ (UIAlertAction)in
-
+            let controller = MainStoryboard.instantiateViewController(withIdentifier: "addMember") as! CPAddMemberViewController
+            controller.isUpdating = true
+            self.navigationController?.pushViewController(controller, animated: true)
         }))
         
         alert.addAction(UIAlertAction(title: "Trigger Event", style: .default, handler:{ (UIAlertAction)in
-
+            let controller = MainStoryboard.instantiateViewController(withIdentifier: "addEvent")
+            self.navigationController?.pushViewController(controller, animated: true)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{ (UIAlertAction)in
             
