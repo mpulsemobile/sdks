@@ -17,6 +17,8 @@ class CPAddEventViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Add new event"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTapped))
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+
     }
     
     @objc func doneTapped() {
@@ -88,6 +90,16 @@ extension CPAddEventViewController:MemberDelegate {
         UIView.performWithoutAnimation {
             tableView.beginUpdates()
             tableView.endUpdates()
+        }
+        if (memberDetails[0].value?.isEmpty == false &&
+            memberDetails[1].value?.isEmpty == false &&
+            memberDetails[2].value?.isEmpty == false &&
+            memberDetails[3].value?.isEmpty == false &&
+            memberDetails[4].value?.isEmpty == false) {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+
         }
     }
 }
