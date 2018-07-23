@@ -9,17 +9,27 @@
 #import "Event.h"
 
 @implementation Event
-+(NSDictionary *)getDictionaryFor:(Event *)event {
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-    [dictionary setValue:event.name forKey:@"name"];
-    [dictionary setValue:event.scheduledOn forKey:@"scheduled_on"];
-    [dictionary setValue:event.evaluationScope forKey:@"evaluation_scope"];
-    [dictionary setValue:event.timezone forKey:@"timezone"];
-    [dictionary setValue:event.memberid forKey:@"memberid"];
-    [dictionary setValue:event.correlationid forKey:@"correlationid"];
-    for(id key in event.customAttributes) {
-        [dictionary setValue:[event.customAttributes objectForKey:key] forKey:key];
+
+- (id)initWithName:(NSString *_Nonnull)name scheduledOn:(NSString *_Nonnull)scheduledOn evaluationScope:(NSString *_Nonnull)scope timezone:(NSString *_Nonnull)timezone memberID:(NSString *_Nonnull)memberID correlationID:(NSString *_Nullable)correlationID customAttributes:(NSDictionary *_Nullable)customAttributes {
+    self = [super init];
+    if (self) {
+        self.name = name;
+        self.scheduledOn = scheduledOn;
+        self.evaluationScope = scope;
+        self.timezone = timezone;
+        self.memberid = memberID;
+        self.correlationid = correlationID;
+        self.customAttributes = customAttributes;
     }
-    return dictionary;
+    return self;
 }
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        return self;
+    }
+    return nil;
+}
+
 @end

@@ -14,7 +14,11 @@ class CPWelcomeViewCotroller: UIViewController {
         super.viewDidLoad()
         self.title = "Welcome"
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

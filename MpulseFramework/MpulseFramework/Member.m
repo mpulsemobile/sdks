@@ -10,16 +10,24 @@
 
 @implementation Member
 
-+(NSDictionary *)getDictionaryFor:(Member *)member {
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-    [dictionary setValue:member.firstname forKey:@"firstname"];
-    [dictionary setValue:member.lastName forKey:@"lastname"];
-    [dictionary setValue:member.email forKey:@"email"];
-    [dictionary setValue:member.phoneNumber forKey:@"mobilephone"];
-    for(id key in member.otherAttributes) {
-        [dictionary setValue:[member.otherAttributes objectForKey:key] forKey:key];
+-(id)initWithFirstName:(NSString *_Nullable)firstName lastName:(NSString *_Nullable)lastName email:(NSString *_Nullable)email phoneNumber:(NSString *_Nullable)phoneNumber otherAttributes:(NSDictionary *_Nullable)otherAttributes{
+    self = [super init];
+    if (self) {
+        self.firstname = firstName;
+        self.lastName  = lastName;
+        self.email  = email;
+        self.phoneNumber  = phoneNumber;
+        self.otherAttributes = otherAttributes;
     }
-    return dictionary;
+    return self;
+}
+
+-(id _Nonnull )init{
+    self = [super init];
+    if (self) {
+        return self;
+    }
+    return nil;
 }
 
 @end

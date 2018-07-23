@@ -11,7 +11,7 @@
 #import "MpulseInboxView.h"
 #import "MpulseManager.h"
 #import "Constants.h"
-#import "MpulseAdmin.h"
+#import "ControlPanelManager.h"
 #import "MpulseError.h"
 #import "MpulseHelper.h"
 

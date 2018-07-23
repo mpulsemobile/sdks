@@ -6,13 +6,13 @@
 //  Copyright © 2018 mPulse. All rights reserved.
 //
 
-#import "MpulseAdmin.h"
+#import "ControlPanelManager.h"
 #import "MpulseHelper.h"
 #import "Constants.h"
 #import "MpulseError.h"
 #import "Member.h"
 #import "MpulseHandler.h"
-@implementation MpulseAdmin {
+@implementation ControlPanelManager {
     NSString* _accessToken;
 }
 
@@ -24,6 +24,32 @@
     return self;
 }
 
+-(NSDictionary *)jsonForEvent:(Event *)event {
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setValue:event.name forKey:@"name"];
+    [dictionary setValue:event.scheduledOn forKey:@"scheduled_on"];
+    [dictionary setValue:event.evaluationScope forKey:@"evaluation_scope"];
+    [dictionary setValue:event.timezone forKey:@"timezone"];
+    [dictionary setValue:event.memberid forKey:@"memberid"];
+    [dictionary setValue:event.correlationid forKey:@"correlationid"];
+    for(id key in event.customAttributes) {
+        [dictionary setValue:[event.customAttributes objectForKey:key] forKey:key];
+    }
+    return dictionary;
+}
+
+-(NSDictionary *)jsonForMember:(Member *)member {
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setValue:member.firstname forKey:@"firstname"];
+    [dictionary setValue:member.lastName forKey:@"lastname"];
+    [dictionary setValue:member.email forKey:@"email"];
+    [dictionary setValue:member.phoneNumber forKey:@"mobilephone"];
+    for(id key in member.otherAttributes) {
+        [dictionary setValue:[member.otherAttributes objectForKey:key] forKey:key];
+    }
+    return dictionary;
+}
+
 - (void)shouldUpdateMemberWithID:(NSString * _Nullable)memberID details:(Member *_Nonnull)member andList:(NSString* _Nullable)listID completionHandler: (void (^_Nonnull)(MpulseAudienceResult result, NSString* _Nullable apiMessage, NSError * _Nullable error))completionHandler{
     __block NSError *error;
     __block MpulseAudienceResult res;
@@ -31,7 +57,7 @@
         if(mpulseURL) {
             NSDictionary *headerDict = @{mPulseAccessTokenHeaderKey: _accessToken};
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
-            NSDictionary *memberJson = [Member getDictionaryFor:member];
+            NSDictionary *memberJson = [self jsonForMember:member];
             NSMutableDictionary *mutableMemberJson = [NSMutableDictionary dictionaryWithDictionary:memberJson];
             
             [mutableMemberJson setValue:memberID forKey:@"memberid"];
@@ -84,7 +110,7 @@
             // check here later
             NSDictionary *headerDict = @{mPulseAccessTokenHeaderKey: _accessToken};
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
-            NSDictionary *memberJson = [Member getDictionaryFor:member];
+            NSDictionary *memberJson = [self jsonForMember:member];
             [jsonRequest setValue:memberJson forKey:@"member"];
             [jsonRequest setValue:listID forKey:@"listid"];
             
@@ -135,7 +161,7 @@
             NSMutableDictionary *jsonRequest = [NSMutableDictionary dictionary];
             NSMutableDictionary *eventDictionary = [NSMutableDictionary dictionary];
             [eventDictionary setValue:event.name forKey:@"name"];
-            [eventDictionary setValue:[Event getDictionaryFor:event] forKey:@"event"];
+            [eventDictionary setValue:[self jsonForEvent:event] forKey:@"event"];
             [jsonRequest setValue:eventDictionary forKey:@"events"];
             [jsonRequest setValue:listID forKey:@"listid"];
 

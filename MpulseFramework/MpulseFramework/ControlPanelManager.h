@@ -11,7 +11,7 @@
 #import "Member.h"
 #import "Event.h"
 
-@interface MpulseAdmin : NSObject
+@interface ControlPanelManager : NSObject
 
 -(id _Nonnull)initWithAccessToken:(NSString *_Nonnull)accessToken;
 

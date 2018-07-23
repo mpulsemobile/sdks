@@ -8,7 +8,7 @@
 
 #import "MpulseControlPanel.h"
 #import "MpulseError.h"
-#import "MpulseAdmin.h"
+#import "ControlPanelManager.h"
 #import "Constants.h"
 #import "MpulseHelper.h"
 
@@ -109,8 +109,8 @@ static id _instance;
         completionHandler(AudienceAPIFailure,nil,[MpulseError returnMpulseErrorWithCode:kNoAccessToken]);
         return;
     }
-    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] initWithAccessToken:_accessToken];
-    [mPulseAdmin createNewMember:member inList:listID completionHandler:^(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+    ControlPanelManager *cpManager = [[ControlPanelManager alloc] initWithAccessToken:_accessToken];
+    [cpManager createNewMember:member inList:listID completionHandler:^(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }
@@ -120,8 +120,8 @@ static id _instance;
         completionHandler(AudienceAPIFailure,nil,[MpulseError returnMpulseErrorWithCode:kNoAccessToken]);
         return;
     }
-    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] initWithAccessToken:_accessToken];
-    [mPulseAdmin updateMemberWithID:memberID details:member andList:listID completionHandler:^(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+    ControlPanelManager *cpManager = [[ControlPanelManager alloc] initWithAccessToken:_accessToken];
+    [cpManager updateMemberWithID:memberID details:member andList:listID completionHandler:^(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }
@@ -153,8 +153,8 @@ static id _instance;
         completionHandler(EventAPIFailure,nil,[MpulseError returnMpulseErrorWithCode:kNoAccessToken]);
         return;
     }
-    MpulseAdmin *mPulseAdmin = [[MpulseAdmin alloc] initWithAccessToken:_accessToken];
-    [mPulseAdmin sendEvent:event inList:listID completionHandler:^(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+    ControlPanelManager *cpManager = [[ControlPanelManager alloc] initWithAccessToken:_accessToken];
+    [cpManager sendEvent:event inList:listID completionHandler:^(MpulseEventUploadResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
         completionHandler(result,apiMessage,error);
     }];
 }

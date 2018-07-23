@@ -541,7 +541,7 @@
         <scene sceneID="zsk-Sw-Jpw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fn8-iO-MYk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Control Panel" id="khe-DR-B1D"/>
+                    <tabBarItem key="tabBarItem" title="Control Panel" image="ControlPanel" id="khe-DR-B1D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cUX-xG-f0L">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -558,10 +558,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ControlPanel" width="15" height="15"/>
         <image name="HomeIcon" width="15" height="15"/>
         <image name="MsgIcon" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0gS-yK-EuG"/>
+        <segue reference="SFE-ZE-EYx"/>
     </inferredMetricsTieBreakers>
 </document>
