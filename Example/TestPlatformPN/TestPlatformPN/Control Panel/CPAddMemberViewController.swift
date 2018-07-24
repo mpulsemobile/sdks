@@ -11,9 +11,11 @@ import MpulseFramework
 class Field {
     var label:String?
     var value:String?
-    init(_ label:String?, value:String?) {
+    var placeholder:String?
+    init(_ label:String?, value:String?,placeholder:String? = "--") {
         self.label = label
         self.value = value
+        self.placeholder = placeholder
     }
 }
 
@@ -78,7 +80,7 @@ extension CPAddMemberViewController:UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memberFieldCell", for: indexPath) as! MemberFieldCell
         let field = memberDetails[indexPath.row]
-        cell.configureWithMemberDetails(field: field.label ?? "", value: field.value ?? "")
+        cell.configureWithMemberDetails(field: field.label ?? "", value: field.value ?? "",placeholder: field.placeholder!)
         cell.delegate = self
         return cell
     }

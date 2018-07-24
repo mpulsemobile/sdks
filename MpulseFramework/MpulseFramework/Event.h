@@ -37,7 +37,7 @@
  @param timezone the timezone of the event
  @param memberID id of the member receiving the event
  @param correlationID the tag of the event. The value provided can be used to retrieve information using theMessage Delivery Report API about Messages that were scheduled because of an Event
- @param customAttributes attributes of the event that are set as "Required" in event definition on control panel. It is used in the rule for the Custom Event riggered message you want to schedule
+ @param customAttributes attributes of the event that are set as "Required" in event definition on control panel. It is used in the rule for the Custom Event triggered message you want to schedule
  @returns Event for using with triggerEvent:toMembers:inList:completionHandler
  @discussion This is the designated to let mPulse client create a new event instance
  */

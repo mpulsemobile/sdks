@@ -28,10 +28,11 @@ class MemberFieldCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func configureWithMemberDetails(field:String,value:String) {
+    func configureWithMemberDetails(field:String,value:String, placeholder:String) {
         fieldLabelTextField.isUserInteractionEnabled = field.isEmpty
         fieldLabelTextField.text  = field
         fieldValueTextField.text = value
+        fieldValueTextField.placeholder = placeholder
     }
     
     @IBAction func fieldLabelChanged(_ sender: UITextField) {

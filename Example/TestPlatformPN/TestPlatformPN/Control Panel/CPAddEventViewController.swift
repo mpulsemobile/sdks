@@ -12,7 +12,7 @@ import MpulseFramework
 class CPAddEventViewController: UIViewController {
     
     @IBOutlet weak var tableView: TPKeyboardAvoidingTableView!
-    var memberDetails:[Field] = [Field("Event Name", value: nil),Field("Scheduled On", value: nil),Field("Evaluation Scope", value: nil),Field("Timezone", value: nil),Field("Member ID", value: nil), Field("Correlation ID (optional)", value: nil)]
+    var memberDetails:[Field] = [Field("Event Name", value: nil),Field("Scheduled On", value: nil, placeholder:"YYYY-MM-DD HH:MM | +HH:MM"),Field("Evaluation Scope", value: nil, placeholder:"no_rule | with_rule | all"),Field("Timezone", value: nil),Field("Member ID", value: nil), Field("Correlation ID (optional)", value: nil)]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add new event"
@@ -66,7 +66,7 @@ extension CPAddEventViewController:UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memberFieldCell", for: indexPath) as! MemberFieldCell
         let field = memberDetails[indexPath.row]
-        cell.configureWithMemberDetails(field: field.label ?? "", value: field.value ?? "")
+        cell.configureWithMemberDetails(field: field.label ?? "", value: field.value ?? "", placeholder:field.placeholder!)
         cell.delegate = self
         return cell
     }
