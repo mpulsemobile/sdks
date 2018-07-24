@@ -12,32 +12,45 @@ import MpulseFramework
 class CPAddEventViewController: UIViewController {
     
     @IBOutlet weak var tableView: TPKeyboardAvoidingTableView!
-    var memberDetails:[InputField] = [InputField("Event Name", value: nil),InputField("Scheduled On", value: nil, placeholder:"YYYY-MM-DD HH:MM | +HH:MM"),InputField("Evaluation Scope", value: nil, placeholder:"no_rule | with_rule | all"),InputField("Timezone", value: nil),InputField("Member ID", value: nil), InputField("Correlation ID (optional)", value: nil),InputField("List ID", value: nil)]
+    // Fields in Member form
+    var eventNameField = InputField("Event Name", value: nil)
+    var scheduledOnField = InputField("Scheduled On", value: nil, placeholder:"YYYY-MM-DD HH:MM | +HH:MM")
+    var scopeField = InputField("Evaluation Scope", value: nil, placeholder:"no_rule | with_rule | all")
+    var timezoneField = InputField("Timezone", value: nil)
+    var memberIDField = InputField("Member ID", value: nil)
+    var correlationField = InputField("Correlation ID (optional)", value: nil)
+    var listIDField = InputField("List ID", value: nil)
+    
+    var eventDetails = [InputField]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add new event"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTapped))
         self.navigationItem.rightBarButtonItem?.isEnabled = false
-
+        self.initializeEventForm()
+    }
+    
+    func initializeEventForm() {
+        eventDetails.append(contentsOf: [eventNameField,scheduledOnField, scopeField, timezoneField, memberIDField, correlationField, listIDField])
     }
     
     @objc func doneTapped() {
         var customAttributes = [String:String]()
         
-        for i in  4..<memberDetails.count {
-            let field = memberDetails[i]
+        for i in  4..<eventDetails.count {
+            let field = eventDetails[i]
             customAttributes[field.label ?? ""] = field.value
         }
         
-        let event =  Event(name: memberDetails[0].value!,
-                           scheduledOn: memberDetails[1].value!,
-                           evaluationScope: memberDetails[2].value!,
-                           timezone: memberDetails[3].value!,
-                           memberID: memberDetails[4].value!,
-                           correlationID:  memberDetails[5].value,
+        let event =  Event(name: eventNameField.value!,
+                           scheduledOn: scheduledOnField.value!,
+                           evaluationScope: scopeField.value!,
+                           timezone: timezoneField.value!,
+                           memberID: memberIDField.value!,
+                           correlationID:correlationField.value,
                            customAttributes: customAttributes)
       
-        MpulseControlPanel.shared().triggerEvent(event, inList: memberDetails[6].value!) { (result, apiMessage, error) in
+        MpulseControlPanel.shared().triggerEvent(event, inList: listIDField.value!) { (result, apiMessage, error) in
             
         }
 
@@ -49,10 +62,10 @@ class CPAddEventViewController: UIViewController {
     }
     
     @IBAction func newFieldAction(_ sender: UIButton) {
-        memberDetails.append(InputField(nil, value: nil))
+        eventDetails.append(InputField(nil, value: nil))
         tableView.beginUpdates()
         tableView.insertRows(at: [
-            IndexPath(row: memberDetails.count - 1, section: 0)
+            IndexPath(row: eventDetails.count - 1, section: 0)
             ], with: .bottom)
         tableView.endUpdates()
     }
@@ -60,12 +73,12 @@ class CPAddEventViewController: UIViewController {
 
 extension CPAddEventViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memberDetails.count
+        return eventDetails.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memberFieldCell", for: indexPath) as! MemberFieldCell
-        let field = memberDetails[indexPath.row]
+        let field = eventDetails[indexPath.row]
         cell.configureWithMemberDetails(field: field.label ?? "", value: field.value ?? "", placeholder:field.placeholder!)
         cell.delegate = self
         return cell
@@ -75,7 +88,7 @@ extension CPAddEventViewController:UITableViewDataSource {
 extension CPAddEventViewController:MemberDelegate {
     func didChangeFieldLabel(_ cell: MemberFieldCell,text:String) {
         let indexPath = tableView.indexPath(for: cell)
-        let field = memberDetails[(indexPath?.row)!]
+        let field = eventDetails[(indexPath?.row)!]
         field.label = text
         UIView.performWithoutAnimation {
             tableView.beginUpdates()
@@ -85,17 +98,17 @@ extension CPAddEventViewController:MemberDelegate {
     
     func didChangeFieldValue(_ cell: MemberFieldCell,text:String) {
         let indexPath = tableView.indexPath(for: cell)
-        let field = memberDetails[(indexPath?.row)!]
+        let field = eventDetails[(indexPath?.row)!]
         field.value = text
         UIView.performWithoutAnimation {
             tableView.beginUpdates()
             tableView.endUpdates()
         }
-        if (memberDetails[0].value?.isEmpty == false &&
-            memberDetails[1].value?.isEmpty == false &&
-            memberDetails[2].value?.isEmpty == false &&
-            memberDetails[3].value?.isEmpty == false &&
-            memberDetails[4].value?.isEmpty == false && memberDetails[6].value?.isEmpty == false ) {
+        if (eventNameField.value?.isEmpty == false &&
+            scheduledOnField.value?.isEmpty == false &&
+           scopeField.value?.isEmpty == false &&
+            timezoneField.value?.isEmpty == false &&
+            memberIDField.value?.isEmpty == false && listIDField.value?.isEmpty == false ) {
             self.navigationItem.rightBarButtonItem?.isEnabled = true
         } else {
             self.navigationItem.rightBarButtonItem?.isEnabled = false

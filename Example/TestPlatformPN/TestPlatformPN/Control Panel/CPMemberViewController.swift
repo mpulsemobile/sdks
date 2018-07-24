@@ -16,7 +16,15 @@ class CPMemberViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var memberidTextField: UITextField!
     @IBOutlet weak var tableView: TPKeyboardAvoidingTableView!
-    var memberDetails:[InputField] = [InputField("First Name", value: nil),InputField("Last Name", value: nil),InputField("Email", value: nil),InputField("Phone", value: nil),InputField("List ID", value: nil)]
+    
+    var memberDetails = [InputField]()
+    // Fields in Member form
+    var firstNameField = InputField("First Name", value: nil)
+    var lastNameField = InputField("Last Name", value: nil)
+    var emailField = InputField("Email", value: nil)
+    var phoneField = InputField("Phone", value: nil)
+    var listIDField = InputField("List ID", value: nil)
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = isUpdating ? "Update member" : "Add new member"
@@ -30,6 +38,11 @@ class CPMemberViewController: UIViewController {
         }
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTapped))
         self.navigationItem.rightBarButtonItem?.isEnabled = false
+        self.initializeMemberForm()
+    }
+    
+    func initializeMemberForm() {
+        memberDetails.append(contentsOf:[firstNameField, lastNameField, emailField, phoneField, listIDField])
     }
     
     @objc func doneTapped() {
@@ -39,13 +52,13 @@ class CPMemberViewController: UIViewController {
             let field = memberDetails[i]
             otherAttributes[field.label ?? "" ] = field.value 
         }
-        let member =  Member(firstName: memberDetails[0].value, lastName: memberDetails[1].value, email: memberDetails[2].value, phoneNumber: memberDetails[3].value, otherAttributes: otherAttributes)
+        let member =  Member(firstName: firstNameField.value, lastName: lastNameField.value, email: emailField.value, phoneNumber: phoneField.value, otherAttributes: otherAttributes)
         if isUpdating == true {
-            MpulseControlPanel.shared().updateMember(withID: memberidTextField.text ?? nil, details: member, andList: memberDetails[4].value, completionHandler: { (result, apiMessage, error) in
+            MpulseControlPanel.shared().updateMember(withID: memberidTextField.text ?? nil, details: member, andList: listIDField.value, completionHandler: { (result, apiMessage, error) in
                 
             })
         } else {
-            MpulseControlPanel.shared().addNewMember(member, toList: memberDetails[4].value) { (result, apiMessage, error) in
+            MpulseControlPanel.shared().addNewMember(member, toList:listIDField.value) { (result, apiMessage, error) in
                 
             }
         }
@@ -57,13 +70,16 @@ class CPMemberViewController: UIViewController {
     }
     
     @IBAction func memberIDFieldChanged(_ sender: UITextField) {
-        if isUpdating == true {
-            self.navigationItem.rightBarButtonItem?.isEnabled = memberidTextField.text?.isEmpty == false || memberDetails[2].value?.isEmpty == false || memberDetails[3].value?.isEmpty == false
-        } else {
-            self.navigationItem.rightBarButtonItem?.isEnabled =  memberDetails[2].value?.isEmpty == false || memberDetails[3].value?.isEmpty == false
-        }
+        self.updateDoneButtonState()
     }
     
+    func updateDoneButtonState() {
+        if isUpdating == true {
+            self.navigationItem.rightBarButtonItem?.isEnabled = memberidTextField.text?.isEmpty == false || emailField.value?.isEmpty == false || phoneField.value?.isEmpty == false
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = emailField.value?.isEmpty == false || phoneField.value?.isEmpty == false
+        }
+    }
     
     @IBAction func newFieldAction(_ sender: UIButton) {
         memberDetails.append(InputField(nil, value: nil))
@@ -108,11 +124,6 @@ extension CPMemberViewController:MemberDelegate {
             tableView.beginUpdates()
             tableView.endUpdates()
         }
-        if isUpdating == true {
-            self.navigationItem.rightBarButtonItem?.isEnabled = memberidTextField.text?.isEmpty == false || memberDetails[2].value?.isEmpty == false || memberDetails[3].value?.isEmpty == false
-        } else {
-            self.navigationItem.rightBarButtonItem?.isEnabled =  memberDetails[2].value?.isEmpty == false || memberDetails[3].value?.isEmpty == false
-        }
-        
+        self.updateDoneButtonState()
     }
 }
