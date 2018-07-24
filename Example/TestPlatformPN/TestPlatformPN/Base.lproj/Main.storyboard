@@ -314,6 +314,9 @@
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="memberIDFieldChanged:" destination="Pwf-lC-jtd" eventType="editingChanged" id="HY7-Fd-VAI"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -324,7 +327,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="1xa-DU-kUV">
-                                    <rect key="frame" x="0.0" y="166" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="166" width="375" height="88"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGh-eO-hs1">
@@ -338,11 +341,21 @@
                                                 <action selector="newFieldAction:" destination="Pwf-lC-jtd" eventType="touchUpInside" id="PQY-7l-ul7"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuS-Ro-mra">
+                                            <rect key="frame" x="18" y="38" width="349" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="zGh-eO-hs1" firstAttribute="top" secondItem="1xa-DU-kUV" secondAttribute="top" constant="6" id="5fc-fa-UXU"/>
+                                        <constraint firstAttribute="trailing" secondItem="FuS-Ro-mra" secondAttribute="trailing" constant="8" id="Mor-Zx-0G5"/>
                                         <constraint firstItem="zGh-eO-hs1" firstAttribute="leading" secondItem="1xa-DU-kUV" secondAttribute="leading" constant="18" id="UFV-cT-gfj"/>
+                                        <constraint firstItem="FuS-Ro-mra" firstAttribute="leading" secondItem="1xa-DU-kUV" secondAttribute="leading" constant="18" id="Wgp-z6-lWZ"/>
+                                        <constraint firstItem="FuS-Ro-mra" firstAttribute="top" secondItem="zGh-eO-hs1" secondAttribute="bottom" constant="2" id="a5B-yn-ocp"/>
+                                        <constraint firstAttribute="bottom" secondItem="FuS-Ro-mra" secondAttribute="bottom" constant="20" id="hja-nR-G3H"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -350,7 +363,7 @@
                                         <rect key="frame" x="0.0" y="89" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ptC-TJ-Ffe" id="jp2-hn-L9x">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="76.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Field" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTT-Qp-I3N">
@@ -410,6 +423,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="alertLabel" destination="FuS-Ro-mra" id="io8-Sy-mXf"/>
                         <outlet property="headerView" destination="fvw-im-gsz" id="3Pk-CU-cZj"/>
                         <outlet property="memberidTextField" destination="0BU-hg-Qe6" id="WpB-RT-xbh"/>
                         <outlet property="tableView" destination="0s1-GA-nbP" id="hGN-z2-QEr"/>
@@ -459,7 +473,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f1e-f5-zdk" id="uqt-Pu-Uxy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="76.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Field" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3u-c0-9Th">

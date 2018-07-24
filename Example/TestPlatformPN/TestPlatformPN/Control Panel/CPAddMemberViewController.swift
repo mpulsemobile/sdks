@@ -21,6 +21,7 @@ class Field {
 
 class CPAddMemberViewController: UIViewController {
     
+    @IBOutlet weak var alertLabel: UILabel!
     var isUpdating:Bool = false
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var memberidTextField: UITextField!
@@ -29,13 +30,16 @@ class CPAddMemberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = isUpdating ? "Update member" : "Add new member"
+        alertLabel.text = "**Member id or Email or Phone, at least one is required"
+
         if isUpdating == false {
+            alertLabel.text = "**Email or Phone, at least one is required"
             headerView.removeFromSuperview()
             headerView = nil
             self.tableView.tableHeaderView = UIView.init(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: 1.0))
         }
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTapped))
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     @objc func doneTapped() {
@@ -61,6 +65,15 @@ class CPAddMemberViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func memberIDFieldChanged(_ sender: UITextField) {
+        if isUpdating == true {
+            self.navigationItem.rightBarButtonItem?.isEnabled = memberidTextField.text?.isEmpty == false || memberDetails[2].value?.isEmpty == false || memberDetails[3].value?.isEmpty == false
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled =  memberDetails[2].value?.isEmpty == false || memberDetails[3].value?.isEmpty == false
+        }
+    }
+    
     
     @IBAction func newFieldAction(_ sender: UIButton) {
         memberDetails.append(Field(nil, value: nil))
@@ -105,5 +118,11 @@ extension CPAddMemberViewController:MemberDelegate {
             tableView.beginUpdates()
             tableView.endUpdates()
         }
+        if isUpdating == true {
+            self.navigationItem.rightBarButtonItem?.isEnabled = memberidTextField.text?.isEmpty == false || memberDetails[2].value?.isEmpty == false || memberDetails[3].value?.isEmpty == false
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled =  memberDetails[2].value?.isEmpty == false || memberDetails[3].value?.isEmpty == false
+        }
+        
     }
 }
