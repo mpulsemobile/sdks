@@ -291,10 +291,10 @@
             </objects>
             <point key="canvasLocation" x="476" y="1747.3763118440781"/>
         </scene>
-        <!--Add Member View Controller-->
+        <!--Member View Controller-->
         <scene sceneID="SYv-Ji-sYa">
             <objects>
-                <viewController storyboardIdentifier="addMember" id="Pwf-lC-jtd" customClass="CPAddMemberViewController" customModule="TestPlatformPN" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addMember" id="Pwf-lC-jtd" customClass="CPMemberViewController" customModule="TestPlatformPN" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D6s-oh-g1y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

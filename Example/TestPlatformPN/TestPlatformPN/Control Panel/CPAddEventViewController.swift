@@ -12,7 +12,7 @@ import MpulseFramework
 class CPAddEventViewController: UIViewController {
     
     @IBOutlet weak var tableView: TPKeyboardAvoidingTableView!
-    var memberDetails:[Field] = [Field("Event Name", value: nil),Field("Scheduled On", value: nil, placeholder:"YYYY-MM-DD HH:MM | +HH:MM"),Field("Evaluation Scope", value: nil, placeholder:"no_rule | with_rule | all"),Field("Timezone", value: nil),Field("Member ID", value: nil), Field("Correlation ID (optional)", value: nil)]
+    var memberDetails:[InputField] = [InputField("Event Name", value: nil),InputField("Scheduled On", value: nil, placeholder:"YYYY-MM-DD HH:MM | +HH:MM"),InputField("Evaluation Scope", value: nil, placeholder:"no_rule | with_rule | all"),InputField("Timezone", value: nil),InputField("Member ID", value: nil), InputField("Correlation ID (optional)", value: nil)]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add new event"
@@ -49,7 +49,7 @@ class CPAddEventViewController: UIViewController {
     }
     
     @IBAction func newFieldAction(_ sender: UIButton) {
-        memberDetails.append(Field(nil, value: nil))
+        memberDetails.append(InputField(nil, value: nil))
         tableView.beginUpdates()
         tableView.insertRows(at: [
             IndexPath(row: memberDetails.count - 1, section: 0)

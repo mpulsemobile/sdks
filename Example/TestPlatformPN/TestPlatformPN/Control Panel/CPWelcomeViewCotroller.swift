@@ -34,7 +34,7 @@ class CPWelcomeViewCotroller: UIViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "Update Member", style: .default , handler:{ (UIAlertAction)in
-            let controller = MainStoryboard.instantiateViewController(withIdentifier: "addMember") as! CPAddMemberViewController
+            let controller = MainStoryboard.instantiateViewController(withIdentifier: "addMember") as! CPMemberViewController
             controller.isUpdating = true
             self.navigationController?.pushViewController(controller, animated: true)
         }))

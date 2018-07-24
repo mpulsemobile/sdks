@@ -8,25 +8,15 @@
 
 import UIKit
 import MpulseFramework
-class Field {
-    var label:String?
-    var value:String?
-    var placeholder:String?
-    init(_ label:String?, value:String?,placeholder:String? = "--") {
-        self.label = label
-        self.value = value
-        self.placeholder = placeholder
-    }
-}
 
-class CPAddMemberViewController: UIViewController {
+class CPMemberViewController: UIViewController {
     
     @IBOutlet weak var alertLabel: UILabel!
     var isUpdating:Bool = false
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var memberidTextField: UITextField!
     @IBOutlet weak var tableView: TPKeyboardAvoidingTableView!
-    var memberDetails:[Field] = [Field("First Name", value: nil),Field("Last Name", value: nil),Field("Email", value: nil),Field("Phone", value: nil)]
+    var memberDetails:[InputField] = [InputField("First Name", value: nil),InputField("Last Name", value: nil),InputField("Email", value: nil),InputField("Phone", value: nil)]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = isUpdating ? "Update member" : "Add new member"
@@ -76,7 +66,7 @@ class CPAddMemberViewController: UIViewController {
     
     
     @IBAction func newFieldAction(_ sender: UIButton) {
-        memberDetails.append(Field(nil, value: nil))
+        memberDetails.append(InputField(nil, value: nil))
         tableView.beginUpdates()
         tableView.insertRows(at: [
             IndexPath(row: memberDetails.count - 1, section: 0)
@@ -85,7 +75,7 @@ class CPAddMemberViewController: UIViewController {
     }
 }
 
-extension CPAddMemberViewController:UITableViewDataSource {
+extension CPMemberViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memberDetails.count
     }
@@ -99,7 +89,7 @@ extension CPAddMemberViewController:UITableViewDataSource {
     }
 }
 
-extension CPAddMemberViewController:MemberDelegate {
+extension CPMemberViewController:MemberDelegate {
     func didChangeFieldLabel(_ cell: MemberFieldCell,text:String) {
         let indexPath = tableView.indexPath(for: cell)
         let field = memberDetails[(indexPath?.row)!]
