@@ -342,7 +342,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuS-Ro-mra">
-                                            <rect key="frame" x="18" y="38" width="349" height="30"/>
+                                            <rect key="frame" x="13" y="38" width="349" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -351,9 +351,9 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="zGh-eO-hs1" firstAttribute="top" secondItem="1xa-DU-kUV" secondAttribute="top" constant="6" id="5fc-fa-UXU"/>
-                                        <constraint firstAttribute="trailing" secondItem="FuS-Ro-mra" secondAttribute="trailing" constant="8" id="Mor-Zx-0G5"/>
+                                        <constraint firstAttribute="trailing" secondItem="FuS-Ro-mra" secondAttribute="trailing" constant="13" id="Mor-Zx-0G5"/>
                                         <constraint firstItem="zGh-eO-hs1" firstAttribute="leading" secondItem="1xa-DU-kUV" secondAttribute="leading" constant="18" id="UFV-cT-gfj"/>
-                                        <constraint firstItem="FuS-Ro-mra" firstAttribute="leading" secondItem="1xa-DU-kUV" secondAttribute="leading" constant="18" id="Wgp-z6-lWZ"/>
+                                        <constraint firstItem="FuS-Ro-mra" firstAttribute="leading" secondItem="1xa-DU-kUV" secondAttribute="leading" constant="13" id="Wgp-z6-lWZ"/>
                                         <constraint firstItem="FuS-Ro-mra" firstAttribute="top" secondItem="zGh-eO-hs1" secondAttribute="bottom" constant="2" id="a5B-yn-ocp"/>
                                         <constraint firstAttribute="bottom" secondItem="FuS-Ro-mra" secondAttribute="bottom" constant="20" id="hja-nR-G3H"/>
                                     </constraints>
@@ -446,7 +446,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="qim-nH-0kC">
-                                    <rect key="frame" x="0.0" y="105" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="105" width="375" height="82"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd3-ZM-h3F">
@@ -461,10 +461,19 @@
                                                 <action selector="newFieldAction:" destination="Utp-fX-1Xi" eventType="touchUpInside" id="4mW-gh-gsZ"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="**All fields except correlation id are required" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-gB-qp8">
+                                            <rect key="frame" x="13" y="45" width="349" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="hpc-gB-qp8" firstAttribute="top" secondItem="pd3-ZM-h3F" secondAttribute="bottom" constant="9" id="4gY-Aw-tfm"/>
+                                        <constraint firstItem="hpc-gB-qp8" firstAttribute="leading" secondItem="qim-nH-0kC" secondAttribute="leading" constant="13" id="Kjd-A1-BbY"/>
                                         <constraint firstItem="pd3-ZM-h3F" firstAttribute="leading" secondItem="qim-nH-0kC" secondAttribute="leading" constant="18" id="PpU-dA-xnH"/>
+                                        <constraint firstAttribute="trailing" secondItem="hpc-gB-qp8" secondAttribute="trailing" constant="13" id="ZIo-LU-gzK"/>
                                         <constraint firstItem="pd3-ZM-h3F" firstAttribute="top" secondItem="qim-nH-0kC" secondAttribute="top" constant="6" id="uUp-0v-bIf"/>
                                     </constraints>
                                 </view>
