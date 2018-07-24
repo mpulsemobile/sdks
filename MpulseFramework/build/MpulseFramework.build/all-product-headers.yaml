@@ -4,7 +4,7 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/rahulv-M/Library/Developer/Xcode/DerivedData/MpulseFramework-gtxezfojrbkllcdtvpiwsnqfdgoc/Build/Products/Debug-iphoneos/MpulseFramework.framework/Headers",
+      'name': "/Users/rahulv-M/Library/Developer/Xcode/DerivedData/MpulseFramework-gtxezfojrbkllcdtvpiwsnqfdgoc/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -24,7 +24,7 @@
         {
           'type': 'file',
           'name': "MpulseFramework-Swift.h",
-          'external-contents': "/Users/rahulv-M/Library/Developer/Xcode/DerivedData/MpulseFramework-gtxezfojrbkllcdtvpiwsnqfdgoc/Build/Products/Debug-iphoneos/MpulseFramework.framework/Headers/MpulseFramework-Swift.h"
+          'external-contents': "/Users/rahulv-M/Library/Developer/Xcode/DerivedData/MpulseFramework-gtxezfojrbkllcdtvpiwsnqfdgoc/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Headers/MpulseFramework-Swift.h"
         },
         {
           'type': 'file',
@@ -45,12 +45,12 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/rahulv-M/Library/Developer/Xcode/DerivedData/MpulseFramework-gtxezfojrbkllcdtvpiwsnqfdgoc/Build/Products/Debug-iphoneos/MpulseFramework.framework/Modules",
+      'name': "/Users/rahulv-M/Library/Developer/Xcode/DerivedData/MpulseFramework-gtxezfojrbkllcdtvpiwsnqfdgoc/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphoneos/MpulseFramework.build/module.modulemap"
+          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/module.modulemap"
         }
       ]
     }

@@ -23,7 +23,7 @@
 #define mPulseAccountId @"ACCOUNT_ID"
 #define mPulseAPIURL @"MPULSE_URL"
 #define mPulseClientId @"CLIENT_ID"
-#define mPulseControlPanelEndpoint @"CONTROL_PANEL_ENDPOINT"
+#define mPulseControlPanelEndpoint @"MIDDLEWARE_URL"
 #define mPulseClientSecret @"CLIENT_SECRET"
 #define mPulseControlPanelURL @"MPULSE_CONTROL_PANEL_URL"
 #define mPulseAccessKey @"ACCESS_KEY"
