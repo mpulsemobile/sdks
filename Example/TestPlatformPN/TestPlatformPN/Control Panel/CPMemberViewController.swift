@@ -16,7 +16,7 @@ class CPMemberViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var memberidTextField: UITextField!
     @IBOutlet weak var tableView: TPKeyboardAvoidingTableView!
-    var memberDetails:[InputField] = [InputField("First Name", value: nil),InputField("Last Name", value: nil),InputField("Email", value: nil),InputField("Phone", value: nil)]
+    var memberDetails:[InputField] = [InputField("First Name", value: nil),InputField("Last Name", value: nil),InputField("Email", value: nil),InputField("Phone", value: nil),InputField("List ID", value: nil)]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = isUpdating ? "Update member" : "Add new member"
@@ -41,11 +41,11 @@ class CPMemberViewController: UIViewController {
         }
         let member =  Member(firstName: memberDetails[0].value, lastName: memberDetails[1].value, email: memberDetails[2].value, phoneNumber: memberDetails[3].value, otherAttributes: otherAttributes)
         if isUpdating == true {
-            MpulseControlPanel.shared().updateMember(withID: memberidTextField.text ?? nil, details: member, andList: nil, completionHandler: { (result, apiMessage, error) in
+            MpulseControlPanel.shared().updateMember(withID: memberidTextField.text ?? nil, details: member, andList: memberDetails[4].value, completionHandler: { (result, apiMessage, error) in
                 
             })
         } else {
-            MpulseControlPanel.shared().addNewMember(member, toList: nil) { (result, apiMessage, error) in
+            MpulseControlPanel.shared().addNewMember(member, toList: memberDetails[4].value) { (result, apiMessage, error) in
                 
             }
         }

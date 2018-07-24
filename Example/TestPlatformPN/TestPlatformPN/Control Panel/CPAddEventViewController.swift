@@ -12,7 +12,7 @@ import MpulseFramework
 class CPAddEventViewController: UIViewController {
     
     @IBOutlet weak var tableView: TPKeyboardAvoidingTableView!
-    var memberDetails:[InputField] = [InputField("Event Name", value: nil),InputField("Scheduled On", value: nil, placeholder:"YYYY-MM-DD HH:MM | +HH:MM"),InputField("Evaluation Scope", value: nil, placeholder:"no_rule | with_rule | all"),InputField("Timezone", value: nil),InputField("Member ID", value: nil), InputField("Correlation ID (optional)", value: nil)]
+    var memberDetails:[InputField] = [InputField("Event Name", value: nil),InputField("Scheduled On", value: nil, placeholder:"YYYY-MM-DD HH:MM | +HH:MM"),InputField("Evaluation Scope", value: nil, placeholder:"no_rule | with_rule | all"),InputField("Timezone", value: nil),InputField("Member ID", value: nil), InputField("Correlation ID (optional)", value: nil),InputField("List ID (optional)", value: nil)]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add new event"
@@ -37,7 +37,7 @@ class CPAddEventViewController: UIViewController {
                            correlationID:  memberDetails[5].value,
                            customAttributes: customAttributes)
       
-        MpulseControlPanel.shared().triggerEvent(event, inList: "20") { (result, apiMessage, error) in
+        MpulseControlPanel.shared().triggerEvent(event, inList: memberDetails[8].value!) { (result, apiMessage, error) in
             
         }
 
@@ -95,7 +95,7 @@ extension CPAddEventViewController:MemberDelegate {
             memberDetails[1].value?.isEmpty == false &&
             memberDetails[2].value?.isEmpty == false &&
             memberDetails[3].value?.isEmpty == false &&
-            memberDetails[4].value?.isEmpty == false) {
+            memberDetails[4].value?.isEmpty == false && memberDetails[8].value?.isEmpty == false ) {
             self.navigationItem.rightBarButtonItem?.isEnabled = true
         } else {
             self.navigationItem.rightBarButtonItem?.isEnabled = false
