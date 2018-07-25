@@ -49,11 +49,10 @@ class CPAddEventViewController: UIViewController {
                            memberID: memberIDField.value!,
                            correlationID:correlationField.value,
                            customAttributes: customAttributes)
-      
+        ProgressIndicatorCommand(view: self.view).execute()
         MpulseControlPanel.shared().triggerEvent(event, inList: listIDField.value!) { (result, apiMessage, error) in
-            
+            ProgressIndicatorCommand(view: self.view).stopExecution()
         }
-
     }
     
     override func didReceiveMemoryWarning() {

@@ -32,7 +32,10 @@ class CPLoginViewController: UIViewController {
     }
     
     @IBAction func LoginButtonClicked(_ sender: Any) {
+        
+        ProgressIndicatorCommand(view: self.view).execute()
         MpulseControlPanel.shared().logIn(withOauthUsername: usernameTextField.text!, andPassword: passwordTextField.text!) { (isSuccess, error) in
+            ProgressIndicatorCommand(view: self.view).stopExecution()
             if isSuccess == true && error == nil {
                 let message = "refresh token: \(MpulseControlPanel.shared().refreshToken) "
                 AlertHelper().showAlert(title:"Success", message:message , presentingController: self, buttonAction: {

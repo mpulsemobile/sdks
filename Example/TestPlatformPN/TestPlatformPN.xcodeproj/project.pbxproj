@@ -19,6 +19,7 @@
 		11987D242063BF2300BC9A05 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11987D232063BF2300BC9A05 /* InboxViewController.swift */; };
 		119AC5DD2060EA69007BE295 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116A79062057E3B500B9218F /* UserNotifications.framework */; };
 		3A4358F52105B19300E06DDE /* CPAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4358F42105B19300E06DDE /* CPAddEventViewController.swift */; };
+		3A4C588E21083FFC002780E0 /* ProgressCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C588D21083FF3002780E0 /* ProgressCommand.swift */; };
 		3A54FE212101C4FC00076BEB /* CPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE202101C4FC00076BEB /* CPLoginViewController.swift */; };
 		3A54FE262101C7D600076BEB /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE252101C7D600076BEB /* AlertHelper.swift */; };
 		3A54FE282101CC5200076BEB /* CPWelcomeViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE272101CC5200076BEB /* CPWelcomeViewCotroller.swift */; };
@@ -64,6 +65,7 @@
 		11987D232063BF2300BC9A05 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
 		3A4358F42105B19300E06DDE /* CPAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAddEventViewController.swift; sourceTree = "<group>"; };
+		3A4C588D21083FF3002780E0 /* ProgressCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCommand.swift; sourceTree = "<group>"; };
 		3A54FE202101C4FC00076BEB /* CPLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPLoginViewController.swift; sourceTree = "<group>"; };
 		3A54FE252101C7D600076BEB /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		3A54FE272101CC5200076BEB /* CPWelcomeViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPWelcomeViewCotroller.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				3A66EC552105AE250057CA8B /* TPKeyboardAvoiding */,
+				3A4C588C21083FD1002780E0 /* ProgressIndicator */,
 				116A79042057C96A00B9218F /* TestPlatformPN.entitlements */,
 				3A60C0AD2107240000F629AA /* MpulseFramework.framework */,
 				3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */,
@@ -143,6 +146,14 @@
 				116A79062057E3B500B9218F /* UserNotifications.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A4C588C21083FD1002780E0 /* ProgressIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C588D21083FF3002780E0 /* ProgressCommand.swift */,
+			);
+			name = ProgressIndicator;
 			sourceTree = "<group>";
 		};
 		3A54FE532101ED3100076BEB /* Control Panel */ = {
@@ -255,6 +266,7 @@
 			files = (
 				116A78F52057BEFC00B9218F /* ViewController.swift in Sources */,
 				11987D242063BF2300BC9A05 /* InboxViewController.swift in Sources */,
+				3A4C588E21083FFC002780E0 /* ProgressCommand.swift in Sources */,
 				11758AD0207CDC0F00A232FA /* MpulseTabViewController.swift in Sources */,
 				3A66EC512105ADE80057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				11018449206B85AA005113AF /* Manager.swift in Sources */,

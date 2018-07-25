@@ -54,12 +54,14 @@ class CPMemberViewController: UIViewController {
         }
         let member =  Member(firstName: firstNameField.value, lastName: lastNameField.value, email: emailField.value, phoneNumber: phoneField.value, otherAttributes: otherAttributes)
         if isUpdating == true {
+            ProgressIndicatorCommand(view: self.view).execute()
             MpulseControlPanel.shared().updateMember(withID: memberidTextField.text ?? nil, details: member, andList: listIDField.value, completionHandler: { (result, apiMessage, error) in
-                
+                ProgressIndicatorCommand(view: self.view).stopExecution()
             })
         } else {
+            ProgressIndicatorCommand(view: self.view).execute()
             MpulseControlPanel.shared().addNewMember(member, toList:listIDField.value) { (result, apiMessage, error) in
-                
+                ProgressIndicatorCommand(view: self.view).stopExecution()
             }
         }
     }
