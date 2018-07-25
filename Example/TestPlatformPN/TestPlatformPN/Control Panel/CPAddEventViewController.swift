@@ -46,7 +46,7 @@ class CPAddEventViewController: UIViewController {
                            scheduledOn: scheduledOnField.value!,
                            evaluationScope: scopeField.value!,
                            timezone: timezoneField.value!,
-                           memberID: memberIDField.value!,
+                           memberID: memberIDField.value,
                            correlationID:correlationField.value,
                            customAttributes: customAttributes)
         ProgressIndicatorCommand(view: self.view).execute()
@@ -107,7 +107,7 @@ extension CPAddEventViewController:MemberDelegate {
             scheduledOnField.value?.isEmpty == false &&
            scopeField.value?.isEmpty == false &&
             timezoneField.value?.isEmpty == false &&
-            memberIDField.value?.isEmpty == false && listIDField.value?.isEmpty == false ) {
+            listIDField.value?.isEmpty == false ) {
             self.navigationItem.rightBarButtonItem?.isEnabled = true
         } else {
             self.navigationItem.rightBarButtonItem?.isEnabled = false
