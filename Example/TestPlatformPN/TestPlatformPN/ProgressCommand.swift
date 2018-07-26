@@ -45,6 +45,7 @@ protocol ProgressIndicator {
 
 class DefaultProgressIndicator:ProgressIndicator {
     func load(on view:UIView){
+        view.endEditing(true)
         let viewCenter  = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         viewCenter.tag = 500
         viewCenter.layer.cornerRadius = 16

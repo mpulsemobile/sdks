@@ -556,10 +556,10 @@
                         <constraints>
                             <constraint firstItem="AKP-XX-pFZ" firstAttribute="leading" secondItem="ClE-ez-TgH" secondAttribute="leading" id="BhF-jf-mAt"/>
                             <constraint firstItem="Olu-jc-phj" firstAttribute="leading" secondItem="ClE-ez-TgH" secondAttribute="leading" id="QYt-us-7rr"/>
-                            <constraint firstItem="AKP-XX-pFZ" firstAttribute="top" secondItem="Olu-jc-phj" secondAttribute="bottom" id="RKg-0b-ywD"/>
                             <constraint firstItem="Olu-jc-phj" firstAttribute="top" secondItem="ClE-ez-TgH" secondAttribute="top" id="Tv7-hd-Z8o"/>
                             <constraint firstItem="AKP-XX-pFZ" firstAttribute="trailing" secondItem="ClE-ez-TgH" secondAttribute="trailing" id="bFa-FI-liW"/>
                             <constraint firstItem="AKP-XX-pFZ" firstAttribute="bottom" secondItem="ClE-ez-TgH" secondAttribute="bottom" id="ciS-TB-JCg"/>
+                            <constraint firstItem="AKP-XX-pFZ" firstAttribute="top" secondItem="ClE-ez-TgH" secondAttribute="top" constant="61" id="oXR-mf-iJd"/>
                             <constraint firstItem="Olu-jc-phj" firstAttribute="trailing" secondItem="ClE-ez-TgH" secondAttribute="trailing" id="xXF-4z-I2D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ClE-ez-TgH"/>

@@ -66,7 +66,9 @@ class CPAddEventViewController: UIViewController {
     }
     
     @IBAction func newFieldAction(_ sender: UIButton) {
-        eventDetails.append(InputField(nil, value: nil))
+        let field = InputField(nil, value: nil)
+        field.isNewField = true
+        eventDetails.append(field)
         tableView.beginUpdates()
         tableView.insertRows(at: [
             IndexPath(row: eventDetails.count - 1, section: 0)
@@ -83,7 +85,7 @@ extension CPAddEventViewController:UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memberFieldCell", for: indexPath) as! MemberFieldCell
         let field = eventDetails[indexPath.row]
-        cell.configureWithMemberDetails(field: field.label ?? "", value: field.value ?? "", placeholder:field.placeholder!)
+        cell.configureWithMemberDetails(field: field.label ?? "", value: field.value ?? "",placeholder: field.placeholder!, isNewField: field.isNewField!)
         cell.delegate = self
         return cell
     }
@@ -92,22 +94,19 @@ extension CPAddEventViewController:UITableViewDataSource {
 extension CPAddEventViewController:MemberDelegate {
     func didChangeFieldLabel(_ cell: MemberFieldCell,text:String) {
         let indexPath = tableView.indexPath(for: cell)
-        let field = eventDetails[(indexPath?.row)!]
-        field.label = text
-        UIView.performWithoutAnimation {
-            tableView.beginUpdates()
-            tableView.endUpdates()
+        if let row = indexPath?.row {
+            let field = eventDetails[row]
+            field.label = text
         }
     }
     
     func didChangeFieldValue(_ cell: MemberFieldCell,text:String) {
         let indexPath = tableView.indexPath(for: cell)
-        let field = eventDetails[(indexPath?.row)!]
-        field.value = text
-        UIView.performWithoutAnimation {
-            tableView.beginUpdates()
-            tableView.endUpdates()
+        if let row = indexPath?.row {
+            let field = eventDetails[row]
+            field.value = text
         }
+
         if (eventNameField.value?.isEmpty == false &&
             scheduledOnField.value?.isEmpty == false &&
            scopeField.value?.isEmpty == false &&

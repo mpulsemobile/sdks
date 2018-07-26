@@ -28,8 +28,9 @@ class MemberFieldCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func configureWithMemberDetails(field:String,value:String, placeholder:String) {
-        fieldLabelTextField.isUserInteractionEnabled = field.isEmpty
+    func configureWithMemberDetails(field:String,value:String, placeholder:String, isNewField:Bool) {
+        fieldLabelTextField.isUserInteractionEnabled = isNewField
+        fieldLabelTextField.textColor = isNewField ? UIColor.blue : UIColor.black
         fieldLabelTextField.text  = field
         fieldValueTextField.text = value
         fieldValueTextField.placeholder = placeholder

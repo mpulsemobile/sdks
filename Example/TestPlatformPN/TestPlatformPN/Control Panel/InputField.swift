@@ -11,6 +11,8 @@ class InputField {
     var label:String?
     var value:String?
     var placeholder:String?
+    var isNewField:Bool?  = false
+
     init(_ label:String?, value:String?,placeholder:String? = "--") {
         self.label = label
         self.value = value
