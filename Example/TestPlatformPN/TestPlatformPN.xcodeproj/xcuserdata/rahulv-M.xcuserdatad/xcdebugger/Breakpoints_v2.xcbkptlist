@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.4822609"
+            timestampString = "554269251.256321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -42,12 +42,12 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "554212041.864049"
+                  timestampString = "554269251.408622"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "88"
                   endingLineNumber = "88"
-                  offsetFromSymbolStart = "80">
+                  offsetFromSymbolStart = "89">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -57,12 +57,12 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "554212041.866889"
+                  timestampString = "554269251.412526"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
                   endingLineNumber = "89"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "21">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.482655"
+            timestampString = "554269251.256418"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -90,12 +90,12 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "554212041.874681"
+                  timestampString = "554269251.4202501"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
                   endingLineNumber = "90"
-                  offsetFromSymbolStart = "324">
+                  offsetFromSymbolStart = "402">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -105,12 +105,12 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "554212041.8770421"
+                  timestampString = "554269251.423252"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
                   endingLineNumber = "90"
-                  offsetFromSymbolStart = "172">
+                  offsetFromSymbolStart = "149">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.482942"
+            timestampString = "554269251.2564909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.483107"
+            timestampString = "554269251.25656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.484959"
+            timestampString = "554269251.256626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -170,12 +170,12 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "554212041.896487"
+                  timestampString = "554269251.445068"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "87"
                   endingLineNumber = "87"
-                  offsetFromSymbolStart = "1108">
+                  offsetFromSymbolStart = "1353">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -185,12 +185,12 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/ViewController.swift"
-                  timestampString = "554212041.898865"
+                  timestampString = "554269251.448465"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "88"
                   endingLineNumber = "88"
-                  offsetFromSymbolStart = "80">
+                  offsetFromSymbolStart = "89">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.485288"
+            timestampString = "554269251.256693"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.485518"
+            timestampString = "554269251.256759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.4858"
+            timestampString = "554269251.256826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.4860359"
+            timestampString = "554269251.256892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.486256"
+            timestampString = "554269251.256958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.486433"
+            timestampString = "554269251.257025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.486703"
+            timestampString = "554269251.257091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/ViewController.swift"
-            timestampString = "554125205.486966"
+            timestampString = "554269251.257159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
@@ -378,7 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/AlertHelper.swift"
-            timestampString = "554020384.963572"
+            timestampString = "554269208.985323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/AlertHelper.swift"
-            timestampString = "554020384.964202"
+            timestampString = "554269208.985423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/Control Panel/CPMemberViewController.swift"
-            timestampString = "554125205.487872"
+            timestampString = "554272276.592046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "doneTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,23 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/Control Panel/CPMemberViewController.swift"
-            timestampString = "554125205.488278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "doneTapped()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestPlatformPN/Control Panel/CPMemberViewController.swift"
-            timestampString = "554125205.490397"
+            timestampString = "554272276.592339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -506,12 +490,12 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/Control%20Panel/CPMemberViewController.swift"
-                  timestampString = "554212041.982566"
+                  timestampString = "554269251.547425"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "58"
                   endingLineNumber = "58"
-                  offsetFromSymbolStart = "1804">
+                  offsetFromSymbolStart = "2303">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -521,7 +505,7 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/Control%20Panel/CPMemberViewController.swift"
-                  timestampString = "554212041.985243"
+                  timestampString = "554269251.5523241"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "58"
@@ -536,12 +520,12 @@
                   moduleName = "TestPlatformPN"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/Example/TestPlatformPN/TestPlatformPN/Control%20Panel/CPMemberViewController.swift"
-                  timestampString = "554212041.988397"
+                  timestampString = "554269251.556035"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "59"
                   endingLineNumber = "59"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "54">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -553,11 +537,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPlatformPN/Control Panel/CPMemberViewController.swift"
-            timestampString = "554212051.466562"
+            timestampString = "554272276.592466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "doneTapped()"
             landmarkType = "7">
          </BreakpointContent>

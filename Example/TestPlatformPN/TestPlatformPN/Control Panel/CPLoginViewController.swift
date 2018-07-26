@@ -21,9 +21,11 @@ class CPLoginViewController: UIViewController {
         super.viewDidLoad()
         
         // Remove later
+        /*
         self.usernameTextField.text = "rahul.verma"
         self.passwordTextField.text = "qwerty123!"
         self.LoginButtonClicked(UIButton())
+         */
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +39,7 @@ class CPLoginViewController: UIViewController {
         MpulseControlPanel.shared().logIn(withOauthUsername: usernameTextField.text!, andPassword: passwordTextField.text!) { (isSuccess, error) in
             ProgressIndicatorCommand(view: self.view).stopExecution()
             if isSuccess == true && error == nil {
-                let message = "refresh token: \(MpulseControlPanel.shared().refreshToken) "
+                let message = "Logged in successfully"
                 AlertHelper().showAlert(title:"Success", message:message , presentingController: self, buttonAction: {
                     let MainStoryboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
                     let controller = MainStoryboard.instantiateViewController(withIdentifier: "controlPanel")

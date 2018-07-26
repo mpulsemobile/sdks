@@ -52,6 +52,11 @@ class CPAddEventViewController: UIViewController {
         ProgressIndicatorCommand(view: self.view).execute()
         MpulseControlPanel.shared().triggerEvent(event, inList: listIDField.value!) { (result, apiMessage, error) in
             ProgressIndicatorCommand(view: self.view).stopExecution()
+            if (apiMessage != nil) {
+                AlertHelper().showAlert(title:"", message:apiMessage! , presentingController: self, buttonAction: nil)
+            } else if (error != nil) {
+                AlertHelper().showAlert(title:"", message:error!.localizedDescription , presentingController: self, buttonAction: nil)
+            }
         }
     }
     

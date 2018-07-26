@@ -57,11 +57,22 @@ class CPMemberViewController: UIViewController {
             ProgressIndicatorCommand(view: self.view).execute()
             MpulseControlPanel.shared().updateMember(withID: memberidTextField.text ?? nil, details: member, andList: listIDField.value, completionHandler: { (result, apiMessage, error) in
                 ProgressIndicatorCommand(view: self.view).stopExecution()
-            })
+                if (apiMessage != nil) {
+                    AlertHelper().showAlert(title:"", message:apiMessage! , presentingController: self, buttonAction: nil)
+                    return
+                }
+            else if (error != nil) {
+                    AlertHelper().showAlert(title:"", message:error!.localizedDescription , presentingController: self, buttonAction: nil)
+                }})
         } else {
             ProgressIndicatorCommand(view: self.view).execute()
             MpulseControlPanel.shared().addNewMember(member, toList:listIDField.value) { (result, apiMessage, error) in
                 ProgressIndicatorCommand(view: self.view).stopExecution()
+                if (apiMessage != nil) {
+                AlertHelper().showAlert(title:"", message:apiMessage! , presentingController: self, buttonAction: nil)
+                } else if (error != nil) {
+                    AlertHelper().showAlert(title:"", message:error!.localizedDescription , presentingController: self, buttonAction: nil)
+                }
             }
         }
     }

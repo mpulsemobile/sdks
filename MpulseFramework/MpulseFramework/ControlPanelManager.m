@@ -90,7 +90,7 @@
                     }
                     else{
                         res = AudienceAPIFailure;
-                        completionHandler(res,nil,error);
+                        completionHandler(res,apiMsg,error);
                     }
                 }
             }];
@@ -139,7 +139,7 @@
                     }
                     else{
                         res = AudienceAPIFailure;
-                        completionHandler(res,nil,error);
+                        completionHandler(res,apiMsg,error);
                     }
                 }
             }];
@@ -190,7 +190,7 @@
                     }
                     else{
                         res = EventAPIFailure;
-                        completionHandler(res,nil,error);
+                        completionHandler(res,apiMsg,error);
                     }
                 }
             }];
