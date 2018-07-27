@@ -18,6 +18,7 @@
 		11758AD0207CDC0F00A232FA /* MpulseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11758ACF207CDC0F00A232FA /* MpulseTabViewController.swift */; };
 		11987D242063BF2300BC9A05 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11987D232063BF2300BC9A05 /* InboxViewController.swift */; };
 		119AC5DD2060EA69007BE295 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116A79062057E3B500B9218F /* UserNotifications.framework */; };
+		2428E0DED04C1016F6613D91 /* libPods-TestPlatformPN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D201BA90B2B9E11172DC5D23 /* libPods-TestPlatformPN.a */; };
 		3A4358F52105B19300E06DDE /* CPAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4358F42105B19300E06DDE /* CPAddEventViewController.swift */; };
 		3A4C588E21083FFC002780E0 /* ProgressCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C588D21083FF3002780E0 /* ProgressCommand.swift */; };
 		3A54FE212101C4FC00076BEB /* CPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE202101C4FC00076BEB /* CPLoginViewController.swift */; };
@@ -82,6 +83,9 @@
 		3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		3A66EC4F2105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		3A953EBB21097BDC00F39153 /* MpulseFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MpulseFramework.framework; sourceTree = "<group>"; };
+		A764BC852068C63331E2B5C8 /* Pods-TestPlatformPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPlatformPN.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPlatformPN/Pods-TestPlatformPN.release.xcconfig"; sourceTree = "<group>"; };
+		D201BA90B2B9E11172DC5D23 /* libPods-TestPlatformPN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestPlatformPN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1F53AB3FCC51062D44AE257 /* Pods-TestPlatformPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPlatformPN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPlatformPN/Pods-TestPlatformPN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			files = (
 				1103807F2077EFAB00BF960D /* SystemConfiguration.framework in Frameworks */,
 				119AC5DD2060EA69007BE295 /* UserNotifications.framework in Frameworks */,
+				2428E0DED04C1016F6613D91 /* libPods-TestPlatformPN.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,7 @@
 				116A78F12057BEFB00B9218F /* TestPlatformPN */,
 				116A78F02057BEFB00B9218F /* Products */,
 				116A79052057E3B400B9218F /* Frameworks */,
+				9A87D8ECE986A742CDC42076 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +150,7 @@
 			children = (
 				1103807E2077EFAB00BF960D /* SystemConfiguration.framework */,
 				116A79062057E3B500B9218F /* UserNotifications.framework */,
+				D201BA90B2B9E11172DC5D23 /* libPods-TestPlatformPN.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,6 +191,15 @@
 			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
+		9A87D8ECE986A742CDC42076 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1F53AB3FCC51062D44AE257 /* Pods-TestPlatformPN.debug.xcconfig */,
+				A764BC852068C63331E2B5C8 /* Pods-TestPlatformPN.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 116A79012057BEFC00B9218F /* Build configuration list for PBXNativeTarget "TestPlatformPN" */;
 			buildPhases = (
+				C77BDE0B04D0AA25ED935DD2 /* [CP] Check Pods Manifest.lock */,
 				116A78EB2057BEFB00B9218F /* Sources */,
 				116A78EC2057BEFB00B9218F /* Frameworks */,
 				116A78ED2057BEFB00B9218F /* Resources */,
@@ -258,6 +275,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C77BDE0B04D0AA25ED935DD2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestPlatformPN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		116A78EB2057BEFB00B9218F /* Sources */ = {
@@ -416,6 +454,7 @@
 		};
 		116A79022057BEFC00B9218F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1F53AB3FCC51062D44AE257 /* Pods-TestPlatformPN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -446,6 +485,7 @@
 		};
 		116A79032057BEFC00B9218F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A764BC852068C63331E2B5C8 /* Pods-TestPlatformPN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

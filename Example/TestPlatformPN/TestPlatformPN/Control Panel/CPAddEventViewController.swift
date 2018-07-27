@@ -37,9 +37,19 @@ class CPAddEventViewController: UIViewController {
     @objc func doneTapped() {
         var customAttributes = [String:String]()
         
-        for i in  4..<eventDetails.count {
+        for i in  7..<eventDetails.count {
             let field = eventDetails[i]
             customAttributes[field.label ?? ""] = field.value
+        }
+        
+        for (key,value) in customAttributes {
+            if value.isEmpty == true {
+                customAttributes[key] = nil
+            }
+        }
+        
+        if memberIDField.value?.isEmpty == true {
+            memberIDField.value = nil
         }
         
         let event =  Event(name: eventNameField.value!,

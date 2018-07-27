@@ -24,12 +24,12 @@ class CPMemberViewController: UIViewController {
     var emailField = InputField("Email", value: nil)
     var phoneField = InputField("Phone", value: nil)
     var listIDField = InputField("List ID", value: nil)
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = isUpdating ? "Update member" : "Add new member"
         alertLabel.text = "**Member id or Email or Phone, at least one is required"
-
+        
         if isUpdating == false {
             alertLabel.text = "**Email or Phone, at least one is required"
             headerView.removeFromSuperview()
@@ -48,20 +48,35 @@ class CPMemberViewController: UIViewController {
     @objc func doneTapped() {
         var otherAttributes = [String:String]()
         
-        for i in  4..<memberDetails.count {
+        for i in  5..<memberDetails.count {
             let field = memberDetails[i]
             otherAttributes[field.label ?? "" ] = field.value 
         }
+        
+        for (key,value) in otherAttributes {
+            if value.isEmpty == true {
+                otherAttributes[key] = nil
+            }
+        }
+        
         let member =  Member(firstName: firstNameField.value, lastName: lastNameField.value, email: emailField.value, phoneNumber: phoneField.value, otherAttributes: otherAttributes)
+        self.setEmptyAttributesToNil(member:member)
+        
         if isUpdating == true {
             ProgressIndicatorCommand(view: self.view).execute()
-            MpulseControlPanel.shared().updateMember(withID: memberidTextField.text ?? nil, details: member, andList: listIDField.value, completionHandler: { (result, apiMessage, error) in
+            var memberId:String?
+            if memberidTextField.text?.isEmpty == true {
+                memberId = nil
+            } else {
+                memberId = memberidTextField.text
+            }
+            MpulseControlPanel.shared().updateMember(withID: memberId, details: member, andList: listIDField.value, completionHandler: { (result, apiMessage, error) in
                 ProgressIndicatorCommand(view: self.view).stopExecution()
                 if (apiMessage != nil) {
                     AlertHelper().showAlert(title:"", message:apiMessage! , presentingController: self, buttonAction: nil)
                     return
                 }
-            else if (error != nil) {
+                else if (error != nil) {
                     AlertHelper().showAlert(title:"", message:error!.localizedDescription , presentingController: self, buttonAction: nil)
                 }})
         } else {
@@ -69,11 +84,20 @@ class CPMemberViewController: UIViewController {
             MpulseControlPanel.shared().addNewMember(member, toList:listIDField.value) { (result, apiMessage, error) in
                 ProgressIndicatorCommand(view: self.view).stopExecution()
                 if (apiMessage != nil) {
-                AlertHelper().showAlert(title:"", message:apiMessage! , presentingController: self, buttonAction: nil)
+                    AlertHelper().showAlert(title:"", message:apiMessage! , presentingController: self, buttonAction: nil)
                 } else if (error != nil) {
                     AlertHelper().showAlert(title:"", message:error!.localizedDescription , presentingController: self, buttonAction: nil)
                 }
             }
+        }
+    }
+    
+    func setEmptyAttributesToNil(member:Member) {
+        if member.email?.isEmpty == true {
+            member.email = nil
+        }
+        if member.phoneNumber?.isEmpty == true {
+            member.phoneNumber = nil
         }
     }
     
