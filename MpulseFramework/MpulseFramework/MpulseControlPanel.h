@@ -70,7 +70,7 @@ typedef enum
  @param member the details of new member
  @param listID ID of the list to which member has to be added
  @param completionHandler the response with MpulseAudienceResult as Success or Failure, api message from backend if any and error if there is any
- @discussion This is the designated to let mPulse client add a new member to specified lists
+ @discussion This is the designated to let mPulse client add a new member to specified list
  */
 -(void)addNewMember:(Member * _Nonnull)member toList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
@@ -80,14 +80,14 @@ typedef enum
  @param member the details of member
  @param listID ID of the list
  @param completionHandler the response with MpulseAudienceResult as Success or Failure, api message from backend if any and error if there is any
- @discussion This is the designated to let mPulse client update an existing member and his lists
+ @discussion This is the designated to let mPulse client update an existing member and his list
  */
 -(void)updateMemberWithID:(NSString *_Nullable)memberID details:(Member * _Nonnull)member andList:(NSString *_Nullable)listID completionHandler: (void (^_Nullable)(MpulseAudienceResult result, NSString * _Nullable apiMessage, NSError * _Nullable error))completionHandler;
 
 /**
  @method triggerEvent:inList:completionHandler
  @param event the details of event
- @param listID a valid List ID created in your Control Panel Account. Members included in the event must be subscribed to thelist
+ @param listID a valid List ID created in your Control Panel Account. Members included in the event must be subscribed to the list
  @param completionHandler the response with MpulseEventUploadResult as Success or Failure, api message from backend if any and error if there is any
  @discussion This is the designated to let mPulse client trigger events to the audience
  */

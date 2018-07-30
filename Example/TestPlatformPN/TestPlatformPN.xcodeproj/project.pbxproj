@@ -32,7 +32,7 @@
 		3A66EC522105ADE80057CA8B /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */; };
 		3A66EC532105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4F2105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m */; };
 		3A953EBD21097C3400F39153 /* MpulseFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A953EBB21097BDC00F39153 /* MpulseFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3AC0CA7220E4BA65000A998C /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */; };
+		3AE03C13210EF36800F9E179 /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE03C12210EF36600F9E179 /* mpulseServices-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,7 +64,6 @@
 		116A79062057E3B500B9218F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		11758ACF207CDC0F00A232FA /* MpulseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MpulseTabViewController.swift; sourceTree = "<group>"; };
 		11987D232063BF2300BC9A05 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
-		3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
 		3A4358F42105B19300E06DDE /* CPAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAddEventViewController.swift; sourceTree = "<group>"; };
 		3A4C588D21083FF3002780E0 /* ProgressCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCommand.swift; sourceTree = "<group>"; };
 		3A54FE202101C4FC00076BEB /* CPLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPLoginViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +82,7 @@
 		3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		3A66EC4F2105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		3A953EBB21097BDC00F39153 /* MpulseFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MpulseFramework.framework; sourceTree = "<group>"; };
+		3AE03C12210EF36600F9E179 /* mpulseServices-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
 		A764BC852068C63331E2B5C8 /* Pods-TestPlatformPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPlatformPN.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPlatformPN/Pods-TestPlatformPN.release.xcconfig"; sourceTree = "<group>"; };
 		D201BA90B2B9E11172DC5D23 /* libPods-TestPlatformPN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestPlatformPN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F53AB3FCC51062D44AE257 /* Pods-TestPlatformPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPlatformPN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPlatformPN/Pods-TestPlatformPN.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 				3A4C588C21083FD1002780E0 /* ProgressIndicator */,
 				116A79042057C96A00B9218F /* TestPlatformPN.entitlements */,
 				3A953EBB21097BDC00F39153 /* MpulseFramework.framework */,
-				3A0127CD20E3D1680057D90F /* mpulseServices-Info.plist */,
 				116A78F22057BEFC00B9218F /* AppDelegate.swift */,
+				3AE03C12210EF36600F9E179 /* mpulseServices-Info.plist */,
 				3A54FE252101C7D600076BEB /* AlertHelper.swift */,
 				116A78F42057BEFC00B9218F /* ViewController.swift */,
 				11987D232063BF2300BC9A05 /* InboxViewController.swift */,
@@ -269,7 +269,7 @@
 			files = (
 				116A78FD2057BEFC00B9218F /* LaunchScreen.storyboard in Resources */,
 				116A78FA2057BEFC00B9218F /* Assets.xcassets in Resources */,
-				3AC0CA7220E4BA65000A998C /* mpulseServices-Info.plist in Resources */,
+				3AE03C13210EF36800F9E179 /* mpulseServices-Info.plist in Resources */,
 				116A78F82057BEFC00B9218F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
