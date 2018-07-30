@@ -149,7 +149,7 @@ extension CPMemberViewController:MemberDelegate {
         let indexPath = tableView.indexPath(for: cell)
         if let row = indexPath?.row {
             let field = memberDetails[row]
-            field.label = text
+            field.label = text.trimmingCharacters(in: .whitespacesAndNewlines)
         }
     }
     
