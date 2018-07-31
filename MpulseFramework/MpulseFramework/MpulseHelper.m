@@ -28,6 +28,20 @@
     }
 }
 
++ (void)getCPConfiguration:(void (^_Nullable)(NSDictionary* _Nullable dataDict, NSError* _Nullable err))result {
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource: mPulseCPConfigFile ofType: mPulseConfigFileType];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
+        NSDictionary *mainDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+        result(mainDictionary,nil);
+        return;
+    }
+    else{
+        NSError *error = [MpulseError returnMpulseErrorWithCode:kNoCPPlist];
+        result(nil,error);
+        return;
+    }
+}
+
 +(void)generateQueryStringWithBaseParametersAndAppMemberId:(NSString*_Nonnull)appMemberId result:(void (^_Nonnull)(NSString* _Nullable urlStr, NSError* _Nullable err))result{
     __block NSDictionary *mPulseDataDict;
     __block NSError *error;
@@ -182,7 +196,7 @@
     __block NSString *controlPanelPath;
     __block NSError *error;
     __block NSDictionary *mpulseDataDict;
-    [self getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+    [self getCPConfiguration:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
         mpulseDataDict = dataDict;
         error = error;
     }];
@@ -246,7 +260,7 @@
     __block NSString *queryString;
     __block NSError *error;
     __block NSDictionary *mPulseDataDict;
-    [self getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+    [self getCPConfiguration:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
         mPulseDataDict = dataDict;
         error = err;
     }];
@@ -266,7 +280,7 @@
         NSString *accountId = mPulseDataDict[mPulseAccountId];
         if(accountId == nil){
             //Error - No account Id found in plist dictionary
-            error = [MpulseError returnMpulseErrorWithCode:kNoAccountId];
+            error = [MpulseError returnMpulseErrorWithCode:kNoCPAccountId];
             result(nil,error);
             return;
         }

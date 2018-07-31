@@ -28,6 +28,7 @@
 #define mPulseControlPanelURL @"MPULSE_CONTROL_PANEL_URL"
 #define mPulseAccessKey @"ACCESS_KEY"
 #define mPulseConfigFile @"mpulseServices-Info"
+#define mPulseCPConfigFile @"mpulseServices-Info-cp"
 #define mPulseConfigFileType @"plist"
 #define mPulseSDKRequest @"sdk"
 #define mPulseUserAgentFromHeaderKey @"user-agent-from"

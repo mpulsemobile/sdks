@@ -13,6 +13,8 @@
 
 + (void)getDictValues:(void (^_Nullable)(NSDictionary* _Nullable dataDict, NSError* _Nullable err))result;
 
++ (void)getCPConfiguration:(void (^_Nullable)(NSDictionary* _Nullable dataDict, NSError* _Nullable err))result;
+
 +(void)generateQueryStringWithBaseParametersAndAppMemberId:(NSString*_Nonnull)appMemberId result:(void (^_Nonnull)(NSString* _Nullable urlStr, NSError* _Nullable err))result;
 
 +(void)generateQueryStringWithAccountIdBaseParametersAndAppMemberId:(NSString*_Nonnull)appMemberId result:(void (^_Nonnull)(NSString* _Nullable urlStr, NSError* _Nullable err))result;

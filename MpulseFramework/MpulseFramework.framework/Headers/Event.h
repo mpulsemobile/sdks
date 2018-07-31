@@ -23,7 +23,7 @@
  @param name the name of the Event in the mPulse Platform
  @param scheduledOn the date string at which event has to be triggered
  Accepted formats: YYYY-MM-DD HH:MM | +HH:MM.
- It Supports scheduling messages at a specified date and time(YYYY-MM-DD HH:MM)or relative to when the request is processed(+HH:MM).
+ It Supports scheduling messages at a specified date and time(YYYY-MM-DD HH:MM) or relative to when the request is processed(+HH:MM).
  -Valid values for HH:Integers in the range from 0 to 24.
  -Value values for MM: Integers in the range from0 to 59.
  -If `scheduled_on` = “2018-01-01 09:30”, then the message will be scheduled for January 1, 2018 at 9:30 AM.
@@ -33,10 +33,10 @@
  Accepted values:no_rule | with_rule | all.
  -no_rule: Only messages with Custom Event triggers thatonly specify an Event Definition Name will be considered for processing.
  -with_rule: Only messages with Custom Event triggers that specify both an Event Definition Name and a rule based on an Event Attribute will be considered for processing.
- -all: All messages with Custom Event triggers for the given Event Definition Name will be considered for processing
+ -all: All messages with Custom Event triggers for the given Event Definition Name will be considered for processing.
  @param timezone the timezone of the event
  @param memberID id of the member receiving the event
- @param correlationID the tag of the event. The value provided can be used to retrieve information using theMessage Delivery Report API about Messages that were scheduled because of an Event
+ @param correlationID the tag of the event. The value provided can be used to retrieve information using the Message Delivery Report API about Messages that were scheduled because of an Event
  @param customAttributes attributes of the event that are set as "Required" in event definition on control panel. It is used in the rule for the Custom Event triggered message you want to schedule
  @returns Event for using with triggerEvent:toMembers:inList:completionHandler
  @discussion This is the designated to let mPulse client create a new event instance

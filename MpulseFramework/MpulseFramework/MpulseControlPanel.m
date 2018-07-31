@@ -55,7 +55,7 @@ static id _instance;
     __block NSString *oauthEndoint;
     __block NSDictionary *mpulseDataDict;
     __block NSError *error;
-    [MpulseHelper getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+    [MpulseHelper getCPConfiguration:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
         mpulseDataDict = dataDict;
         error = err;
     }];
@@ -165,7 +165,7 @@ static id _instance;
     __block NSString *oauthEndoint;
     __block NSDictionary *mpulseDataDict;
     __block NSError *error;
-    [MpulseHelper getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+    [MpulseHelper getCPConfiguration:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
         mpulseDataDict = dataDict;
         error = err;
     }];

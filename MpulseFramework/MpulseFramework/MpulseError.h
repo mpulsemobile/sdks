@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-enum mpulseErrorCode {kNoPlist=5001,\
+enum mpulseErrorCode {
+    kNoCPPlist=5000,\
+    kNoPlist,\
     kNoAppId,\
     kNoAccountId,\
     kNoAccessKey,\
@@ -23,6 +25,7 @@ enum mpulseErrorCode {kNoPlist=5001,\
     kNoAccessToken,\
     kInvalidRefreshToken,\
     kNoOAuthEndpoint,\
+    kNoCPAccountId,\
     kBadRequest
 };
 
