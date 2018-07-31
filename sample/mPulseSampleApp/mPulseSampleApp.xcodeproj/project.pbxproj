@@ -16,6 +16,18 @@
 		11D1ADA920B3266300174958 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1ADA520B3266200174958 /* Manager.swift */; };
 		11D1ADAA20B3266300174958 /* MpulseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1ADA620B3266200174958 /* MpulseTabViewController.swift */; };
 		11D1ADAB20B3266300174958 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1ADA720B3266200174958 /* MessageViewController.swift */; };
+		3A60D3CE21108A44001288B4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A60D3CA21108A43001288B4 /* TPKeyboardAvoidingCollectionView.m */; };
+		3A60D3CF21108A44001288B4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A60D3CB21108A43001288B4 /* TPKeyboardAvoidingScrollView.m */; };
+		3A60D3D021108A44001288B4 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A60D3CC21108A44001288B4 /* TPKeyboardAvoidingTableView.m */; };
+		3A60D3D121108A44001288B4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A60D3CD21108A44001288B4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		3A60D3D421108A93001288B4 /* ProgressCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60D3D321108A93001288B4 /* ProgressCommand.swift */; };
+		3A89127521106E200093E1C9 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89127421106E1F0093E1C9 /* AlertHelper.swift */; };
+		3A89127D21106E7F0093E1C9 /* CPAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89127721106E7F0093E1C9 /* CPAddEventViewController.swift */; };
+		3A89127E21106E7F0093E1C9 /* CPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89127821106E7F0093E1C9 /* CPLoginViewController.swift */; };
+		3A89127F21106E7F0093E1C9 /* CPMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89127921106E7F0093E1C9 /* CPMemberViewController.swift */; };
+		3A89128021106E7F0093E1C9 /* CPWelcomeViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89127A21106E7F0093E1C9 /* CPWelcomeViewCotroller.swift */; };
+		3A89128121106E7F0093E1C9 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89127B21106E7F0093E1C9 /* InputField.swift */; };
+		3A89128221106E7F0093E1C9 /* MemberFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89127C21106E7F0093E1C9 /* MemberFieldCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +56,23 @@
 		11D1ADA620B3266200174958 /* MpulseTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MpulseTabViewController.swift; sourceTree = "<group>"; };
 		11D1ADA720B3266200174958 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		11D1ADB120B3F63500174958 /* mPulseSampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mPulseSampleApp.entitlements; sourceTree = "<group>"; };
+		3A60D3C621108A42001288B4 /* mPulseSampleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mPulseSampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		3A60D3C721108A43001288B4 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		3A60D3C821108A43001288B4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		3A60D3C921108A43001288B4 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		3A60D3CA21108A43001288B4 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		3A60D3CB21108A43001288B4 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		3A60D3CC21108A44001288B4 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		3A60D3CD21108A44001288B4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		3A60D3D321108A93001288B4 /* ProgressCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCommand.swift; sourceTree = "<group>"; };
+		3A60D3D621108AE8001288B4 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingCollectionView.h; path = mPulseSampleApp/TPKeyboardAvoidingCollectionView.h; sourceTree = SOURCE_ROOT; };
+		3A89127421106E1F0093E1C9 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		3A89127721106E7F0093E1C9 /* CPAddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPAddEventViewController.swift; sourceTree = "<group>"; };
+		3A89127821106E7F0093E1C9 /* CPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPLoginViewController.swift; sourceTree = "<group>"; };
+		3A89127921106E7F0093E1C9 /* CPMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPMemberViewController.swift; sourceTree = "<group>"; };
+		3A89127A21106E7F0093E1C9 /* CPWelcomeViewCotroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPWelcomeViewCotroller.swift; sourceTree = "<group>"; };
+		3A89127B21106E7F0093E1C9 /* InputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		3A89127C21106E7F0093E1C9 /* MemberFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberFieldCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +105,13 @@
 		11D1AD9120B325EB00174958 /* mPulseSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				3A89127621106E7F0093E1C9 /* Control Panel */,
 				11D1ADB120B3F63500174958 /* mPulseSampleApp.entitlements */,
+				3A60D3D221108A49001288B4 /* TPKeyboardAvoiding */,
+				3A60D3D521108A97001288B4 /* ProgressIndicator */,
 				11D1ADA420B3266200174958 /* InboxViewController.swift */,
 				11D1ADA520B3266200174958 /* Manager.swift */,
+				3A89127421106E1F0093E1C9 /* AlertHelper.swift */,
 				11D1ADA720B3266200174958 /* MessageViewController.swift */,
 				11D1ADA620B3266200174958 /* MpulseTabViewController.swift */,
 				11D1AD9220B325EB00174958 /* AppDelegate.swift */,
@@ -87,8 +120,45 @@
 				11D1AD9920B325EB00174958 /* Assets.xcassets */,
 				11D1AD9B20B325EB00174958 /* LaunchScreen.storyboard */,
 				11D1AD9E20B325EB00174958 /* Info.plist */,
+				3A60D3C621108A42001288B4 /* mPulseSampleApp-Bridging-Header.h */,
 			);
 			path = mPulseSampleApp;
+			sourceTree = "<group>";
+		};
+		3A60D3D221108A49001288B4 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				3A60D3D621108AE8001288B4 /* TPKeyboardAvoidingCollectionView.h */,
+				3A60D3CA21108A43001288B4 /* TPKeyboardAvoidingCollectionView.m */,
+				3A60D3C721108A43001288B4 /* TPKeyboardAvoidingScrollView.h */,
+				3A60D3CB21108A43001288B4 /* TPKeyboardAvoidingScrollView.m */,
+				3A60D3C921108A43001288B4 /* TPKeyboardAvoidingTableView.h */,
+				3A60D3CC21108A44001288B4 /* TPKeyboardAvoidingTableView.m */,
+				3A60D3C821108A43001288B4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				3A60D3CD21108A44001288B4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		3A60D3D521108A97001288B4 /* ProgressIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				3A60D3D321108A93001288B4 /* ProgressCommand.swift */,
+			);
+			path = ProgressIndicator;
+			sourceTree = "<group>";
+		};
+		3A89127621106E7F0093E1C9 /* Control Panel */ = {
+			isa = PBXGroup;
+			children = (
+				3A89127721106E7F0093E1C9 /* CPAddEventViewController.swift */,
+				3A89127821106E7F0093E1C9 /* CPLoginViewController.swift */,
+				3A89127921106E7F0093E1C9 /* CPMemberViewController.swift */,
+				3A89127A21106E7F0093E1C9 /* CPWelcomeViewCotroller.swift */,
+				3A89127B21106E7F0093E1C9 /* InputField.swift */,
+				3A89127C21106E7F0093E1C9 /* MemberFieldCell.swift */,
+			);
+			path = "Control Panel";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +194,7 @@
 				TargetAttributes = {
 					11D1AD8E20B325EB00174958 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -170,11 +241,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D1AD9520B325EB00174958 /* ViewController.swift in Sources */,
+				3A60D3D021108A44001288B4 /* TPKeyboardAvoidingTableView.m in Sources */,
+				3A60D3D421108A93001288B4 /* ProgressCommand.swift in Sources */,
+				3A89128021106E7F0093E1C9 /* CPWelcomeViewCotroller.swift in Sources */,
+				3A60D3D121108A44001288B4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				11D1ADAA20B3266300174958 /* MpulseTabViewController.swift in Sources */,
 				11D1ADA820B3266300174958 /* InboxViewController.swift in Sources */,
 				11D1AD9320B325EB00174958 /* AppDelegate.swift in Sources */,
+				3A89127E21106E7F0093E1C9 /* CPLoginViewController.swift in Sources */,
+				3A60D3CF21108A44001288B4 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				3A60D3CE21108A44001288B4 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				3A89128221106E7F0093E1C9 /* MemberFieldCell.swift in Sources */,
+				3A89127F21106E7F0093E1C9 /* CPMemberViewController.swift in Sources */,
+				3A89127521106E200093E1C9 /* AlertHelper.swift in Sources */,
 				11D1ADAB20B3266300174958 /* MessageViewController.swift in Sources */,
+				3A89127D21106E7F0093E1C9 /* CPAddEventViewController.swift in Sources */,
 				11D1ADA920B3266300174958 /* Manager.swift in Sources */,
+				3A89128121106E7F0093E1C9 /* InputField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = mPulseSampleApp/mPulseSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MYQC5FZ88F;
@@ -323,6 +407,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mPulse-Mobile.mPulseSample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mPulseSampleApp/mPulseSampleApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -332,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = mPulseSampleApp/mPulseSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MYQC5FZ88F;
@@ -344,6 +431,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mPulse-Mobile.mPulseSample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mPulseSampleApp/mPulseSampleApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
