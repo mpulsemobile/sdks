@@ -27,13 +27,13 @@
 		3A54FE552101EE1C00076BEB /* CPMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE542101EE1C00076BEB /* CPMemberViewController.swift */; };
 		3A54FE572101EF0C00076BEB /* MemberFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FE562101EF0C00076BEB /* MemberFieldCell.swift */; };
 		3A60C0B1210727C000F629AA /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60C0B0210727C000F629AA /* InputField.swift */; };
-		3A60D3AD21108477001288B4 /* mpulseServices-Info-cp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A891285211081430093E1C9 /* mpulseServices-Info-cp.plist */; };
 		3A60D3B02110858E001288B4 /* MpulseFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A60D3AE21108585001288B4 /* MpulseFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3A60D3B1211085C6001288B4 /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE03C14211026D800F9E179 /* mpulseServices-Info.plist */; };
 		3A66EC502105ADE80057CA8B /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4A2105ADE60057CA8B /* TPKeyboardAvoidingCollectionView.m */; };
 		3A66EC512105ADE80057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4D2105ADE70057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		3A66EC522105ADE80057CA8B /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */; };
 		3A66EC532105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4F2105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m */; };
+		3A7EBC05211327A700F64416 /* mpulseServices-Info-cp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A7EBC042113279E00F64416 /* mpulseServices-Info-cp.plist */; };
+		3A7EBC072113283200F64416 /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A7EBC06211327D800F64416 /* mpulseServices-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,8 +83,8 @@
 		3A66EC4D2105ADE70057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		3A66EC4F2105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		3A891285211081430093E1C9 /* mpulseServices-Info-cp.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info-cp.plist"; sourceTree = "<group>"; };
-		3AE03C14211026D800F9E179 /* mpulseServices-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
+		3A7EBC042113279E00F64416 /* mpulseServices-Info-cp.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info-cp.plist"; sourceTree = "<group>"; };
+		3A7EBC06211327D800F64416 /* mpulseServices-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
 		A764BC852068C63331E2B5C8 /* Pods-TestPlatformPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPlatformPN.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPlatformPN/Pods-TestPlatformPN.release.xcconfig"; sourceTree = "<group>"; };
 		D201BA90B2B9E11172DC5D23 /* libPods-TestPlatformPN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestPlatformPN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F53AB3FCC51062D44AE257 /* Pods-TestPlatformPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPlatformPN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPlatformPN/Pods-TestPlatformPN.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,9 +129,9 @@
 				3A4C588C21083FD1002780E0 /* ProgressIndicator */,
 				116A79042057C96A00B9218F /* TestPlatformPN.entitlements */,
 				3A60D3AE21108585001288B4 /* MpulseFramework.framework */,
-				3AE03C14211026D800F9E179 /* mpulseServices-Info.plist */,
-				3A891285211081430093E1C9 /* mpulseServices-Info-cp.plist */,
 				116A78F22057BEFC00B9218F /* AppDelegate.swift */,
+				3A7EBC042113279E00F64416 /* mpulseServices-Info-cp.plist */,
+				3A7EBC06211327D800F64416 /* mpulseServices-Info.plist */,
 				3A54FE252101C7D600076BEB /* AlertHelper.swift */,
 				116A78F42057BEFC00B9218F /* ViewController.swift */,
 				11987D232063BF2300BC9A05 /* InboxViewController.swift */,
@@ -270,9 +270,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A60D3B1211085C6001288B4 /* mpulseServices-Info.plist in Resources */,
+				3A7EBC072113283200F64416 /* mpulseServices-Info.plist in Resources */,
 				116A78FD2057BEFC00B9218F /* LaunchScreen.storyboard in Resources */,
-				3A60D3AD21108477001288B4 /* mpulseServices-Info-cp.plist in Resources */,
+				3A7EBC05211327A700F64416 /* mpulseServices-Info-cp.plist in Resources */,
 				116A78FA2057BEFC00B9218F /* Assets.xcassets in Resources */,
 				116A78F82057BEFC00B9218F /* Main.storyboard in Resources */,
 			);
