@@ -8,6 +8,13 @@
 
 import UIKit
 import MpulseFramework
+
+enum LinkingType:String {
+    case openApp = "Open_App"
+    case secureMsg = "Open_Appmail_Message"
+    case keyValue = "Open_Other"
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var lblToken: UILabel!
@@ -21,7 +28,7 @@ class ViewController: UIViewController {
     
     @IBAction func getToken(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let deviceTokenFromDelegate : String? = appDelegate.deviceTokenVal;
+        let deviceTokenFromDelegate = appDelegate.deviceTokenVal;
         lblToken.text = deviceTokenFromDelegate
         view.endEditing(true)
         if(deviceTokenFromDelegate != nil){
@@ -118,10 +125,49 @@ class ViewController: UIViewController {
     }
     
     func handleRemoteNotification(_ notification: [AnyHashable: Any]) {
-        let (strTitle, strDetails) = Manager.shared.handleNotificaion(userInfo: notification)
-        self.strTitle = strTitle
-        self.details = strDetails
-        performSegue(withIdentifier: "messageSegue", sender: nil)
+        trackPushNotificationOpened(notification)
+        
+        //Handling deep linking parameters in push notification
+        if let deeplinkingParams = notification["deepLinkingParameters"] as? [AnyHashable : Any] ,
+            let linkingType = deeplinkingParams["linkingType"] as? String {
+            let appLinkingType = LinkingType(rawValue: linkingType)
+            switch appLinkingType! {
+            case LinkingType.openApp:
+                break
+            case LinkingType.secureMsg:
+                tabBarController?.selectedIndex = 1
+                NotificationCenter.default.post(name: Notification.Name("ReloadInbox"), object: nil)
+            case LinkingType.keyValue:
+                tabBarController?.selectedIndex = 0
+                let (strTitle, strDetails) = Manager.shared.keyValuePairForNotificaion(deeplinkingParams: deeplinkingParams)
+                self.strTitle = strTitle
+                self.details = strDetails
+                performSegue(withIdentifier: "messageSegue", sender: nil)
+            }
+        }
+    }
+    
+    func trackPushNotificationOpened(_ notification: [AnyHashable: Any]) {
+        //Call SDK method to track push notification opened
+        guard let pnInfo = notification["aps"] as? [AnyHashable : Any], let trackingId = pnInfo["trackingId"] as? String  else {
+            print("Tracking Id missing in push notification. Contact support.");
+            return
+        }
+        
+        MpulseHandler.shared().trackPushNotificationOpened(withTrackingId: trackingId, deliveryTimeStamp: Date().getCurrentPNActionTime(), actionTimeStamp: Date().getCurrentPNActionTime(), completionHandler: { (res, apiMsg, error) in
+            DispatchQueue.main.async {
+                if(error == nil){
+                    AlertHelper().showAlert(title:"PN Tracking Success", message:"Push notification tracked successfully.", presentingController: self, buttonAction: nil)
+                    print(error?.localizedDescription ?? "")
+                    print(apiMsg ?? "")
+                    print("Push notification tracked.");
+                } else {
+                    AlertHelper().showAlert(title:"PN Tracking Error", message:error?.localizedDescription ?? "" , presentingController: self, buttonAction: nil)
+                    print(error?.localizedDescription ?? "")
+                    print(apiMsg ?? "")
+                }
+            }
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

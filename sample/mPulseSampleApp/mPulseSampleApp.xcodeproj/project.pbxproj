@@ -28,6 +28,7 @@
 		3A89128021106E7F0093E1C9 /* CPWelcomeViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89127A21106E7F0093E1C9 /* CPWelcomeViewCotroller.swift */; };
 		3A89128121106E7F0093E1C9 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89127B21106E7F0093E1C9 /* InputField.swift */; };
 		3A89128221106E7F0093E1C9 /* MemberFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89127C21106E7F0093E1C9 /* MemberFieldCell.swift */; };
+		83C0516E2190502E0042A7F6 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0516D2190502E0042A7F6 /* NSDate+Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +74,7 @@
 		3A89127A21106E7F0093E1C9 /* CPWelcomeViewCotroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPWelcomeViewCotroller.swift; sourceTree = "<group>"; };
 		3A89127B21106E7F0093E1C9 /* InputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		3A89127C21106E7F0093E1C9 /* MemberFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberFieldCell.swift; sourceTree = "<group>"; };
+		83C0516D2190502E0042A7F6 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				11D1AD9B20B325EB00174958 /* LaunchScreen.storyboard */,
 				11D1AD9E20B325EB00174958 /* Info.plist */,
 				3A60D3C621108A42001288B4 /* mPulseSampleApp-Bridging-Header.h */,
+				83C0516D2190502E0042A7F6 /* NSDate+Utilities.swift */,
 			);
 			path = mPulseSampleApp;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				11D1AD9520B325EB00174958 /* ViewController.swift in Sources */,
 				3A60D3D021108A44001288B4 /* TPKeyboardAvoidingTableView.m in Sources */,
 				3A60D3D421108A93001288B4 /* ProgressCommand.swift in Sources */,
+				83C0516E2190502E0042A7F6 /* NSDate+Utilities.swift in Sources */,
 				3A89128021106E7F0093E1C9 /* CPWelcomeViewCotroller.swift in Sources */,
 				3A60D3D121108A44001288B4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				11D1ADAA20B3266300174958 /* MpulseTabViewController.swift in Sources */,
@@ -397,7 +401,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = mPulseSampleApp/mPulseSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MYQC5FZ88F;
+				DEVELOPMENT_TEAM = SNQQJDD73U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mPulseSampleApp",
@@ -421,7 +425,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = mPulseSampleApp/mPulseSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MYQC5FZ88F;
+				DEVELOPMENT_TEAM = SNQQJDD73U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mPulseSampleApp",

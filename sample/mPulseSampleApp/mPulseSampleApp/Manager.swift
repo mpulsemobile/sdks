@@ -11,9 +11,8 @@ import Foundation
 class Manager {
     static let shared = Manager()
     private init() { }
-    func handleNotificaion(userInfo: [AnyHashable : Any]) -> (title : String?, details: String?){
-        if let pnData = userInfo["deepLinkingParameters"] as? [AnyHashable : Any] ,
-            let pnDataModule = pnData["otherAppKeyValuePairs"] as? [Any] {
+    func keyValuePairForNotificaion(deeplinkingParams: [AnyHashable : Any]) -> (title : String?, details: String?){
+        if let pnDataModule = deeplinkingParams["otherAppKeyValuePairs"] as? [Any] {
             //Considering only 1 pair
             for each in pnDataModule{
                 if let eachDict = each as? [String: String]{
@@ -24,3 +23,4 @@ class Manager {
         return (nil, nil)
     }
 }
+
