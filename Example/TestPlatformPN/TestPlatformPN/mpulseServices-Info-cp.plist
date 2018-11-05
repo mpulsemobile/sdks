@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>ACCOUNT_ID</key>
-	<string>1255</string>
+	<string>1615</string>
 	<key>CLIENT_ID</key>
 	<string>demo_oauth</string>
 	<key>CLIENT_SECRET</key>
 	<string>admin123</string>
 	<key>MIDDLEWARE_URL</key>
-	<string>https://oauth.mpulsemobile.com</string>
+	<string>https://qa2-oauth.mpulsemobile.com</string>
 </dict>
 </plist>
