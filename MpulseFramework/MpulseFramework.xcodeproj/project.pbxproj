@@ -36,6 +36,10 @@
 		3A6117F720F4C94C006B7607 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6117F520F4C94C006B7607 /* Member.m */; };
 		3A924EBF20FC61910053F9A4 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A924EBD20FC61910053F9A4 /* Event.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A924EC020FC61910053F9A4 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A924EBE20FC61910053F9A4 /* Event.m */; };
+		83FD79E321869CD00058B529 /* PushNotificationTrackingInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 83FD79E121869CD00058B529 /* PushNotificationTrackingInfo.h */; };
+		83FD79E421869CD00058B529 /* PushNotificationTrackingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FD79E221869CD00058B529 /* PushNotificationTrackingInfo.m */; };
+		83FD79E7218704F40058B529 /* NSDictionary+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 83FD79E5218704F40058B529 /* NSDictionary+SafeAccess.h */; };
+		83FD79E8218704F40058B529 /* NSDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FD79E6218704F40058B529 /* NSDictionary+SafeAccess.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		3A6117F520F4C94C006B7607 /* Member.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
 		3A924EBD20FC61910053F9A4 /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		3A924EBE20FC61910053F9A4 /* Event.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		83FD79E121869CD00058B529 /* PushNotificationTrackingInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushNotificationTrackingInfo.h; sourceTree = "<group>"; };
+		83FD79E221869CD00058B529 /* PushNotificationTrackingInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushNotificationTrackingInfo.m; sourceTree = "<group>"; };
+		83FD79E5218704F40058B529 /* NSDictionary+SafeAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeAccess.h"; sourceTree = "<group>"; };
+		83FD79E6218704F40058B529 /* NSDictionary+SafeAccess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeAccess.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,10 @@
 				11854A9A207CC5C200F0E833 /* Info.plist */,
 				11758B34207F719D00A232FA /* MpulseManager.h */,
 				11758B35207F719D00A232FA /* MpulseManager.m */,
+				83FD79E121869CD00058B529 /* PushNotificationTrackingInfo.h */,
+				83FD79E221869CD00058B529 /* PushNotificationTrackingInfo.m */,
+				83FD79E5218704F40058B529 /* NSDictionary+SafeAccess.h */,
+				83FD79E6218704F40058B529 /* NSDictionary+SafeAccess.m */,
 			);
 			path = MpulseFramework;
 			sourceTree = "<group>";
@@ -173,6 +185,7 @@
 			files = (
 				11854ACA207CC5E200F0E833 /* MpulseInboxView.h in Headers */,
 				11854AC6207CC5E200F0E833 /* MpulseHandler.h in Headers */,
+				83FD79E7218704F40058B529 /* NSDictionary+SafeAccess.h in Headers */,
 				3A4C591720EF77D200898738 /* ControlPanelManager.h in Headers */,
 				11854AC0207CC5E200F0E833 /* Constants.h in Headers */,
 				11854AC4207CC5E200F0E833 /* MpulseError.h in Headers */,
@@ -184,6 +197,7 @@
 				11854AA7207CC5C200F0E833 /* MpulseFramework.h in Headers */,
 				3A50DA1320FEFD8100DC479D /* MpulseControlPanel.h in Headers */,
 				11854AC8207CC5E200F0E833 /* MpulseHelper.h in Headers */,
+				83FD79E321869CD00058B529 /* PushNotificationTrackingInfo.h in Headers */,
 				11854ACE207CC5E200F0E833 /* Reachability.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,7 +253,8 @@
 				TargetAttributes = {
 					11854A95207CC5C200F0E833 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = MYQC5FZ88F;
+						DevelopmentTeam = SNQQJDD73U;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					11854A9E207CC5C200F0E833 = {
@@ -316,6 +331,8 @@
 				3A50DA1420FEFD8100DC479D /* MpulseControlPanel.m in Sources */,
 				3A6117F720F4C94C006B7607 /* Member.m in Sources */,
 				3A4358F72105E71B00E06DDE /* ControlPanelManager.m in Sources */,
+				83FD79E8218704F40058B529 /* NSDictionary+SafeAccess.m in Sources */,
+				83FD79E421869CD00058B529 /* PushNotificationTrackingInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,9 +458,10 @@
 		11854AAB207CC5C200F0E833 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = MYQC5FZ88F;
+				DEVELOPMENT_TEAM = SNQQJDD73U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -454,15 +472,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mPulse.MpulseFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		11854AAC207CC5C200F0E833 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = MYQC5FZ88F;
+				DEVELOPMENT_TEAM = SNQQJDD73U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -473,6 +494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mPulse.MpulseFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

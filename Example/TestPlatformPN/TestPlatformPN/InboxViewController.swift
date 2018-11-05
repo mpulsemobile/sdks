@@ -33,6 +33,16 @@ class InboxViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleReloadInboxNotification(_:)), name: Notification.Name("ReloadInbox"), object: nil)
+        loadInbox()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("ReloadInbox"), object: nil)
+    }
+    
+    func loadInbox() {
         if let _ = UserDefaults.standard.value(forKey: "User") {
             self.inboxView.isHidden = false
             self.lblNoUser.isHidden = true
@@ -44,7 +54,6 @@ class InboxViewController: UIViewController {
             self.lblNoUser.isHidden = false
             self.inboxView.isHidden = true
         }
-       
     }
     
     func showActivityIndicator(){
@@ -54,6 +63,10 @@ class InboxViewController: UIViewController {
         activityIN.startAnimating()
         self.view.addSubview(activityIN)
         inboxView.addSubview(activityIN)
+    }
+    
+    @objc private func handleReloadInboxNotification(_ notification : NSNotification) {
+        loadInbox()
     }
 }
 

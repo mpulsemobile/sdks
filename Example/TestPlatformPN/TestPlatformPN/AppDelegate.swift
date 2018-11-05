@@ -8,25 +8,19 @@
 
 import UIKit
 import UserNotifications
-import netfox
+//import netfox
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    
     var window: UIWindow?
     var deviceTokenVal : String?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 //        NFX.sharedInstance().start()
         // Override point for customization after application launch.
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
-        } else {
-            // Fallback on earlier versions
-            let type :UIUserNotificationType = [UIUserNotificationType.badge, UIUserNotificationType.badge, UIUserNotificationType.sound]
-            let setting = UIUserNotificationSettings(types: type, categories: nil)
-            application.registerUserNotificationSettings(setting)
-        }
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         application.registerForRemoteNotifications()
         return true
     }
@@ -74,12 +68,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vcRoot = firstVC.viewControllers[0] as? ViewController{
             vcRoot.handleRemoteNotification(userInfo)
         }
-//        if let vc = window?.rootViewController as? UINavigationController,
-//            let vcRoot = vc.viewControllers[0] as? ViewController{
-//            vcRoot.handleRemoteNotification(userInfo)
-//        }
+        //        if let vc = window?.rootViewController as? UINavigationController,
+        //            let vcRoot = vc.viewControllers[0] as? ViewController{
+        //            vcRoot.handleRemoteNotification(userInfo)
+        //        }
     }
-
-
+    
+    //    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler([.alert, .badge, .sound])
+    }
 }
 

@@ -3,12 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>ACCESS_KEY</key>
-	<string></string>
+	<string>wj54UZoWIkLhQl@a</string>
 	<key>ACCOUNT_ID</key>
-	<string>1255</string>
+	<string>1615</string>
 	<key>APP_ID</key>
 	<string>TestPlatformPN</string>
 	<key>MPULSE_URL</key>
-	<string>https://appmail.mpulsemobile.com</string>
+	<string>https://qa2-appmail.mpulsemobile.com</string>
+	<key>GATEWAY_URL</key>
+	<string>https://qa2-ms-api.mpulsemobile.com</string>
 </dict>
 </plist>

@@ -71,6 +71,18 @@ typedef enum
 -(void)unregisterForPushNotificationWithDeviceToken:(NSString* _Nonnull) withDeviceToken completionHandler:(void (^_Nullable)(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error)) completionHandler;
 
 /**
+ @method trackPushNotificationOpenedWithTrackingId:deliveryTimeStamp:actionTimeStamp:completionHandler
+ @param trackingId the tracking id of the push notification in the mPulse platform, you get this in the AppDelegate's didReceiveRemoteNotification's userInfo
+ @param deliveryTimeStamp the date and time string at which push notification was delivered on iPhone
+ Accepted format: YYYY-MM-DD HH:MM:SS
+ @param actionTimeStamp the date and time string at which push notification was opened by user
+ Accepted format: YYYY-MM-DD HH:MM:SS
+ @param completionHandler the response with MpulsePNResult as Success or Failure, api message from backend if any and error if there is any
+ @discussion This is the designated to notify mPulse platform when push notification is opened from iPhone
+ */
+-(void)trackPushNotificationOpenedWithTrackingId:(NSString*_Nonnull) trackingId deliveryTimeStamp: (NSString*_Nonnull)deliveryTimeStamp actionTimeStamp: (NSString*_Nonnull)actionTimeStamp completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString*_Nullable apiMessage, NSError * _Nullable error))completionHandler;
+
+/**
  @method inboxView
  @returns MpulseInboxView for secure message inbox for configured appmemberId in MpulseHandler
  @discussion This is the designated to get inbox view of secure mail messages for app member id in mpulse platform

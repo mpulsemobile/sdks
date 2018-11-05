@@ -1,12 +1,14 @@
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulsePNRegister.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseError.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/Event.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseManager.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseHandler.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/Reachability.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseInboxView.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseHelper.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseControlPanel.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/Member.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/ControlPanelManager.o
-/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseFramework_vers.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulsePNRegister.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseError.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/Event.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseManager.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseHandler.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/Reachability.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseInboxView.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseHelper.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseControlPanel.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/Member.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/ControlPanelManager.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/NSDictionary+SafeAccess.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/PushNotificationTrackingInfo.o
+/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/Objects-normal/x86_64/MpulseFramework_vers.o

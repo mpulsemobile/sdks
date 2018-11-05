@@ -73,6 +73,12 @@ NSString *_appMemberId = nil;
     }];
 }
 
+-(void)trackPushNotificationOpenedWithTrackingId:(NSString*_Nonnull) trackingId deliveryTimeStamp: (NSString*_Nonnull)deliveryTimeStamp actionTimeStamp: (NSString*_Nonnull)actionTimeStamp completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString*_Nullable apiMessage, NSError * _Nullable error))completionHandler {
+    [MpulsePNRegister trackPushNotificationOpenedWithTrackingId:trackingId deliveryTimeStamp:deliveryTimeStamp actionTimeStamp:actionTimeStamp completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+        completionHandler(result,apiMessage,error);
+    }];
+}
+
 -(MpulseInboxView*_Nonnull)inboxView{
     return [[MpulseInboxView alloc]init];
 }

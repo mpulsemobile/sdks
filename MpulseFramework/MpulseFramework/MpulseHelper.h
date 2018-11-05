@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MpulseHandler.h"
 #import "MpulseControlPanel.h"
+#import "PushNotificationTrackingInfo.h"
+
 @interface MpulseHelper : NSObject
 
 + (void)getDictValues:(void (^_Nullable)(NSDictionary* _Nullable dataDict, NSError* _Nullable err))result;
@@ -28,4 +30,8 @@
 +(NSMutableURLRequest*_Nonnull) urlRequestForURL:(NSURL*_Nonnull)url withMethod:(NSString*_Nullable)method headerDict:(NSDictionary*_Nullable)headerDict andBody:(NSData*_Nullable)body;
 
 + (void)getControlPanelAPIUrlForAction:(MpulseAdminActionType)action resultAs:(void (^_Nullable)(NSURL* _Nullable mpulseURL, NSError* _Nullable err))result;
+
++(void)getPushNotificationTrackingURLWithCompletion: (void (^_Nonnull)(NSURL* _Nullable url, NSError* _Nullable err))result;
+
++(void)getPushNotificationTrackingInfoWithTrackingId: (NSString* _Nonnull)trackingId deliveryTimeStamp: (NSString* _Nonnull)deliveryTimeStamp actionTimeStamp: (NSString* _Nonnull)actionTimeStamp resultAs: (void (^_Nonnull)(PushNotificationTrackingInfo* _Nullable pushNotificationTrackingInfo, NSError* _Nullable err))result;
 @end

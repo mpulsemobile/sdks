@@ -12,6 +12,8 @@
 #import "ErrorConstants.h"
 #import "Reachability.h"
 
+NSString *const kPnTrackingEndpoint = @"/device_requests/pn_clicked";
+
 @implementation MpulseHelper
 
 + (void)getDictValues:(void (^)(NSDictionary* dataDict, NSError* err))result{
@@ -289,4 +291,67 @@
     }
 }
 
++(void)getPushNotificationTrackingURLWithCompletion: (void (^_Nonnull)(NSURL* _Nullable url, NSError* _Nullable err))result{
+    __block NSDictionary *mPulseDataDict;
+    __block NSError *error;
+    [self getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+        mPulseDataDict = dataDict;
+        error = err;
+    }];
+    if (error) {
+        result(nil, error);
+        return;
+    } else {
+        NSString *pnTrackingBaseUrl = mPulseDataDict[mPulseGatewayURL];
+        if(pnTrackingBaseUrl == nil){
+            //Error - No Gateway URL found in plist dictionary
+            error = [MpulseError returnMpulseErrorWithCode:kNoGatewayURL];
+            result(nil,error);
+            return;
+        }
+        //Create Url String and encode with base 64
+        NSString *pnTrackingURLStr = [pnTrackingBaseUrl stringByAppendingString:kPnTrackingEndpoint];
+        pnTrackingURLStr = [pnTrackingURLStr  stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        if (pnTrackingURLStr == nil) {
+            NSError *error = [MpulseError returnMpulseErrorWithCode:kCouldNotGenerateURL];
+            result(nil,error);
+            return;
+        } else {
+            result([NSURL URLWithString:pnTrackingURLStr],nil);
+            return;
+        }
+    }
+}
+
++(void)getPushNotificationTrackingInfoWithTrackingId: (NSString* _Nonnull)trackingId deliveryTimeStamp: (NSString* _Nonnull)deliveryTimeStamp actionTimeStamp: (NSString* _Nonnull)actionTimeStamp resultAs: (void (^_Nonnull)(PushNotificationTrackingInfo* _Nullable pushNotificationTrackingInfo, NSError* _Nullable err))result{
+    __block NSString *appId;
+    __block NSString *accountId;
+    __block NSDictionary *mpulseDataDict;
+    __block NSError *error;
+    
+    [MpulseHelper getDictValues:^(NSDictionary * _Nullable dataDict, NSError * _Nullable err) {
+        mpulseDataDict = dataDict;
+        error = err;
+    }];
+    if (error) {
+        result(nil,error);
+        return;
+    }
+    
+    appId = mpulseDataDict[mPulseAppId];
+    accountId = mpulseDataDict[mPulseAccountId];
+    if ( appId  == nil) {
+        error = [MpulseError returnMpulseErrorWithCode:kNoAppId];
+        result(nil,error);
+        return;
+    }
+    if ( accountId  == nil) {
+        error = [MpulseError returnMpulseErrorWithCode:kNoAccountId];
+        result(nil,error);
+        return;
+    }
+    
+    PushNotificationTrackingInfo * pnTrackingInfo = [[PushNotificationTrackingInfo alloc] initWithTrackingId:trackingId deliveryTimeStamp:deliveryTimeStamp actionTimeStamp:actionTimeStamp appId:appId accountId:accountId];
+    result(pnTrackingInfo,nil);
+}
 @end

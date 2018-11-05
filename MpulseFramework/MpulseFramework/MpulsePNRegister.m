@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "MpulseHelper.h"
 #import "MpulseError.h"
+#import "PushNotificationTrackingInfo.h"
 
 @implementation MpulsePNRegister
 
@@ -109,7 +110,66 @@
     }];
 }
 
++(void)trackPushNotificationOpenedWithTrackingInfo:(PushNotificationTrackingInfo *_Nonnull) pushNotificationTrackingInfo pushNotificationTrackingURL: (NSURL *_Nonnull)trackingURL completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString*_Nullable apiMessage, NSError * _Nullable error))completionHandler {
+    __block NSError *error;
+    
+    NSDictionary *bodyDict = [pushNotificationTrackingInfo JSONObject];
+    NSData *bodyData = [NSJSONSerialization dataWithJSONObject:bodyDict options:0 error:&error];
+    NSDictionary *headerDict = @{mPulseContentType: mPulseContentTypeValue};
+    
+    [MpulseHelper makeAPICallToPlatformForURL:trackingURL withMethod:mPulsePOSTmethod headerDict:headerDict andBody:bodyData completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if(error) {
+            completionHandler(Failure, nil, error);
+        }else {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+            NSString *apiMsg;
+            if(data) {
+                apiMsg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            }
+            if(httpResponse.statusCode >= 200 && httpResponse.statusCode < 300) {
+                MpulsePNResult res = Success;
+                completionHandler(res, apiMsg, nil);
+            } else {
+                MpulsePNResult res = Failure;
+                error = [MpulseError returnMpulseErrorWithCode:kSomeErrorOccured];
+                completionHandler(res,nil,error);
+            }
+        }
+    }];
+}
 
-
++(void)trackPushNotificationOpenedWithTrackingId:(NSString*_Nonnull) trackingId deliveryTimeStamp: (NSString*_Nonnull)deliveryTimeStamp actionTimeStamp: (NSString*_Nonnull)actionTimeStamp completionHandler: (void (^_Nullable)(MpulsePNResult result, NSString*_Nullable apiMessage, NSError * _Nullable error))completionHandler {
+  
+    __block NSURL *pnTrackingEndpointURL;
+    __block NSError *error;
+    MpulsePNResult result = Failure;
+    
+    [MpulseHelper getPushNotificationTrackingURLWithCompletion:^(NSURL * _Nullable url, NSError * _Nullable err) {
+        pnTrackingEndpointURL = url;
+        error = err;
+    }];
+    if (error) {
+        completionHandler(result,nil,error);
+        return;
+    }
+    if(pnTrackingEndpointURL == nil) {
+        NSError *error = [MpulseError returnMpulseErrorWithCode:kCouldNotGenerateURL];
+        completionHandler(result,nil,error);
+    }
+    
+    __block PushNotificationTrackingInfo *pnTrackingInfo;
+    [MpulseHelper getPushNotificationTrackingInfoWithTrackingId:trackingId deliveryTimeStamp:deliveryTimeStamp actionTimeStamp:actionTimeStamp resultAs:^(PushNotificationTrackingInfo * _Nullable pushNotificationTrackingInfo, NSError * _Nullable err) {
+        pnTrackingInfo = pushNotificationTrackingInfo;
+        error = err;
+    }];
+    if (error) {
+        completionHandler(result,nil,error);
+        return;
+    }
+    
+    [self trackPushNotificationOpenedWithTrackingInfo:pnTrackingInfo pushNotificationTrackingURL:pnTrackingEndpointURL completionHandler:^(MpulsePNResult result, NSString * _Nullable apiMessage, NSError * _Nullable error) {
+        completionHandler(result,apiMessage,error);
+    }];
+}
 @end
 

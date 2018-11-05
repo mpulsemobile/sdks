@@ -22,6 +22,7 @@
 #define mPulseAppId @"APP_ID"
 #define mPulseAccountId @"ACCOUNT_ID"
 #define mPulseAPIURL @"MPULSE_URL"
+#define mPulseGatewayURL @"GATEWAY_URL"
 #define mPulseClientId @"CLIENT_ID"
 #define mPulseControlPanelEndpoint @"MIDDLEWARE_URL"
 #define mPulseClientSecret @"CLIENT_SECRET"
@@ -50,6 +51,15 @@
 #define mPulseContentTypeValue @"application/json"
 #define mPulseTracking @"mPulseTracking"
 #define mPulseAppMemberIdValue @"mPulseAppMemberId"
+#define mPulseAppIdKey @"app_id"
+#define mPulseAccountIdKey @"account_id"
+#define mPulsePlatform @"platform"
+#define mPulseDeliveryTimeStamp @"deliveryTimeStamp"
+#define mPulseActionTimeStamp @"actionTimeStamp"
+#define mPulseTrackingId @"trackingId"
+#define mPulseAction @"action"
+#define mPulsePlatformValue @"ios"
+
 #endif
 
 /* Constants_h */

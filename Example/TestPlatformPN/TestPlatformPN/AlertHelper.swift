@@ -16,7 +16,8 @@ class AlertHelper {
         })
         alertController.addAction(OKAction)
         DispatchQueue.main.async {
-            presentingController.present(alertController, animated: true, completion: nil)
+            UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
         }
     }
 }
+

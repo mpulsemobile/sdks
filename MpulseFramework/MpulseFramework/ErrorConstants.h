@@ -26,6 +26,7 @@
     @"5015":@"MIDDLEWARE_URL is missing from mPulseServices-Info-cp.plist. Please contact mPulse",\
     @"5016":@"ACCOUNT_ID is missing from mPulseServices-Info-cp.plist. Please contact mPulse",\
     @"5017":@"Bad request, some query parameter is missing or wrong.",\
+    @"5018":@"GATEWAY_URL is missing from mPulseServices-Info.plist. Please contact mPulse",\
 }
 #define mPulseNoAppMemberIdConfigured @"App member Id not configured"
 #define mPulseNoAppMemberIdConfiguredReason @"Mpulse Handler requires app member Id to be configured, to user any methods related to Mpulse Handler Or Mpulse Inbox View"

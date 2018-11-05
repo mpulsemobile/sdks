@@ -1,0 +1,58 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/deepanshig-l/Library/Developer/Xcode/DerivedData/MpulseFramework-hdjsjmyidyqbcngkwenahmttgwga/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Event.h",
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/Event.h"
+        },
+        {
+          'type': 'file',
+          'name': "Member.h",
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/Member.h"
+        },
+        {
+          'type': 'file',
+          'name': "MpulseControlPanel.h",
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/MpulseControlPanel.h"
+        },
+        {
+          'type': 'file',
+          'name': "MpulseFramework-Swift.h",
+          'external-contents': "/Users/deepanshig-l/Library/Developer/Xcode/DerivedData/MpulseFramework-hdjsjmyidyqbcngkwenahmttgwga/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Headers/MpulseFramework-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "MpulseFramework.h",
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/MpulseFramework.h"
+        },
+        {
+          'type': 'file',
+          'name': "MpulseHandler.h",
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/MpulseHandler.h"
+        },
+        {
+          'type': 'file',
+          'name': "MpulseInboxView.h",
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/MpulseInboxView.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/deepanshig-l/Library/Developer/Xcode/DerivedData/MpulseFramework-hdjsjmyidyqbcngkwenahmttgwga/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

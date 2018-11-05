@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/Reachability.m \
-  /Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/module.modulemap \
-  /Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/Reachability.h
+  /Users/deepanshig-l/Desktop/mPulse\ Projects/SDK\ /sdks/MpulseFramework/MpulseFramework/Reachability.m \
+  /Users/deepanshig-l/Desktop/mPulse\ Projects/SDK\ /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/module.modulemap \
+  /Users/deepanshig-l/Desktop/mPulse\ Projects/SDK\ /sdks/MpulseFramework/MpulseFramework/Reachability.h

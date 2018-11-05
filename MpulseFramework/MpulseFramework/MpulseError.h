@@ -26,7 +26,8 @@ enum mpulseErrorCode {
     kInvalidRefreshToken,\
     kNoOAuthEndpoint,\
     kNoCPAccountId,\
-    kBadRequest
+    kBadRequest,\
+    kNoGatewayURL
 };
 
 @interface MpulseError : NSObject

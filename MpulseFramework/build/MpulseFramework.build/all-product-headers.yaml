@@ -4,53 +4,53 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/rahulv-M/Library/Developer/Xcode/DerivedData/MpulseFramework-gtxezfojrbkllcdtvpiwsnqfdgoc/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Headers",
+      'name': "/Users/deepanshig-l/Library/Developer/Xcode/DerivedData/MpulseFramework-hdjsjmyidyqbcngkwenahmttgwga/Build/Products/Debug-iphoneos/MpulseFramework.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "Event.h",
-          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/Event.h"
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/Event.h"
         },
         {
           'type': 'file',
           'name': "Member.h",
-          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/Member.h"
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/Member.h"
         },
         {
           'type': 'file',
           'name': "MpulseControlPanel.h",
-          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/MpulseControlPanel.h"
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/MpulseControlPanel.h"
         },
         {
           'type': 'file',
           'name': "MpulseFramework-Swift.h",
-          'external-contents': "/Users/rahulv-M/Library/Developer/Xcode/DerivedData/MpulseFramework-gtxezfojrbkllcdtvpiwsnqfdgoc/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Headers/MpulseFramework-Swift.h"
+          'external-contents': "/Users/deepanshig-l/Library/Developer/Xcode/DerivedData/MpulseFramework-hdjsjmyidyqbcngkwenahmttgwga/Build/Products/Debug-iphoneos/MpulseFramework.framework/Headers/MpulseFramework-Swift.h"
         },
         {
           'type': 'file',
           'name': "MpulseFramework.h",
-          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/MpulseFramework.h"
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/MpulseFramework.h"
         },
         {
           'type': 'file',
           'name': "MpulseHandler.h",
-          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/MpulseHandler.h"
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/MpulseHandler.h"
         },
         {
           'type': 'file',
           'name': "MpulseInboxView.h",
-          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/MpulseFramework/MpulseInboxView.h"
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/MpulseFramework/MpulseInboxView.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/rahulv-M/Library/Developer/Xcode/DerivedData/MpulseFramework-gtxezfojrbkllcdtvpiwsnqfdgoc/Build/Products/Debug-iphonesimulator/MpulseFramework.framework/Modules",
+      'name': "/Users/deepanshig-l/Library/Developer/Xcode/DerivedData/MpulseFramework-hdjsjmyidyqbcngkwenahmttgwga/Build/Products/Debug-iphoneos/MpulseFramework.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/rahulv-M/Documents/mPulse/mPulse-Github/sdks/Framework-master/sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphonesimulator/MpulseFramework.build/module.modulemap"
+          'external-contents': "/Users/deepanshig-l/Desktop/mPulse Projects/SDK /sdks/MpulseFramework/build/MpulseFramework.build/Debug-iphoneos/MpulseFramework.build/module.modulemap"
         }
       ]
     }
