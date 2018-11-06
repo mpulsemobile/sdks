@@ -30,10 +30,10 @@
 		3A66EC512105ADE80057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4D2105ADE70057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		3A66EC522105ADE80057CA8B /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */; };
 		3A66EC532105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66EC4F2105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m */; };
-		3A7EBC05211327A700F64416 /* mpulseServices-Info-cp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A7EBC042113279E00F64416 /* mpulseServices-Info-cp.plist */; };
 		830BBA6F2189DA49001D23E6 /* MpulseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 834F96F12189D6B400976AD9 /* MpulseFramework.framework */; };
 		830BBA702189DA49001D23E6 /* MpulseFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 834F96F12189D6B400976AD9 /* MpulseFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		830BBA712189DBC1001D23E6 /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 834F96F22189D75A00976AD9 /* mpulseServices-Info.plist */; };
+		832B81C2219160D000E122A0 /* mpulseServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 832B81C0219160D000E122A0 /* mpulseServices-Info.plist */; };
+		832B81C3219160D000E122A0 /* mpulseServices-Info-cp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 832B81C1219160D000E122A0 /* mpulseServices-Info-cp.plist */; };
 		834F96F42189D7AA00976AD9 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F96F32189D7A900976AD9 /* NSDate+Utilities.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,9 +83,9 @@
 		3A66EC4D2105ADE70057CA8B /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		3A66EC4E2105ADE70057CA8B /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		3A66EC4F2105ADE80057CA8B /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		3A7EBC042113279E00F64416 /* mpulseServices-Info-cp.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info-cp.plist"; sourceTree = "<group>"; };
+		832B81C0219160D000E122A0 /* mpulseServices-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
+		832B81C1219160D000E122A0 /* mpulseServices-Info-cp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info-cp.plist"; sourceTree = "<group>"; };
 		834F96F12189D6B400976AD9 /* MpulseFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MpulseFramework.framework; sourceTree = "<group>"; };
-		834F96F22189D75A00976AD9 /* mpulseServices-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpulseServices-Info.plist"; sourceTree = "<group>"; };
 		834F96F32189D7A900976AD9 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,14 +123,14 @@
 		116A78F12057BEFB00B9218F /* TestPlatformPN */ = {
 			isa = PBXGroup;
 			children = (
+				832B81C1219160D000E122A0 /* mpulseServices-Info-cp.plist */,
+				832B81C0219160D000E122A0 /* mpulseServices-Info.plist */,
 				834F96F12189D6B400976AD9 /* MpulseFramework.framework */,
 				3A66EC552105AE250057CA8B /* TPKeyboardAvoiding */,
 				3A4C588C21083FD1002780E0 /* ProgressIndicator */,
 				116A79042057C96A00B9218F /* TestPlatformPN.entitlements */,
 				834F96F32189D7A900976AD9 /* NSDate+Utilities.swift */,
 				116A78F22057BEFC00B9218F /* AppDelegate.swift */,
-				3A7EBC042113279E00F64416 /* mpulseServices-Info-cp.plist */,
-				834F96F22189D75A00976AD9 /* mpulseServices-Info.plist */,
 				3A54FE252101C7D600076BEB /* AlertHelper.swift */,
 				116A78F42057BEFC00B9218F /* ViewController.swift */,
 				11987D232063BF2300BC9A05 /* InboxViewController.swift */,
@@ -258,10 +258,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				830BBA712189DBC1001D23E6 /* mpulseServices-Info.plist in Resources */,
 				116A78FD2057BEFC00B9218F /* LaunchScreen.storyboard in Resources */,
-				3A7EBC05211327A700F64416 /* mpulseServices-Info-cp.plist in Resources */,
+				832B81C3219160D000E122A0 /* mpulseServices-Info-cp.plist in Resources */,
 				116A78FA2057BEFC00B9218F /* Assets.xcassets in Resources */,
+				832B81C2219160D000E122A0 /* mpulseServices-Info.plist in Resources */,
 				116A78F82057BEFC00B9218F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

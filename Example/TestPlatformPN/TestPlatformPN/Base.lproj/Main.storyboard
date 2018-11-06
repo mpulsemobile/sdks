@@ -584,7 +584,13 @@
                         <viewLayoutGuide key="safeArea" id="KAE-cW-AIc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Inbox" image="MsgIcon" id="IPD-N8-ml4"/>
-                    <navigationItem key="navigationItem" title="Inbox" id="ZlL-Ak-9OA"/>
+                    <navigationItem key="navigationItem" title="Inbox" id="ZlL-Ak-9OA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="goj-51-j3V">
+                            <connections>
+                                <action selector="refreshAction:" destination="Imr-Jw-0vV" id="mg7-N1-tqI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBo-O0-MW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
