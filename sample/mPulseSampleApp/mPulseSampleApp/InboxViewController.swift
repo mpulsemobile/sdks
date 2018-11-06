@@ -65,6 +65,12 @@ class InboxViewController: UIViewController {
         inboxView.addSubview(activityIN)
     }
     
+    @IBAction func refreshAction(_ sender: UIBarButtonItem) {
+        loadInbox()
+    }
+    
+    
+    
     @objc private func handleReloadInboxNotification(_ notification : NSNotification) {
         loadInbox()
     }
