@@ -1,0 +1,6 @@
+framework module Pods_mPulseSDKDemo {
+  umbrella header "Pods-mPulseSDKDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
