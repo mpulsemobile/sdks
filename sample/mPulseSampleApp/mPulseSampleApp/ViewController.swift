@@ -149,7 +149,7 @@ class ViewController: UIViewController {
     
     func trackPushNotificationOpened(_ notification: [AnyHashable: Any]) {
         //Call SDK method to track push notification opened
-        guard let pnInfo = notification["aps"] as? [AnyHashable : Any], let trackingId = pnInfo["trackingId"] as? String  else {
+        guard let params = notification["deepLinkingParameters"] as? [AnyHashable : Any], let trackingId = params["trackingId"] as? String  else {
             print("Tracking Id missing in push notification. Contact support.");
             return
         }
